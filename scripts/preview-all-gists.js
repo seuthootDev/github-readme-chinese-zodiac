@@ -53,7 +53,7 @@ const html = `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Gist pin preview — 12 signs</title>
+  <title>Gist pin preview — 12 animals</title>
   <style>
     :root { color-scheme: dark; }
     body {
@@ -95,7 +95,7 @@ const html = `<!doctype html>
   </style>
 </head>
 <body>
-  <h1>Gist pin preview — all 12 signs</h1>
+  <h1>Gist pin preview — all 12 animals (生肖)</h1>
   <p class="meta">@${escape(profile.username)} · open this file in a browser · monospace like GitHub</p>
   <div class="grid">
     ${cards

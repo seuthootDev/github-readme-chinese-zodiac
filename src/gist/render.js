@@ -1,5 +1,5 @@
 import { pickDisplayStats } from "../lib/stats.js";
-import { getAsciiConstellation } from "./constellations.js";
+import { getPinEmblem } from "./emblem.js";
 
 const LEFT_WIDTH = 36;
 const BAR_WIDTH = 12;
@@ -114,9 +114,7 @@ function abbreviateTitle(title) {
 }
 
 /**
- * Pin-first card: colorful left column + stable ASCII constellation on the right.
- * Display-width padding keeps the star map from drifting when stats change.
- * Languages stay below the pin fold (full names) — not squeezed into 5 lines.
+ * Pin-first card: stats on the left, 简体 animal seal on the right.
  */
 export function renderGistCard({ profile, zodiac, stats }) {
   const displayStats = pickDisplayStats(stats, zodiac, 3);
@@ -128,7 +126,7 @@ export function renderGistCard({ profile, zodiac, stats }) {
     .map((l) => l.name)
     .join(" · ");
 
-  const constellation = getAsciiConstellation(zodiac.id);
+  const emblem = getPinEmblem(zodiac);
 
   const pinLeft = [
     `${zodiac.symbol} ${zodiac.sign.toUpperCase()} · ${title}`,
@@ -138,11 +136,11 @@ export function renderGistCard({ profile, zodiac, stats }) {
     `${displayStats[1].label.slice(0, 10).padEnd(10)} ${bar(displayStats[1].value)} ${num(displayStats[1].value, 3)}%`,
   ];
 
-  const lines = [...mergePinRows(pinLeft, constellation)];
+  const lines = [...mergePinRows(pinLeft, emblem)];
 
   lines.push("────────────────────────────────────");
   lines.push(
-    `${zodiac.symbol} ${zodiac.element} · ${zodiac.earthlyBranch || "支"}`,
+    `${zodiac.symbol} ${zodiac.hanzi || ""} · ${zodiac.element} · ${zodiac.earthlyBranch || "支"}`,
   );
   if (langs) lines.push(langs);
   if (displayStats[2]) {
@@ -155,7 +153,7 @@ export function renderGistCard({ profile, zodiac, stats }) {
     lines.push(`💫 ${zodiac.description}`);
   }
   lines.push("");
-  lines.push("✦ Your coding personality written in the Asian zodiac");
+  lines.push("印 Your coding personality written in the Asian zodiac");
 
   return lines.join("\n");
 }

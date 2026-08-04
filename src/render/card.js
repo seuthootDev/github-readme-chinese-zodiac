@@ -102,25 +102,6 @@ function renderSeal(zodiac, colors) {
     </g>`;
 }
 
-function renderMotif(points, colors) {
-  if (!points?.length) return "";
-  const lines = [];
-  for (let i = 0; i < points.length - 1; i++) {
-    const [x1, y1] = points[i];
-    const [x2, y2] = points[i + 1];
-    lines.push(
-      `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${colors.accent}" stroke-opacity="0.5" stroke-width="1.3"/>`,
-    );
-  }
-  const nodes = points
-    .map(
-      ([x, y], i) =>
-        `<circle cx="${x}" cy="${y}" r="${i === 0 ? 3 : 2.2}" fill="${colors.star}" opacity="0.9"/>`,
-    )
-    .join("");
-  return `${lines.join("")}${nodes}`;
-}
-
 function renderStatBars(displayStats, colors) {
   return displayStats
     .map((stat, i) => {
@@ -176,7 +157,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     900,
   );
   const displayHeight = Math.round((displayWidth / WIDTH) * HEIGHT);
-  const elementLine = [zodiac.element, zodiac.earthlyBranch]
+  const elementLine = [zodiac.hanzi, zodiac.element, zodiac.earthlyBranch]
     .filter(Boolean)
     .join(" · ");
 
@@ -212,9 +193,9 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     ${renderClouds(colors)}
     ${renderSeal(zodiac, colors)}
 
-    <g transform="translate(318, 95)" opacity="0.85">
-      ${renderMotif(zodiac.constellation, colors)}
-    </g>
+    <text class="brush" x="420" y="200" fill="${colors.accent}" font-size="72" opacity="0.12" text-anchor="middle">
+      ${escapeXml(zodiac.hanzi || zodiac.earthlyBranch || "")}
+    </text>
 
     <text class="title" x="36" y="52" fill="${colors.accent}" font-size="22" font-weight="700" letter-spacing="2">
       ${escapeXml(zodiac.symbol)}  ${escapeXml(zodiac.sign.toUpperCase())}
@@ -238,7 +219,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     ${renderStatBars(displayStats, colors)}
 
     <text class="body" x="36" y="298" fill="${colors.accent}" font-size="11" opacity="0.9">
-      ✦ Your coding personality written in the Asian zodiac
+      印 Your coding personality written in the Asian zodiac
     </text>
     <text x="560" y="298" text-anchor="end" fill="${colors.muted}" font-size="10" font-family="Georgia, serif" opacity="0.55">
       ${escapeXml(sourceLabel)}
