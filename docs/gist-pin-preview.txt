@@ -1,22 +1,22 @@
 github-readme-chinese-zodiac gist preview
 user: seuthootDev (JUNG SEUNGHOON)
-generated: 2026-08-04T08:43:53.666Z
+generated: 2026-08-04T08:46:41.310Z
 
 ===== 🐀 Rat.md (rat) =====
 
 --- pin (first 5 lines) ---
-🐀 RAT · Clever Hacker                ┌────┐
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 子 │
-🌟   4  📦  37  👥   0                │ 鼠 │
-Ingenuity  ██████████░░  86%          └────┘
-Insight    ███████░░░░░  57%            生肖
+🐀 RAT · Clever Hacker              ┌────┐
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 子 │
+🌟   4  📦  37  👥   0              │ 鼠 │
+Ingenuity  ██████████░░  86%        └────┘
+Insight    ███████░░░░░  57%          生肖
 
 --- full gist ---
-🐀 RAT · Clever Hacker                ┌────┐
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 子 │
-🌟   4  📦  37  👥   0                │ 鼠 │
-Ingenuity  ██████████░░  86%          └────┘
-Insight    ███████░░░░░  57%            生肖
+🐀 RAT · Clever Hacker              ┌────┐
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 子 │
+🌟   4  📦  37  👥   0              │ 鼠 │
+Ingenuity  ██████████░░  86%        └────┘
+Insight    ███████░░░░░  57%          生肖
 ────────────────────────────────────
 🐀 鼠 · Water · 子
 JavaScript · TypeScript · Python
@@ -29,18 +29,18 @@ Craft      █████████░░░  76%
 ===== 🐂 Ox.md (ox) =====
 
 --- pin (first 5 lines) ---
-🐂 OX · Steady Builder                ┏━━━━┓
-✨ JUNG SEUNGHOON · Full-Stack Dev    ┃ 丑 ┃
-🌟   4  📦  37  👥   0                ┃ 牛 ┃
-Discipline ███████████░  95%          ┗━━━━┛
-Craft      █████████░░░  76%            生肖
+🐂 OX · Steady Builder              ┏━━━━┓
+✨ JUNG SEUNGHOON · Full-Stack Dev  ┃ 丑 ┃
+🌟   4  📦  37  👥   0              ┃ 牛 ┃
+Discipline ███████████░  95%        ┗━━━━┛
+Craft      █████████░░░  76%          生肖
 
 --- full gist ---
-🐂 OX · Steady Builder                ┏━━━━┓
-✨ JUNG SEUNGHOON · Full-Stack Dev    ┃ 丑 ┃
-🌟   4  📦  37  👥   0                ┃ 牛 ┃
-Discipline ███████████░  95%          ┗━━━━┛
-Craft      █████████░░░  76%            生肖
+🐂 OX · Steady Builder              ┏━━━━┓
+✨ JUNG SEUNGHOON · Full-Stack Dev  ┃ 丑 ┃
+🌟   4  📦  37  👥   0              ┃ 牛 ┃
+Discipline ███████████░  95%        ┗━━━━┛
+Craft      █████████░░░  76%          生肖
 ────────────────────────────────────
 🐂 牛 · Earth · 丑
 JavaScript · TypeScript · Python
@@ -53,18 +53,18 @@ Insight    ███████░░░░░  57%
 ===== 🐅 Tiger.md (tiger) =====
 
 --- pin (first 5 lines) ---
-🐅 TIGER · Bold Pioneer               ╲────╱
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 寅 │
-🌟   4  📦  37  👥   0                │ 虎 │
-Craft      █████████░░░  76%          ╱────╲
-Ingenuity  ██████████░░  86%            生肖
+🐅 TIGER · Bold Pioneer             ╲────╱
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 寅 │
+🌟   4  📦  37  👥   0              │ 虎 │
+Craft      █████████░░░  76%        ╱────╲
+Ingenuity  ██████████░░  86%          生肖
 
 --- full gist ---
-🐅 TIGER · Bold Pioneer               ╲────╱
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 寅 │
-🌟   4  📦  37  👥   0                │ 虎 │
-Craft      █████████░░░  76%          ╱────╲
-Ingenuity  ██████████░░  86%            生肖
+🐅 TIGER · Bold Pioneer             ╲────╱
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 寅 │
+🌟   4  📦  37  👥   0              │ 虎 │
+Craft      █████████░░░  76%        ╱────╲
+Ingenuity  ██████████░░  86%          生肖
 ────────────────────────────────────
 🐅 虎 · Wood · 寅
 JavaScript · TypeScript · Python
@@ -77,18 +77,18 @@ Renown     █░░░░░░░░░░░   7%
 ===== 🐇 Rabbit.md (rabbit) =====
 
 --- pin (first 5 lines) ---
-🐇 RABBIT · Careful Craftsman         ╭····╮
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 卯 │
-🌟   4  📦  37  👥   0                │ 兔 │
-Insight    ███████░░░░░  57%          ╰····╯
-Discipline ███████████░  95%            生肖
+🐇 RABBIT · Careful Craftsman       ╭····╮
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 卯 │
+🌟   4  📦  37  👥   0              │ 兔 │
+Insight    ███████░░░░░  57%        ╰····╯
+Discipline ███████████░  95%          生肖
 
 --- full gist ---
-🐇 RABBIT · Careful Craftsman         ╭····╮
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 卯 │
-🌟   4  📦  37  👥   0                │ 兔 │
-Insight    ███████░░░░░  57%          ╰····╯
-Discipline ███████████░  95%            生肖
+🐇 RABBIT · Careful Craftsman       ╭····╮
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 卯 │
+🌟   4  📦  37  👥   0              │ 兔 │
+Insight    ███████░░░░░  57%        ╰····╯
+Discipline ███████████░  95%          生肖
 ────────────────────────────────────
 🐇 兔 · Wood · 卯
 JavaScript · TypeScript · Python
@@ -101,18 +101,18 @@ Ingenuity  ██████████░░  86%
 ===== 🐉 Dragon.md (dragon) =====
 
 --- pin (first 5 lines) ---
-🐉 DRAGON · Vision Architect          *────*
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 辰 │
-🌟   4  📦  37  👥   0                │ 龙 │
-Craft      █████████░░░  76%          *────*
-Renown     █░░░░░░░░░░░   7%            生肖
+🐉 DRAGON · Vision Architect        *────*
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 辰 │
+🌟   4  📦  37  👥   0              │ 龙 │
+Craft      █████████░░░  76%        *────*
+Renown     █░░░░░░░░░░░   7%          生肖
 
 --- full gist ---
-🐉 DRAGON · Vision Architect          *────*
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 辰 │
-🌟   4  📦  37  👥   0                │ 龙 │
-Craft      █████████░░░  76%          *────*
-Renown     █░░░░░░░░░░░   7%            生肖
+🐉 DRAGON · Vision Architect        *────*
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 辰 │
+🌟   4  📦  37  👥   0              │ 龙 │
+Craft      █████████░░░  76%        *────*
+Renown     █░░░░░░░░░░░   7%          生肖
 ────────────────────────────────────
 🐉 龙 · Earth · 辰
 JavaScript · TypeScript · Python
@@ -125,18 +125,18 @@ Ingenuity  ██████████░░  86%
 ===== 🐍 Snake.md (snake) =====
 
 --- pin (first 5 lines) ---
-🐍 SNAKE · Deep Debugger              ╱‾‾‾‾╲
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 巳 │
-🌟   4  📦  37  👥   0                │ 蛇 │
-Insight    ███████░░░░░  57%          ╲____╱
-Ingenuity  ██████████░░  86%            生肖
+🐍 SNAKE · Deep Debugger            ╱‾‾‾‾╲
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 巳 │
+🌟   4  📦  37  👥   0              │ 蛇 │
+Insight    ███████░░░░░  57%        ╲____╱
+Ingenuity  ██████████░░  86%          生肖
 
 --- full gist ---
-🐍 SNAKE · Deep Debugger              ╱‾‾‾‾╲
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 巳 │
-🌟   4  📦  37  👥   0                │ 蛇 │
-Insight    ███████░░░░░  57%          ╲____╱
-Ingenuity  ██████████░░  86%            生肖
+🐍 SNAKE · Deep Debugger            ╱‾‾‾‾╲
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 巳 │
+🌟   4  📦  37  👥   0              │ 蛇 │
+Insight    ███████░░░░░  57%        ╲____╱
+Ingenuity  ██████████░░  86%          生肖
 ────────────────────────────────────
 🐍 蛇 · Fire · 巳
 JavaScript · TypeScript · Python
@@ -149,18 +149,18 @@ Discipline ███████████░  95%
 ===== 🐴 Horse.md (horse) =====
 
 --- pin (first 5 lines) ---
-🐴 HORSE · Rapid Shipper              ╒════╕
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 午 │
-🌟   4  📦  37  👥   0                │ 马 │
-Craft      █████████░░░  76%          ╘════╛
-Discipline ███████████░  95%            生肖
+🐴 HORSE · Rapid Shipper            ╒════╕
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 午 │
+🌟   4  📦  37  👥   0              │ 马 │
+Craft      █████████░░░  76%        ╘════╛
+Discipline ███████████░  95%          生肖
 
 --- full gist ---
-🐴 HORSE · Rapid Shipper              ╒════╕
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 午 │
-🌟   4  📦  37  👥   0                │ 马 │
-Craft      █████████░░░  76%          ╘════╛
-Discipline ███████████░  95%            生肖
+🐴 HORSE · Rapid Shipper            ╒════╕
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 午 │
+🌟   4  📦  37  👥   0              │ 马 │
+Craft      █████████░░░  76%        ╘════╛
+Discipline ███████████░  95%          生肖
 ────────────────────────────────────
 🐴 马 · Fire · 午
 JavaScript · TypeScript · Python
@@ -173,18 +173,18 @@ Ingenuity  ██████████░░  86%
 ===== 🐐 Goat.md (goat) =====
 
 --- pin (first 5 lines) ---
-🐐 GOAT · Creative Engineer           (────)
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 未 │
-🌟   4  📦  37  👥   0                │ 羊 │
-Ingenuity  ██████████░░  86%          (────)
-Renown     █░░░░░░░░░░░   7%            生肖
+🐐 GOAT · Creative Engineer         (────)
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 未 │
+🌟   4  📦  37  👥   0              │ 羊 │
+Ingenuity  ██████████░░  86%        (────)
+Renown     █░░░░░░░░░░░   7%          生肖
 
 --- full gist ---
-🐐 GOAT · Creative Engineer           (────)
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 未 │
-🌟   4  📦  37  👥   0                │ 羊 │
-Ingenuity  ██████████░░  86%          (────)
-Renown     █░░░░░░░░░░░   7%            生肖
+🐐 GOAT · Creative Engineer         (────)
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 未 │
+🌟   4  📦  37  👥   0              │ 羊 │
+Ingenuity  ██████████░░  86%        (────)
+Renown     █░░░░░░░░░░░   7%          生肖
 ────────────────────────────────────
 🐐 羊 · Earth · 未
 JavaScript · TypeScript · Python
@@ -197,18 +197,18 @@ Craft      █████████░░░  76%
 ===== 🐒 Monkey.md (monkey) =====
 
 --- pin (first 5 lines) ---
-🐒 MONKEY · Playful Polyglot          ⌜────⌝
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 申 │
-🌟   4  📦  37  👥   0                │ 猴 │
-Ingenuity  ██████████░░  86%          ⌞────⌟
-Craft      █████████░░░  76%            生肖
+🐒 MONKEY · Playful Polyglot        ⌜────⌝
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 申 │
+🌟   4  📦  37  👥   0              │ 猴 │
+Ingenuity  ██████████░░  86%        ⌞────⌟
+Craft      █████████░░░  76%          生肖
 
 --- full gist ---
-🐒 MONKEY · Playful Polyglot          ⌜────⌝
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 申 │
-🌟   4  📦  37  👥   0                │ 猴 │
-Ingenuity  ██████████░░  86%          ⌞────⌟
-Craft      █████████░░░  76%            生肖
+🐒 MONKEY · Playful Polyglot        ⌜────⌝
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 申 │
+🌟   4  📦  37  👥   0              │ 猴 │
+Ingenuity  ██████████░░  86%        ⌞────⌟
+Craft      █████████░░░  76%          生肖
 ────────────────────────────────────
 🐒 猴 · Metal · 申
 JavaScript · TypeScript · Python
@@ -221,18 +221,18 @@ Insight    ███████░░░░░  57%
 ===== 🐓 Rooster.md (rooster) =====
 
 --- pin (first 5 lines) ---
-🐓 ROOSTER · Precise Optimizer        ┊····┊
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 酉 │
-🌟   4  📦  37  👥   0                │ 鸡 │
-Insight    ███████░░░░░  57%          ┊····┊
-Discipline ███████████░  95%            生肖
+🐓 ROOSTER · Precise Optimizer      ┊····┊
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 酉 │
+🌟   4  📦  37  👥   0              │ 鸡 │
+Insight    ███████░░░░░  57%        ┊····┊
+Discipline ███████████░  95%          生肖
 
 --- full gist ---
-🐓 ROOSTER · Precise Optimizer        ┊····┊
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 酉 │
-🌟   4  📦  37  👥   0                │ 鸡 │
-Insight    ███████░░░░░  57%          ┊····┊
-Discipline ███████████░  95%            生肖
+🐓 ROOSTER · Precise Optimizer      ┊····┊
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 酉 │
+🌟   4  📦  37  👥   0              │ 鸡 │
+Insight    ███████░░░░░  57%        ┊····┊
+Discipline ███████████░  95%          生肖
 ────────────────────────────────────
 🐓 鸡 · Metal · 酉
 JavaScript · TypeScript · Python
@@ -245,18 +245,18 @@ Renown     █░░░░░░░░░░░   7%
 ===== 🐕 Dog.md (dog) =====
 
 --- pin (first 5 lines) ---
-🐕 DOG · Loyal Maintainer             ▣────▣
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 戌 │
-🌟   4  📦  37  👥   0                │ 狗 │
-Discipline ███████████░  95%          ▣────▣
-Renown     █░░░░░░░░░░░   7%            生肖
+🐕 DOG · Loyal Maintainer           ▣────▣
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 戌 │
+🌟   4  📦  37  👥   0              │ 狗 │
+Discipline ███████████░  95%        ▣────▣
+Renown     █░░░░░░░░░░░   7%          生肖
 
 --- full gist ---
-🐕 DOG · Loyal Maintainer             ▣────▣
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 戌 │
-🌟   4  📦  37  👥   0                │ 狗 │
-Discipline ███████████░  95%          ▣────▣
-Renown     █░░░░░░░░░░░   7%            生肖
+🐕 DOG · Loyal Maintainer           ▣────▣
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 戌 │
+🌟   4  📦  37  👥   0              │ 狗 │
+Discipline ███████████░  95%        ▣────▣
+Renown     █░░░░░░░░░░░   7%          生肖
 ────────────────────────────────────
 🐕 狗 · Earth · 戌
 JavaScript · TypeScript · Python
@@ -269,18 +269,18 @@ Insight    ███████░░░░░  57%
 ===== 🐷 Pig.md (pig) =====
 
 --- pin (first 5 lines) ---
-🐷 PIG · Generous Collaborator        ╭────╮
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 亥 │
-🌟   4  📦  37  👥   0                │ 猪 │
-Renown     █░░░░░░░░░░░   7%          ╰────╯
-Craft      █████████░░░  76%            生肖
+🐷 PIG · Generous Collaborator      ╭────╮
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 亥 │
+🌟   4  📦  37  👥   0              │ 猪 │
+Renown     █░░░░░░░░░░░   7%        ╰────╯
+Craft      █████████░░░  76%          生肖
 
 --- full gist ---
-🐷 PIG · Generous Collaborator        ╭────╮
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 亥 │
-🌟   4  📦  37  👥   0                │ 猪 │
-Renown     █░░░░░░░░░░░   7%          ╰────╯
-Craft      █████████░░░  76%            生肖
+🐷 PIG · Generous Collaborator      ╭────╮
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 亥 │
+🌟   4  📦  37  👥   0              │ 猪 │
+Renown     █░░░░░░░░░░░   7%        ╰────╯
+Craft      █████████░░░  76%          生肖
 ────────────────────────────────────
 🐷 猪 · Water · 亥
 JavaScript · TypeScript · Python

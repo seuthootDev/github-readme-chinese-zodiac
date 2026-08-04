@@ -1,7 +1,7 @@
 import { pickDisplayStats } from "../lib/stats.js";
 import { getPinEmblem } from "./emblem.js";
 
-const LEFT_WIDTH = 36;
+const LEFT_WIDTH = 34;
 const BAR_WIDTH = 12;
 
 function codeWidth(code) {
