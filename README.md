@@ -65,11 +65,11 @@ Details (secrets table, variables, schedule): **[§ Pin a Gist — fork setup](#
 With birthdate (animal year):
 
 ```md
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24)
+![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&width=360&glow=1)
 ```
 
 <p align="center">
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24" alt="Asian Zodiac Pig" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&width=360&glow=1" alt="Asian Zodiac Pig" />
 </p>
 
 ### All 12 animals
