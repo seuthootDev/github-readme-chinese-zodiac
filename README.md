@@ -41,38 +41,38 @@ Craft      █████████░░░  76%            生肖
 ## Demo (SVG)
 
 ```md
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&v=3)
+![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev)
 ```
 
 <p align="center">
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&v=3" alt="Asian Zodiac" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev" alt="Asian Zodiac" />
 </p>
 
 With birthdate (animal year):
 
 ```md
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&v=3)
+![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24)
 ```
 
 <p align="center">
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&v=3" alt="Asian Zodiac Pig" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24" alt="Asian Zodiac Pig" />
 </p>
 
 ### All 12 animals
 
 <p align="center">
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rat&v=3" width="49%" alt="Rat" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=ox&v=3" width="49%" alt="Ox" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=tiger&v=3" width="49%" alt="Tiger" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rabbit&v=3" width="49%" alt="Rabbit" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dragon&v=3" width="49%" alt="Dragon" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=snake&v=3" width="49%" alt="Snake" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=horse&v=3" width="49%" alt="Horse" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=goat&v=3" width="49%" alt="Goat" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=monkey&v=3" width="49%" alt="Monkey" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rooster&v=3" width="49%" alt="Rooster" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dog&v=3" width="49%" alt="Dog" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=pig&v=3" width="49%" alt="Pig" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rat" width="49%" alt="Rat" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=ox" width="49%" alt="Ox" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=tiger" width="49%" alt="Tiger" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rabbit" width="49%" alt="Rabbit" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dragon" width="49%" alt="Dragon" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=snake" width="49%" alt="Snake" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=horse" width="49%" alt="Horse" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=goat" width="49%" alt="Goat" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=monkey" width="49%" alt="Monkey" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rooster" width="49%" alt="Rooster" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dog" width="49%" alt="Dog" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=pig" width="49%" alt="Pig" />
 </p>
 
 ---
