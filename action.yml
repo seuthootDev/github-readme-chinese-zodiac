@@ -1,0 +1,10 @@
+name: GitHub Readme Chinese Zodiac Gist
+description: Update a pinned Gist with your Asian zodiac developer card
+author: seuthootDev
+branding:
+  icon: star
+  color: orange
+
+runs:
+  using: node24
+  main: scripts/update-gist.js

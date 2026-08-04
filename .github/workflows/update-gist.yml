@@ -1,0 +1,34 @@
+name: Update Asian Zodiac Gist
+
+on:
+  # Manual: Actions → Update Zodiac Gist → Run workflow
+  workflow_dispatch:
+  # Auto: every push to main
+  push:
+    branches: [main]
+  # Auto: refresh stats daily (00:00 UTC)
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Update pinned gist
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          ZODIAC_USERNAME: ${{ vars.USERNAME }}
+          BIRTHDATE: ${{ vars.BIRTHDATE }}
+          SIGN: ${{ vars.SIGN }}
+          NAME: ${{ vars.NAME }}
+          ROLE: ${{ vars.ROLE }}
+        run: node scripts/update-gist.js

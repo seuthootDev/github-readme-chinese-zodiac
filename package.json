@@ -1,0 +1,17 @@
+{
+  "name": "github-readme-chinese-zodiac",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub activity → Asian / Chinese zodiac SVG cards + pinned Gist Action",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/local-server.js",
+    "dev": "node scripts/local-server.js",
+    "gist": "node scripts/update-gist.js",
+    "preview:gists": "node scripts/preview-all-gists.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
