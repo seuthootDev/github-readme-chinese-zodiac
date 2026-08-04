@@ -4,12 +4,12 @@ function clamp(n, min = 0, max = 100) {
 
 function scale(value, softMax) {
   if (value <= 0) return 0;
-  // Diminishing returns so mid-tier accounts still look lively
   return clamp(100 * (1 - Math.exp(-value / softMax)));
 }
 
 /**
- * Fun developer traits from GitHub signals (not real astrology).
+ * Fun developer traits from GitHub signals.
+ * Keys stay stable; labels are Asian-zodiac flavored (not Western Consistency/Explorer…).
  */
 export function calculateStats(profile) {
   const {
@@ -42,18 +42,19 @@ export function calculateStats(profile) {
   };
 }
 
+/** Display names for Asian zodiac cards / pins */
 export const STAT_LABELS = {
-  consistency: "Consistency",
-  explorer: "Explorer",
-  builder: "Builder",
-  openSource: "Open Source",
-  debugger: "Debugger",
+  consistency: "Discipline",
+  explorer: "Ingenuity",
+  builder: "Craft",
+  openSource: "Renown",
+  debugger: "Insight",
 };
 
 export function pickDisplayStats(stats, zodiac, limit = 3) {
   const keys = zodiac.statKeys?.length
     ? zodiac.statKeys
-    : ["consistency", "explorer", "builder"];
+    : ["consistency", "builder", "debugger"];
 
   return keys.slice(0, limit).map((key) => ({
     key,

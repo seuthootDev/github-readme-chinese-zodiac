@@ -134,8 +134,8 @@ export function renderGistCard({ profile, zodiac, stats }) {
     `${zodiac.symbol} ${zodiac.sign.toUpperCase()} · ${title}`,
     `✨ ${displayName} · ${role}`,
     `⭐${compactStat(profile.stars)}  📦${compactStat(profile.publicRepos)}  👥${compactStat(profile.followers)}`,
-    `${displayStats[0].label.slice(0, 11).padEnd(11)} ${bar(displayStats[0].value)} ${num(displayStats[0].value, 3)}%`,
-    `${displayStats[1].label.slice(0, 11).padEnd(11)} ${bar(displayStats[1].value)} ${num(displayStats[1].value, 3)}%`,
+    `${displayStats[0].label.slice(0, 10).padEnd(10)} ${bar(displayStats[0].value)} ${num(displayStats[0].value, 3)}%`,
+    `${displayStats[1].label.slice(0, 10).padEnd(10)} ${bar(displayStats[1].value)} ${num(displayStats[1].value, 3)}%`,
   ];
 
   const lines = [...mergePinRows(pinLeft, constellation)];
@@ -147,7 +147,7 @@ export function renderGistCard({ profile, zodiac, stats }) {
   if (langs) lines.push(langs);
   if (displayStats[2]) {
     lines.push(
-      `${displayStats[2].label.slice(0, 11).padEnd(11)} ${bar(displayStats[2].value)} ${num(displayStats[2].value, 3)}%`,
+      `${displayStats[2].label.slice(0, 10).padEnd(10)} ${bar(displayStats[2].value)} ${num(displayStats[2].value, 3)}%`,
     );
   }
   if (zodiac.description) {
