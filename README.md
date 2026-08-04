@@ -133,6 +133,20 @@ Pin path uses **your fork’s Action only** — not Vercel.
 
 ---
 
+## Stats (playful, not astrology)
+
+Each card shows **3 of 5** traits. Which three appear depends on the animal’s `statKeys`. Values are scaled from public GitHub signals (0–100) — same math as the [Western sister project](https://github.com/seuthootDev/github-readme-zodiac), Asian-flavored names.
+
+| Stat | Western twin | Drawn from (roughly) |
+|------|--------------|----------------------|
+| **Discipline** | Consistency | Account age + repos per year |
+| **Ingenuity** | Explorer | Distinct languages + public repos |
+| **Craft** | Builder | Public repos + stars + forks |
+| **Renown** | Open Source | Stars + forks + followers |
+| **Insight** | Debugger | Open issues + repos (+ a little stars) |
+
+---
+
 ## Local development
 
 ```bash
