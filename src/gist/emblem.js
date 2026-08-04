@@ -1,6 +1,6 @@
 /**
  * Right-column pin emblem: 地支 + 简体生肖 in per-animal frames.
- * Branch on top, animal below — borders vary, content stays the same grammar.
+ * Borders are ASCII-only so GitHub Gist monospace width stays stable next to CJK.
  */
 
 const HANZI = {
@@ -18,20 +18,23 @@ const HANZI = {
   pig: "猪",
 };
 
-/** 4-line frames (corners ASCII/box-drawing only — avoid wide CJK brackets). */
+/**
+ * 4-line ASCII frames (all border cells width 1).
+ * `{b}` = earthly branch, `{h}` = animal hanzi.
+ */
 const FRAMES = {
-  rat: ["┌────┐", "│ {b} │", "│ {h} │", "└────┘"],
-  ox: ["┏━━━━┓", "┃ {b} ┃", "┃ {h} ┃", "┗━━━━┛"],
-  tiger: ["╲────╱", "│ {b} │", "│ {h} │", "╱────╲"],
-  rabbit: ["╭····╮", "│ {b} │", "│ {h} │", "╰····╯"],
-  dragon: ["*────*", "│ {b} │", "│ {h} │", "*────*"],
-  snake: ["╱‾‾‾‾╲", "│ {b} │", "│ {h} │", "╲____╱"],
-  horse: ["╒════╕", "│ {b} │", "│ {h} │", "╘════╛"],
-  goat: ["(────)", "│ {b} │", "│ {h} │", "(────)"],
-  monkey: ["⌜────⌝", "│ {b} │", "│ {h} │", "⌞────⌟"],
-  rooster: ["┊····┊", "│ {b} │", "│ {h} │", "┊····┊"],
-  dog: ["▣────▣", "│ {b} │", "│ {h} │", "▣────▣"],
-  pig: ["╭────╮", "│ {b} │", "│ {h} │", "╰────╯"],
+  rat: ["+----+", "| {b} |", "| {h} |", "+----+"],
+  ox: ["#====#", "# {b} #", "# {h} #", "#====#"],
+  tiger: ["/----\\", "| {b} |", "| {h} |", "\\----/"],
+  rabbit: [".----.", "| {b} |", "| {h} |", "'----'"],
+  dragon: ["*----*", "| {b} |", "| {h} |", "*----*"],
+  snake: ["/~~~~\\", "| {b} |", "| {h} |", "\\____/"],
+  horse: ["=----=", "| {b} |", "| {h} |", "=----="],
+  goat: ["(----)", "| {b} |", "| {h} |", "(----)"],
+  monkey: ["^----^", "| {b} |", "| {h} |", "v----v"],
+  rooster: [":----:", "| {b} |", "| {h} |", ":----:"],
+  dog: ["[----]", "| {b} |", "| {h} |", "[----]"],
+  pig: ["{----}", "| {b} |", "| {h} |", "{----}"],
 };
 
 const DEFAULT_FRAME = FRAMES.rat;
@@ -48,5 +51,6 @@ export function getPinEmblem(zodiac) {
   const box = template.map((line) =>
     line.replace("{b}", branch).replace("{h}", hanzi),
   );
+  // center 生肖 under 6-col box (2 + CJK + CJK)
   return [...box, "  生肖"];
 }
