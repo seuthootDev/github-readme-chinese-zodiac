@@ -21,6 +21,25 @@ function clamp(n, min = 0, max = 100) {
   return Math.max(min, Math.min(max, n));
 }
 
+function wrapText(text, maxChars, maxLines = 3) {
+  const words = String(text || "").split(/\s+/).filter(Boolean);
+  if (!words.length) return [];
+  const lines = [];
+  let current = "";
+  for (const word of words) {
+    const next = current ? `${current} ${word}` : word;
+    if (next.length > maxChars && current) {
+      lines.push(current);
+      current = word;
+      if (lines.length >= maxLines) break;
+    } else {
+      current = next;
+    }
+  }
+  if (current && lines.length < maxLines) lines.push(current);
+  return lines;
+}
+
 /**
  * Bare classical hanzi where the Western card shows a constellation —
  * no seal box / frame, white glyph that soft-twinkles.
@@ -43,10 +62,10 @@ function renderHanziEmblem(zodiac, uid) {
       <text
         class="classical"
         x="168"
-        y="145"
+        y="120"
         text-anchor="middle"
         fill="#ffffff"
-        font-size="118"
+        font-size="104"
         filter="url(#${uid}-glyph-glow)"
         opacity="0.9"
       >${escapeXml(hanzi)}
@@ -57,10 +76,10 @@ function renderHanziEmblem(zodiac, uid) {
           ? `<text
         class="classical"
         x="168"
-        y="205"
+        y="168"
         text-anchor="middle"
         fill="#ffffff"
-        font-size="30"
+        font-size="28"
         letter-spacing="6"
         opacity="0.72"
       >${escapeXml(branch)}
@@ -69,6 +88,19 @@ function renderHanziEmblem(zodiac, uid) {
           : ""
       }
     </g>`;
+}
+
+/** Blurb under the hanzi — same role as western text under the constellation. */
+function renderDescription(zodiac, colors) {
+  const lines = wrapText(zodiac.description, 34, 3);
+  if (!lines.length) return "";
+  return lines
+    .map((line, i) => {
+      const prefix = i === 0 ? "卷 " : "   ";
+      const y = 200 + i * 17;
+      return `<text class="body" x="340" y="${y}" fill="${colors.muted}" font-size="12">${prefix}${escapeXml(line)}</text>`;
+    })
+    .join("\n    ");
 }
 
 function renderStatBars(displayStats, colors) {
@@ -147,6 +179,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-glow)"/>
 
     ${renderHanziEmblem(zodiac, uid)}
+    ${renderDescription(zodiac, colors)}
 
     <text class="title" x="36" y="52" fill="${colors.accent}" font-size="22" font-weight="700" letter-spacing="2">
       ${escapeXml(zodiac.symbol)}  ${escapeXml(zodiac.sign.toUpperCase())}
