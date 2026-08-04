@@ -36,6 +36,20 @@ Renown     █░░░░░░░░░░░   7%          ╰────╯
 Craft      █████████░░░  76%            生肖
 ```
 
+### How to put this on your profile Pins
+
+Same pattern as [productive-box](https://github.com/maxam2017/productive-box): **fork → Action fills your Gist → pin that Gist**. No Vercel for Pins.
+
+1. **[Fork this repo](https://github.com/seuthootDev/github-readme-chinese-zodiac/fork)**
+2. Create a **public** [Gist](https://gist.github.com/) and copy its ID  
+   (`https://gist.github.com/YOU/`**`GIST_ID`** — not the `.js` embed URL)
+3. Create a PAT with **`gist`** scope → on **your fork**, add Secrets `GH_TOKEN` + `GIST_ID`
+4. On **your fork**, add Variable `BIRTHDATE` = `YYYY-MM-DD` (optional but recommended)
+5. **Actions** → **Update Asian Zodiac Gist** → **Run workflow**
+6. [Pin the Gist](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile) on your profile
+
+Details (secrets table, variables, schedule): **[§ Pin a Gist — fork setup](#1-pin-a-gist--fork-setup)** below.
+
 ---
 
 ## Demo (SVG)
@@ -98,32 +112,31 @@ With birthdate (animal year):
 
 ---
 
-## 1) Pin a Gist
+## 1) Pin a Gist — fork setup
 
-Same idea as productive-box: **Action updates your Gist → pin that Gist**. No Vercel needed for Pins.
+**Recommended for everyone:** fork this repo and run the Action on **your fork**.  
+(That keeps your token/Gist on your account and matches how most README pin projects work.)
 
-| You are… | Where to put secrets / run the Action |
-|----------|----------------------------------------|
-| **Repo owner** (this repo) | Use **this repo** — no fork |
-| **Someone else** | [Fork this repo](https://github.com/seuthootDev/github-readme-chinese-zodiac), then use **your fork** |
+### 1. Fork
 
-### 1. Create a public Gist
+Fork [seuthootDev/github-readme-chinese-zodiac](https://github.com/seuthootDev/github-readme-chinese-zodiac).
+
+### 2. Create a public Gist
 
 1. https://gist.github.com/
 2. Filename e.g. `chinese_zodiac.md`, any placeholder text
 3. **Create public gist**
 4. Copy only the **Gist ID** (not the `.js` embed URL):  
-   `https://gist.github.com/YOU/`**`GIST_ID`**  
-   Example: `6d4d8e34f5d87731b74fe7e9d8f8066b`
+   `https://gist.github.com/YOU/`**`GIST_ID`**
 
-### 2. Create a token (once)
+### 3. Create a token (once)
 
 https://github.com/settings/tokens → **Tokens (classic)** → enable **`gist`** only.  
-The token string is shown **once** — save it. The same PAT can be reused on Western + Asian repos.
+The token string is shown **once** — save it. The same PAT can be reused on the Western sister project.
 
-### 3. Secrets and Variables
+### 4. Secrets and Variables on **your fork**
 
-On the repo (or your fork): **Settings → Secrets and variables → Actions**
+**Settings → Secrets and variables → Actions**
 
 **Secrets** tab:
 
@@ -144,9 +157,9 @@ On the repo (or your fork): **Settings → Secrets and variables → Actions**
 > Birthdate is a **Variable** (`BIRTHDATE`), not a Secret.  
 > Path: Settings → Secrets and variables → Actions → **Variables** → New repository variable.
 
-### 4. Run the Action
+### 5. Run the Action
 
-1. **Actions** → enable workflows if prompted  
+1. On **your fork**: **Actions** → enable workflows if prompted  
 2. **Update Asian Zodiac Gist** → **Run workflow**  
 3. [Pin the Gist on your profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile)
 
@@ -154,8 +167,8 @@ Also runs on every push to `main` and daily at 00:00 UTC.
 
 ### Pin vs SVG
 
-| Feature | Action on this repo / your fork? | Vercel? |
-|---------|----------------------------------|---------|
+| Feature | Your fork’s Action? | Vercel? |
+|---------|---------------------|---------|
 | **Pinned Gist** | Yes | No |
 | **SVG in README** | No | Yes (`github-readme-chinese-zodiac.vercel.app`) |
 
