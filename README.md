@@ -29,11 +29,11 @@ Also: [docs/gist-pin-preview.html](docs/gist-pin-preview.html)
 Example pin body (Pig / 亥 — `birthdate=1995-04-24`):
 
 ```text
-🐷 PIG · Generous Collaborator        ╭────╮
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 亥 │
-🌟   4  📦  37  👥   0                │ 猪 │
-Renown     █░░░░░░░░░░░   7%          ╰────╯
-Craft      █████████░░░  76%            生肖
+🐷 PIG · Generous Collaborator      ╭────╮
+✨ JUNG SEUNGHOON · Full-Stack Dev  │ 亥 │
+🌟   4  📦  37  👥   0              │ 猪 │
+Renown     █░░░░░░░░░░░   7%        ╰────╯
+Craft      █████████░░░  76%          生肖
 ```
 
 ---
