@@ -1,6 +1,7 @@
 import { pickDisplayStats } from "../lib/stats.js";
 import animalIcons from "../data/animal-icons.js";
 import animalGoldIcons from "../data/animal-gold-icons.js";
+import { EMBEDDED_FONT_CSS } from "../data/embedded-fonts.js";
 
 const WIDTH = 600;
 const HEIGHT = 320;
@@ -8,7 +9,7 @@ const DEFAULT_DISPLAY_WIDTH = 360;
 
 /**
  * Unified brush stack — same face as DRAGON / Vision Architect.
- * Google Fonts via <style>@import for live SVG; Camo may strip it.
+ * Face is base64-embedded so README <img> / Camo can render it.
  */
 const FONT_BRUSH =
   "Ma Shan Zheng, ZCOOL XiaoWei, Noto Serif SC, Songti SC, serif";
@@ -242,7 +243,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
       <rect width="${WIDTH}" height="${HEIGHT}" rx="4"/>
     </clipPath>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&amp;family=ZCOOL+XiaoWei&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap');
+${EMBEDDED_FONT_CSS}
     </style>
   </defs>
 
