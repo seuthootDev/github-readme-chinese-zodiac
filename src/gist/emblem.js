@@ -1,6 +1,6 @@
 /**
- * Right-column pin emblem: simplified Chinese animal + earthly branch.
- * Avoids constellation/star ASCII — 简体字 reads clearer in Gist pins.
+ * Right-column pin emblem: 地支 + 简体生肖 in per-animal frames.
+ * Branch on top, animal below — borders vary, content stays the same grammar.
  */
 
 const HANZI = {
@@ -18,6 +18,24 @@ const HANZI = {
   pig: "猪",
 };
 
+/** 4-line frames (corners ASCII/box-drawing only — avoid wide CJK brackets). */
+const FRAMES = {
+  rat: ["┌────┐", "│ {b} │", "│ {h} │", "└────┘"],
+  ox: ["┏━━━━┓", "┃ {b} ┃", "┃ {h} ┃", "┗━━━━┛"],
+  tiger: ["╲────╱", "│ {b} │", "│ {h} │", "╱────╲"],
+  rabbit: ["╭····╮", "│ {b} │", "│ {h} │", "╰····╯"],
+  dragon: ["*────*", "│ {b} │", "│ {h} │", "*────*"],
+  snake: ["╱‾‾‾‾╲", "│ {b} │", "│ {h} │", "╲____╱"],
+  horse: ["╒════╕", "│ {b} │", "│ {h} │", "╘════╛"],
+  goat: ["(────)", "│ {b} │", "│ {h} │", "(────)"],
+  monkey: ["⌜────⌝", "│ {b} │", "│ {h} │", "⌞────⌟"],
+  rooster: ["┊····┊", "│ {b} │", "│ {h} │", "┊····┊"],
+  dog: ["▣────▣", "│ {b} │", "│ {h} │", "▣────▣"],
+  pig: ["╭────╮", "│ {b} │", "│ {h} │", "╰────╯"],
+};
+
+const DEFAULT_FRAME = FRAMES.rat;
+
 export function getAnimalHanzi(animalId) {
   return HANZI[animalId] || "生";
 }
@@ -26,11 +44,9 @@ export function getAnimalHanzi(animalId) {
 export function getPinEmblem(zodiac) {
   const hanzi = zodiac.hanzi || getAnimalHanzi(zodiac.id);
   const branch = zodiac.earthlyBranch || "支";
-  return [
-    "  +----+",
-    `  | ${hanzi} |`,
-    `  | ${branch} |`,
-    "  +----+",
-    "   生肖",
-  ];
+  const template = FRAMES[zodiac.id] || DEFAULT_FRAME;
+  const box = template.map((line) =>
+    line.replace("{b}", branch).replace("{h}", hanzi),
+  );
+  return [...box, "  生肖"];
 }
