@@ -131,7 +131,7 @@ export function renderGistCard({ profile, zodiac, stats }) {
   const pinLeft = [
     `${zodiac.symbol} ${zodiac.sign.toUpperCase()} · ${title}`,
     `✨ ${displayName} · ${role}`,
-    `⭐${compactStat(profile.stars)}  📦${compactStat(profile.publicRepos)}  👥${compactStat(profile.followers)}`,
+    `🌟${compactStat(profile.stars)}  📦${compactStat(profile.publicRepos)}  👥${compactStat(profile.followers)}`,
     `${displayStats[0].label.slice(0, 10).padEnd(10)} ${bar(displayStats[0].value)} ${num(displayStats[0].value, 3)}%`,
     `${displayStats[1].label.slice(0, 10).padEnd(10)} ${bar(displayStats[1].value)} ${num(displayStats[1].value, 3)}%`,
   ];
