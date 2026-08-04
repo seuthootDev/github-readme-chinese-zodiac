@@ -1,7 +1,7 @@
 import { pickDisplayStats } from "../lib/stats.js";
 import { getPinEmblem } from "./emblem.js";
 
-const LEFT_WIDTH = 36;
+const LEFT_WIDTH = 34;
 const BAR_WIDTH = 12;
 
 function codeWidth(code) {
@@ -9,14 +9,13 @@ function codeWidth(code) {
   // combining marks / variation selectors
   if (code >= 0xfe00 && code <= 0xfe0f) return 0;
   if (code >= 0x0300 && code <= 0x036f) return 0;
-  // Astral emoji & pictographs (🌟 📦 👥 🐷 …) — double width on GitHub
+  // emoji & pictographs (⭐ 📦 👥 etc.)
   if (code >= 0x1f300 && code <= 0x1faff) return 2;
   if (code >= 0x1f000 && code <= 0x1f02f) return 2;
-  if (code >= 0x1fa00 && code <= 0x1faff) return 2;
-  // Western zodiac ♈–♓ — often wide in gist monospace
+  // misc symbols / dingbats often render wide in gist
+  if (code >= 0x2600 && code <= 0x27bf) return 2;
+  // zodiac ♈–♓ — treat wide so padding stays stable on GitHub
   if (code >= 0x2648 && code <= 0x2653) return 2;
-  // BMP misc symbols / dingbats (✨ ⭐ ✦ …) render as *single* cell on GitHub Gist
-  // — do NOT count as 2 or the pin seal drifts per row.
   // CJK / Hangul
   if (code >= 0x1100 && code <= 0x115f) return 2;
   if (code >= 0x2e80 && code <= 0xa4cf) return 2;
@@ -70,8 +69,7 @@ function compactStat(n, width = 4) {
 
 function bar(value, width = BAR_WIDTH) {
   const filled = Math.max(0, Math.min(width, Math.round((value / 100) * width)));
-  // ASCII only — █/░ are ambiguous-width next to CJK on GitHub Gist
-  return `${"#".repeat(filled)}${"-".repeat(width - filled)}`;
+  return `${"█".repeat(filled)}${"░".repeat(width - filled)}`;
 }
 
 function mergePinRows(leftLines, rightLines) {
@@ -132,7 +130,7 @@ export function renderGistCard({ profile, zodiac, stats }) {
 
   const pinLeft = [
     `${zodiac.symbol} ${zodiac.sign.toUpperCase()} · ${title}`,
-    `💫 ${displayName} · ${role}`,
+    `✨ ${displayName} · ${role}`,
     `🌟${compactStat(profile.stars)}  📦${compactStat(profile.publicRepos)}  👥${compactStat(profile.followers)}`,
     `${displayStats[0].label.slice(0, 10).padEnd(10)} ${bar(displayStats[0].value)} ${num(displayStats[0].value, 3)}%`,
     `${displayStats[1].label.slice(0, 10).padEnd(10)} ${bar(displayStats[1].value)} ${num(displayStats[1].value, 3)}%`,
