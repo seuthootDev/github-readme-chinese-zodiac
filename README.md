@@ -227,6 +227,16 @@ npm run preview:gists
 Designs, copy, animal-flavored roles, better New Year tables — **welcome anytime.**  
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Credits / attribution
+
+Animal icons in `assets/animals` are derived from a Magnific (Freepik) asset under a **free license with attribution**:
+
+| Used for | Asset | Designed by | Certificate |
+|----------|--------|-------------|-------------|
+| Title animals (`assets/animals`) | [chinese new year animals — colorful animal zodiac sign stickers set](https://www.magnific.com/free-vector/chinese-new-year-animals-colorful-animal-zodiac-sign-stickers-set_16265752.htm) | [rawpixel.com — Magnific.com](https://www.magnific.com) | [docs/license-chinese-new-year-animals-16265752.pdf](docs/license-chinese-new-year-animals-16265752.pdf) |
+
 ## License
 
 [MIT](LICENSE) © seuthootDev
+
+Third-party artwork remains under its Magnific license (see certificate above); the MIT license covers this repository’s code.

@@ -1,4 +1,5 @@
 import { pickDisplayStats } from "../lib/stats.js";
+import animalIcons from "../data/animal-icons.js";
 
 const WIDTH = 600;
 const HEIGHT = 320;
@@ -133,6 +134,23 @@ function renderLanguages(languages, colors) {
   return `<text x="36" y="168" fill="${colors.accent}" font-size="12" letter-spacing="0.4" font-family="${FONT_BODY}">${escapeXml(label)}</text>`;
 }
 
+/** Paper-cut animal icon — keeps original colors; falls back to emoji. */
+function renderAnimalTitle(zodiac, colors) {
+  const icon = animalIcons[zodiac.id];
+  const label = escapeXml(zodiac.sign.toUpperCase());
+  if (!icon) {
+    return `<text x="36" y="52" fill="${colors.accent}" font-size="22" font-weight="700" letter-spacing="2" font-family="${FONT_TITLE}">
+      ${escapeXml(zodiac.symbol)}  ${label}
+    </text>`;
+  }
+  const size = 32;
+  const x = 36;
+  const y = 22;
+  return `
+    <image href="${icon}" x="${x}" y="${y}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet"/>
+    <text x="${x + size + 10}" y="52" fill="${colors.accent}" font-size="22" font-weight="700" letter-spacing="2" font-family="${FONT_TITLE}">${label}</text>`;
+}
+
 /**
  * @param {{ profile: object, zodiac: object, stats: object, meta?: { source?: string, width?: number, glow?: boolean } }} input
  */
@@ -183,9 +201,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     ${renderHanziEmblem(zodiac, uid, { glow })}
     ${renderDescription(zodiac, colors)}
 
-    <text x="36" y="52" fill="${colors.accent}" font-size="22" font-weight="700" letter-spacing="2" font-family="${FONT_TITLE}">
-      ${escapeXml(zodiac.symbol)}  ${escapeXml(zodiac.sign.toUpperCase())}
-    </text>
+    ${renderAnimalTitle(zodiac, colors)}
     <text x="36" y="82" fill="${colors.text}" font-size="22" opacity="0.95" font-family="${FONT_CLASSICAL}">
       ${escapeXml(zodiac.title.replace(/^The\s+/i, ""))}
     </text>

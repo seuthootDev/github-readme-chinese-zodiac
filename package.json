@@ -9,7 +9,8 @@
     "start": "node scripts/local-server.js",
     "dev": "node scripts/local-server.js",
     "gist": "node scripts/update-gist.js",
-    "preview:gists": "node scripts/preview-all-gists.js"
+    "preview:gists": "node scripts/preview-all-gists.js",
+    "extract-animals": "python scripts/extract-animals.py"
   },
   "engines": {
     "node": ">=18"
