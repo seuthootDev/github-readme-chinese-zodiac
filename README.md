@@ -233,7 +233,7 @@ Animal icons in `assets/animals` are derived from a Magnific (Freepik) asset und
 
 | Used for | Asset | Designed by | Certificate |
 |----------|--------|-------------|-------------|
-| Title animals (`assets/animals`) | [chinese new year animals — colorful animal zodiac sign stickers set](https://www.magnific.com/free-vector/chinese-new-year-animals-colorful-animal-zodiac-sign-stickers-set_16265752.htm) | [rawpixel.com — Magnific.com](https://www.magnific.com) | [docs/license-chinese-new-year-animals-16265752.pdf](docs/license-chinese-new-year-animals-16265752.pdf) |
+| Title animals (`assets/animals`) | [chinese zodiac new year signs — red silhouettes](https://www.magnific.com/free-vector/chinese-zodiac-new-year-signs-traditional-china-horoscope-animals-red-zodiacs-silhouette_10722644.htm) | [tartila — Magnific.com](https://www.magnific.com) | [docs/license-chinese-zodiac-red-silhouettes-10722644.pdf](docs/license-chinese-zodiac-red-silhouettes-10722644.pdf) |
 
 ## License
 

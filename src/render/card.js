@@ -134,8 +134,8 @@ function renderLanguages(languages, colors) {
   return `<text x="36" y="168" fill="${colors.accent}" font-size="12" letter-spacing="0.4" font-family="${FONT_BODY}">${escapeXml(label)}</text>`;
 }
 
-/** Paper-cut animal icon — keeps original colors; falls back to emoji. */
-function renderAnimalTitle(zodiac, colors) {
+/** Paper-cut animal icon — tinted to accent via mask; falls back to emoji. */
+function renderAnimalTitle(zodiac, colors, uid) {
   const icon = animalIcons[zodiac.id];
   const label = escapeXml(zodiac.sign.toUpperCase());
   if (!icon) {
@@ -147,7 +147,10 @@ function renderAnimalTitle(zodiac, colors) {
   const x = 36;
   const y = 22;
   return `
-    <image href="${icon}" x="${x}" y="${y}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet"/>
+    <mask id="${uid}-animal" maskUnits="userSpaceOnUse" x="${x}" y="${y}" width="${size}" height="${size}">
+      <image href="${icon}" x="${x}" y="${y}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet"/>
+    </mask>
+    <rect x="${x}" y="${y}" width="${size}" height="${size}" fill="${colors.accent}" mask="url(#${uid}-animal)"/>
     <text x="${x + size + 10}" y="52" fill="${colors.accent}" font-size="22" font-weight="700" letter-spacing="2" font-family="${FONT_TITLE}">${label}</text>`;
 }
 
@@ -201,7 +204,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     ${renderHanziEmblem(zodiac, uid, { glow })}
     ${renderDescription(zodiac, colors)}
 
-    ${renderAnimalTitle(zodiac, colors)}
+    ${renderAnimalTitle(zodiac, colors, uid)}
     <text x="36" y="82" fill="${colors.text}" font-size="22" opacity="0.95" font-family="${FONT_CLASSICAL}">
       ${escapeXml(zodiac.title.replace(/^The\s+/i, ""))}
     </text>
