@@ -100,7 +100,7 @@ function parseWidth(value) {
   return Math.max(240, Math.min(900, Math.round(n)));
 }
 
-/** Optional ?glow=1 — twinkle/halo on large hanzi + earthly branch, alternating (default off). */
+/** Optional ?glow=1 — twinkle/halo on the large hanzi only (default off). */
 function parseFlag(value) {
   if (value == null || value === "") return false;
   const v = String(value).trim().toLowerCase();

@@ -199,7 +199,7 @@ Also runs on every push to `main` and daily at 00:00 UTC.
 | `sign` | Force animal: `rat` … `pig` |
 | `name` / `role` | Overrides (auto by default) |
 | `width` | `240`–`900`, default **`360`** |
-| `glow` | `1` / `true` — soft halo + twinkle on the **large hanzi** and **earthly branch**, alternating (default off; best when opening the SVG URL directly — GitHub Camo is a still frame) |
+| `glow` | `1` / `true` — soft halo + twinkle on the **large hanzi** only (default off; best when opening the SVG URL directly — GitHub Camo is a still frame) |
 
 ---
 

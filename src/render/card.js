@@ -73,8 +73,8 @@ function renderGoldBackground(zodiac) {
 
 /**
  * Bare classical hanzi where the Western card shows a constellation.
- * Optional glow (meta.glow): blur halo + opacity twinkle on large hanzi and earthly branch,
- * phased so they alternate. Default off for GitHub Camo safety.
+ * Optional glow (meta.glow): blur halo + opacity twinkle on the *large* glyph only.
+ * Branch stays static. Default off for GitHub Camo safety.
  */
 function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
   const hanzi = zodiac.hanzi || zodiac.earthlyBranch || "生";
@@ -92,11 +92,8 @@ function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
       </defs>`
     : "";
   const filterAttr = glow ? ` filter="url(#${uid}-glyph-glow)"` : "";
-  const twinkleHanzi = glow
+  const twinkle = glow
     ? `<animate attributeName="opacity" values="0.35;1;0.5;0.92;0.35" dur="3.2s" begin="0s" repeatCount="indefinite"/>`
-    : "";
-  const twinkleBranch = glow
-    ? `<animate attributeName="opacity" values="0.35;1;0.5;0.92;0.35" dur="3.2s" begin="1.6s" repeatCount="indefinite"/>`
     : "";
   return `
     <g transform="translate(310, 8)" aria-hidden="true">
@@ -109,7 +106,7 @@ function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
         font-size="104"
         font-family="${FONT_CLASSICAL}"
         opacity="${glow ? "0.9" : "0.88"}"${filterAttr}
-      >${h}${twinkleHanzi}</text>
+      >${h}${twinkle}</text>
       ${
         branch
           ? `<text
@@ -120,8 +117,8 @@ function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
         font-size="28"
         letter-spacing="6"
         font-family="${FONT_CLASSICAL}"
-        opacity="0.7"${filterAttr}
-      >${escapeXml(branch)}${twinkleBranch}</text>`
+        opacity="0.7"
+      >${escapeXml(branch)}</text>`
           : ""
       }
     </g>`;
