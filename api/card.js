@@ -41,6 +41,7 @@ export default async function handler(req, res) {
     const role = sanitizeText(url.searchParams.get("role"), 40);
     const name = sanitizeText(url.searchParams.get("name"), 32);
     const width = parseWidth(url.searchParams.get("width"));
+    const glow = parseFlag(url.searchParams.get("glow"));
 
     if (!username) {
       return sendErrorSvg(res, 400, "Missing ?username= parameter");
@@ -64,7 +65,7 @@ export default async function handler(req, res) {
       profile,
       zodiac,
       stats,
-      meta: { source, width },
+      meta: { source, width, glow },
     });
 
     return sendSvg(res, svg);
@@ -97,4 +98,11 @@ function parseWidth(value) {
   const n = Number(value);
   if (!Number.isFinite(n)) return undefined;
   return Math.max(240, Math.min(900, Math.round(n)));
+}
+
+/** Optional ?glow=1 — twinkle/halo on the large hanzi only (default off). */
+function parseFlag(value) {
+  if (value == null || value === "") return false;
+  const v = String(value).trim().toLowerCase();
+  return v === "1" || v === "true" || v === "yes" || v === "on";
 }

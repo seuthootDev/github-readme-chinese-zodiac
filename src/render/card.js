@@ -47,14 +47,25 @@ function wrapText(text, maxChars, maxLines = 3) {
 }
 
 /**
- * Bare classical hanzi where the Western card shows a constellation —
- * no seal box / frame. Soft white glyph (no SVG filter — Camo-safe).
+ * Bare classical hanzi where the Western card shows a constellation.
+ * Optional glow (meta.glow): soft halo + twinkle on the *large* glyph only.
+ * Branch stays static. Default off for GitHub Camo safety.
  */
-function renderHanziEmblem(zodiac) {
+function renderHanziEmblem(zodiac, { glow = false } = {}) {
   const hanzi = zodiac.hanzi || zodiac.earthlyBranch || "生";
   const branch = zodiac.earthlyBranch || "";
+  const h = escapeXml(hanzi);
+  // Halo via stacked text (no feGaussianBlur — survives Camo better when glow is on)
+  const halo = glow
+    ? `<text x="168" y="120" text-anchor="middle" fill="#ffffff" font-size="112" font-family="${FONT_CLASSICAL}" opacity="0.18">${h}</text>
+      <text x="168" y="120" text-anchor="middle" fill="#ffffff" font-size="108" font-family="${FONT_CLASSICAL}" opacity="0.28">${h}</text>`
+    : "";
+  const twinkle = glow
+    ? `<animate attributeName="opacity" values="0.42;1;0.55;0.95;0.42" dur="3.2s" begin="0s" repeatCount="indefinite"/>`
+    : "";
   return `
     <g transform="translate(310, 8)" aria-hidden="true">
+      ${halo}
       <text
         x="168"
         y="120"
@@ -62,8 +73,8 @@ function renderHanziEmblem(zodiac) {
         fill="#ffffff"
         font-size="104"
         font-family="${FONT_CLASSICAL}"
-        opacity="0.88"
-      >${escapeXml(hanzi)}</text>
+        opacity="${glow ? "0.92" : "0.88"}"
+      >${h}${twinkle}</text>
       ${
         branch
           ? `<text
@@ -116,7 +127,7 @@ function renderLanguages(languages, colors) {
 }
 
 /**
- * @param {{ profile: object, zodiac: object, stats: object, meta?: { source?: string, width?: number } }} input
+ * @param {{ profile: object, zodiac: object, stats: object, meta?: { source?: string, width?: number, glow?: boolean } }} input
  */
 export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
   const colors = zodiac.colors;
@@ -128,6 +139,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     meta.source === "birthdate"
       ? "mapped by birth year"
       : "mapped by name-seed";
+  const glow = Boolean(meta.glow);
 
   const displayWidth = clamp(
     Number(meta.width) || DEFAULT_DISPLAY_WIDTH,
@@ -161,7 +173,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-bg)"/>
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-glow)"/>
 
-    ${renderHanziEmblem(zodiac)}
+    ${renderHanziEmblem(zodiac, { glow })}
     ${renderDescription(zodiac, colors)}
 
     <text x="36" y="52" fill="${colors.accent}" font-size="22" font-weight="700" letter-spacing="2" font-family="${FONT_TITLE}">

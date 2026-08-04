@@ -80,6 +80,16 @@
         cursor: pointer;
       }
       button:disabled { opacity: 0.55; cursor: wait; }
+      .check {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+        cursor: pointer;
+        user-select: none;
+      }
+      .check input { flex: none; width: auto; padding: 0; accent-color: var(--accent); }
       .preview-wrap img {
         display: block;
         width: min(100%, 360px);
@@ -125,11 +135,16 @@
         />
         <input id="name" name="name" type="text" placeholder="Display name" maxlength="32" />
         <input id="role" name="role" type="text" placeholder="Role" maxlength="40" />
+        <label class="check">
+          <input id="glow" name="glow" type="checkbox" />
+          Glow large hanzi
+        </label>
         <button id="submit" type="submit">Generate</button>
       </form>
       <p class="hint">
         Birthdate maps to your <strong>animal year</strong> (十二生肖).
         Name and role are auto-estimated; edits only appear in the URL when changed.
+        Optional glow twinkles the large 简体 character (best on the live SVG URL).
       </p>
 
       <div class="preview-wrap">
@@ -149,6 +164,7 @@
       const birthInput = document.getElementById("birthdate");
       const roleInput = document.getElementById("role");
       const nameInput = document.getElementById("name");
+      const glowInput = document.getElementById("glow");
       let auto = { name: "", role: "" };
 
       function normalizeBirthdate(value) {
@@ -160,11 +176,12 @@
         return raw;
       }
 
-      function buildCardPath({ username, birthdate, name, role }) {
+      function buildCardPath({ username, birthdate, name, role, glow }) {
         const params = new URLSearchParams({ username });
         if (birthdate) params.set("birthdate", birthdate);
         if (name && name !== auto.name) params.set("name", name);
         if (role && role !== auto.role) params.set("role", role);
+        if (glow) params.set("glow", "1");
         return `/api/card?${params.toString()}`;
       }
 
@@ -198,6 +215,7 @@
             birthdate,
             name: nameInput.value.trim(),
             role: roleInput.value.trim(),
+            glow: glowInput.checked,
           });
         } catch (err) {
           md.textContent = `Error: ${err.message}`;
@@ -215,6 +233,7 @@
             birthdate: normalizeBirthdate(birthInput.value),
             name: nameInput.value.trim(),
             role: roleInput.value.trim(),
+            glow: glowInput.checked,
           });
         } catch (err) {
           md.textContent = `Error: ${err.message}`;
@@ -227,6 +246,7 @@
       });
       nameInput.addEventListener("change", onEdit);
       roleInput.addEventListener("change", onEdit);
+      glowInput.addEventListener("change", onEdit);
       usernameInput.value = "seuthootDev";
       generate();
     </script>
