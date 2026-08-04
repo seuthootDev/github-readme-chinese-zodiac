@@ -48,24 +48,31 @@ function wrapText(text, maxChars, maxLines = 3) {
 
 /**
  * Bare classical hanzi where the Western card shows a constellation.
- * Optional glow (meta.glow): soft halo + twinkle on the *large* glyph only.
+ * Optional glow (meta.glow): original blur halo + opacity twinkle on the *large* glyph only.
  * Branch stays static. Default off for GitHub Camo safety.
  */
-function renderHanziEmblem(zodiac, { glow = false } = {}) {
+function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
   const hanzi = zodiac.hanzi || zodiac.earthlyBranch || "生";
   const branch = zodiac.earthlyBranch || "";
   const h = escapeXml(hanzi);
-  // Halo via stacked text (no feGaussianBlur — survives Camo better when glow is on)
-  const halo = glow
-    ? `<text x="168" y="120" text-anchor="middle" fill="#ffffff" font-size="112" font-family="${FONT_CLASSICAL}" opacity="0.18">${h}</text>
-      <text x="168" y="120" text-anchor="middle" fill="#ffffff" font-size="108" font-family="${FONT_CLASSICAL}" opacity="0.28">${h}</text>`
+  const filterDefs = glow
+    ? `<defs>
+        <filter id="${uid}-glyph-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4.5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>`
     : "";
+  const filterAttr = glow ? ` filter="url(#${uid}-glyph-glow)"` : "";
   const twinkle = glow
-    ? `<animate attributeName="opacity" values="0.42;1;0.55;0.95;0.42" dur="3.2s" begin="0s" repeatCount="indefinite"/>`
+    ? `<animate attributeName="opacity" values="0.35;1;0.5;0.92;0.35" dur="3.2s" begin="0s" repeatCount="indefinite"/>`
     : "";
   return `
     <g transform="translate(310, 8)" aria-hidden="true">
-      ${halo}
+      ${filterDefs}
       <text
         x="168"
         y="120"
@@ -73,7 +80,7 @@ function renderHanziEmblem(zodiac, { glow = false } = {}) {
         fill="#ffffff"
         font-size="104"
         font-family="${FONT_CLASSICAL}"
-        opacity="${glow ? "0.92" : "0.88"}"
+        opacity="${glow ? "0.9" : "0.88"}"${filterAttr}
       >${h}${twinkle}</text>
       ${
         branch
@@ -173,7 +180,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-bg)"/>
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-glow)"/>
 
-    ${renderHanziEmblem(zodiac, { glow })}
+    ${renderHanziEmblem(zodiac, uid, { glow })}
     ${renderDescription(zodiac, colors)}
 
     <text x="36" y="52" fill="${colors.accent}" font-size="22" font-weight="700" letter-spacing="2" font-family="${FONT_TITLE}">
