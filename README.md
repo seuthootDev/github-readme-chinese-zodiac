@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/readme-banner.jpg" alt="Chinese zodiac animals banner" width="100%" />
+</p>
+
 # github-readme-chinese-zodiac
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -229,11 +233,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Credits / attribution
 
-Animal icons in `assets/animals` are derived from a Magnific (Freepik) asset under a **free license with attribution**:
+Animal artwork is derived from a Magnific (Freepik) asset under a **free license with attribution**:
 
 | Used for | Asset | Designed by | Certificate |
 |----------|--------|-------------|-------------|
-| Title animals (`assets/animals`) | [chinese zodiac new year signs — red silhouettes](https://www.magnific.com/free-vector/chinese-zodiac-new-year-signs-traditional-china-horoscope-animals-red-zodiacs-silhouette_10722644.htm) | [tartila — Magnific.com](https://www.magnific.com) | [docs/license-chinese-zodiac-red-silhouettes-10722644.pdf](docs/license-chinese-zodiac-red-silhouettes-10722644.pdf) |
+| README banner + title animals (`docs/readme-banner.jpg`, `assets/animals`) | [chinese zodiac new year signs — red silhouettes](https://www.magnific.com/free-vector/chinese-zodiac-new-year-signs-traditional-china-horoscope-animals-red-zodiacs-silhouette_10722644.htm) | [tartila — Magnific.com](https://www.magnific.com) | [docs/license-chinese-zodiac-red-silhouettes-10722644.pdf](docs/license-chinese-zodiac-red-silhouettes-10722644.pdf) |
 
 ## License
 
