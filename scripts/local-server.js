@@ -1,5 +1,5 @@
 import http from "node:http";
-import { readFile } from "node:fs/promises";
+import { readFile, access } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import cardHandler from "../api/card.js";
@@ -8,6 +8,37 @@ import profileHandler from "../api/profile.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const port = Number(process.env.PORT || 3000);
+
+/** Soft-load .env (GITHUB_TOKEN) without a dotenv dependency. */
+async function loadEnvFile() {
+  const envPath = path.join(root, ".env");
+  try {
+    await access(envPath);
+  } catch {
+    return;
+  }
+  const text = await readFile(envPath, "utf8");
+  for (const line of text.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const i = trimmed.indexOf("=");
+    if (i <= 0) continue;
+    const key = trimmed.slice(0, i).trim();
+    let val = trimmed.slice(i + 1).trim();
+    if (
+      (val.startsWith('"') && val.endsWith('"')) ||
+      (val.startsWith("'") && val.endsWith("'"))
+    ) {
+      val = val.slice(1, -1);
+    }
+    if (process.env[key] == null || process.env[key] === "") {
+      process.env[key] = val;
+    }
+  }
+}
+
+await loadEnvFile();
+process.env.LOCAL_DEV = "1";
 
 function createRes(nodeRes) {
   const res = {
@@ -75,6 +106,12 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(port, () => {
+  const authed = Boolean(process.env.GITHUB_TOKEN || process.env.GH_TOKEN);
   console.log(`github-readme-chinese-zodiac → http://localhost:${port}`);
   console.log(`Try: http://localhost:${port}/api/card?username=seuthootDev&sign=dragon`);
+  console.log(
+    authed
+      ? "GitHub: authenticated (higher rate limit)"
+      : "GitHub: no token — on 403 rate limit, local demo profile is used. Add GITHUB_TOKEN to .env for real stats.",
+  );
 });

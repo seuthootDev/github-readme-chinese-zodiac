@@ -75,12 +75,26 @@ function renderGoldBackground(zodiac) {
     />`;
 }
 
+/** Gold double frame + corner brackets (trial — vermilion card skin). */
+function renderGoldFrame(colors) {
+  const a = colors.accent;
+  const corner = (x, y, dx, dy) =>
+    `<path d="M${x},${y + dy * 14} L${x},${y} L${x + dx * 14},${y}" fill="none" stroke="${a}" stroke-width="1.6" opacity="0.7"/>`;
+  return `
+    <rect x="10" y="10" width="580" height="300" fill="none" stroke="${a}" stroke-width="1.25" opacity="0.55"/>
+    <rect x="14" y="14" width="572" height="292" fill="none" stroke="${a}" stroke-width="0.5" opacity="0.28"/>
+    ${corner(18, 18, 1, 1)}
+    ${corner(582, 18, -1, 1)}
+    ${corner(18, 302, 1, -1)}
+    ${corner(582, 302, -1, -1)}`;
+}
+
 /**
  * Bare classical hanzi where the Western card shows a constellation.
  * Optional glow (meta.glow): blur halo + opacity twinkle on the *large* glyph only.
  * Branch stays static. Default off for GitHub Camo safety.
  */
-function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
+function renderHanziEmblem(zodiac, colors, uid, { glow = false } = {}) {
   const hanzi = zodiac.hanzi || zodiac.earthlyBranch || "生";
   const branch = zodiac.earthlyBranch || "";
   const h = escapeXml(hanzi);
@@ -102,12 +116,14 @@ function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
   return `
     <g transform="translate(310, 8)" aria-hidden="true">
       ${filterDefs}
+      <circle cx="168" cy="92" r="72" fill="none" stroke="${colors.accent}" stroke-width="1.2" opacity="0.28"/>
+      <circle cx="168" cy="92" r="64" fill="${colors.accent}" opacity="0.06"/>
       <text
         x="168"
-        y="118"
+        y="120"
         text-anchor="middle"
         fill="#ffffff"
-        font-size="128"
+        font-size="104"
         font-family="${FONT_CLASSICAL}"
         opacity="${glow ? "0.9" : "0.88"}"${filterAttr}
       >${h}${twinkle}</text>
@@ -115,10 +131,10 @@ function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
         branch
           ? `<text
         x="168"
-        y="176"
+        y="168"
         text-anchor="middle"
         fill="#ffffff"
-        font-size="36"
+        font-size="32"
         letter-spacing="4"
         font-family="${FONT_CLASSICAL}"
         opacity="0.7"
@@ -148,8 +164,9 @@ function renderStatBars(displayStats, colors) {
       const w = barWidth(stat.value);
       return `
       <text x="36" y="${y}" fill="${colors.muted}" font-size="16" font-family="${FONT_BODY}">${escapeXml(stat.label)}</text>
-      <rect x="140" y="${y - 11}" width="150" height="8" fill="${colors.text}" opacity="0.08"/>
-      <rect x="140" y="${y - 11}" width="${w}" height="8" fill="${colors.bar}"/>
+      <rect x="140" y="${y - 11}" width="150" height="7" fill="${colors.text}" opacity="0.1"/>
+      <rect x="140" y="${y - 11}" width="${w}" height="7" fill="${colors.bar}"/>
+      <rect x="140" y="${y - 11}" width="${w}" height="1.5" fill="#ffffff" opacity="0.18"/>
       <text x="300" y="${y}" fill="${colors.text}" font-size="16" font-family="${FONT_BODY}" opacity="0.85">${stat.value}</text>`;
     })
     .join("");
@@ -211,17 +228,18 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
 <svg width="${displayWidth}" height="${displayHeight}" viewBox="0 0 ${WIDTH} ${HEIGHT}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${escapeXml(displayName)} Asian Zodiac Card">
   <title>${escapeXml(displayName)} — ${escapeXml(zodiac.sign)} ${escapeXml(zodiac.title)}</title>
   <defs>
-    <linearGradient id="${uid}-bg" x1="0" y1="0" x2="0.9" y2="1">
-      <stop offset="0%" stop-color="${colors.bg0}"/>
-      <stop offset="55%" stop-color="${colors.bg1}"/>
-      <stop offset="100%" stop-color="#12080a"/>
+    <linearGradient id="${uid}-bg" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="${colors.bg1}"/>
+      <stop offset="48%" stop-color="${colors.bg0}"/>
+      <stop offset="100%" stop-color="#080304"/>
     </linearGradient>
-    <radialGradient id="${uid}-glow" cx="72%" cy="32%" r="42%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+    <radialGradient id="${uid}-glow" cx="78%" cy="28%" r="48%">
+      <stop offset="0%" stop-color="${colors.accent}" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="${colors.bg1}" stop-opacity="0.08"/>
       <stop offset="100%" stop-color="${colors.bg0}" stop-opacity="0"/>
     </radialGradient>
     <clipPath id="${uid}-clip">
-      <rect width="${WIDTH}" height="${HEIGHT}" rx="6"/>
+      <rect width="${WIDTH}" height="${HEIGHT}" rx="4"/>
     </clipPath>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&amp;family=ZCOOL+XiaoWei&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap');
@@ -232,8 +250,9 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-bg)"/>
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-glow)"/>
     ${renderGoldBackground(zodiac)}
+    ${renderGoldFrame(colors)}
 
-    ${renderHanziEmblem(zodiac, uid, { glow })}
+    ${renderHanziEmblem(zodiac, colors, uid, { glow })}
     ${renderDescription(zodiac, colors)}
 
     ${renderAnimalTitle(zodiac, colors, uid)}
@@ -254,8 +273,12 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     ${renderLanguages(profile.languages, colors)}
     ${renderStatBars(displayStats, colors)}
 
-    <text x="36" y="298" fill="${colors.accent}" font-size="15" opacity="0.9" font-family="${FONT_BODY}">
-      印 Your coding personality written in the Asian zodiac
+    <g opacity="0.85" aria-hidden="true">
+      <circle cx="52" cy="292" r="11" fill="none" stroke="${colors.accent}" stroke-width="1.1"/>
+      <text x="52" y="296" text-anchor="middle" fill="${colors.accent}" font-size="12" font-family="${FONT_CLASSICAL}">印</text>
+    </g>
+    <text x="70" y="298" fill="${colors.accent}" font-size="15" opacity="0.9" font-family="${FONT_BODY}">
+      Your coding personality written in the Asian zodiac
     </text>
     <text x="560" y="298" text-anchor="end" fill="${colors.muted}" font-size="13" opacity="0.55" font-family="${FONT_BODY}">
       ${escapeXml(sourceLabel)}

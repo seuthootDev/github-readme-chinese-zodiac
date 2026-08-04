@@ -1,4 +1,5 @@
 /** Asian / Chinese zodiac — 12 earthly branches (生肖). */
+/** Palette trial: vermilion / ink / gold (distinct from western night-sky cards). */
 export default [
   {
     "id": "rat",
@@ -14,12 +15,12 @@ export default [
       "builder"
     ],
     "colors": {
-      "bg0": "#0a1218",
-      "bg1": "#1c2c38",
+      "bg0": "#100810",
+      "bg1": "#3a1824",
       "accent": "#c9a227",
       "star": "#e8d5a3",
       "text": "#f7f0e0",
-      "muted": "#a89878",
+      "muted": "#b09878",
       "bar": "#d4b44a"
     },
     "hanzi": "鼠"
@@ -38,8 +39,8 @@ export default [
       "debugger"
     ],
     "colors": {
-      "bg0": "#14100a",
-      "bg1": "#3a2818",
+      "bg0": "#140a08",
+      "bg1": "#4a2014",
       "accent": "#d4a574",
       "star": "#f0e0c8",
       "text": "#faf3e8",
@@ -62,8 +63,8 @@ export default [
       "openSource"
     ],
     "colors": {
-      "bg0": "#1a0808",
-      "bg1": "#6b1810",
+      "bg0": "#1a0606",
+      "bg1": "#7a1810",
       "accent": "#e8b84a",
       "star": "#ffe8b0",
       "text": "#fff6e8",
@@ -86,8 +87,8 @@ export default [
       "explorer"
     ],
     "colors": {
-      "bg0": "#120c14",
-      "bg1": "#3a2038",
+      "bg0": "#160810",
+      "bg1": "#5a2030",
       "accent": "#e8c49a",
       "star": "#f8e8d8",
       "text": "#fff8f0",
@@ -110,8 +111,8 @@ export default [
       "explorer"
     ],
     "colors": {
-      "bg0": "#140808",
-      "bg1": "#5c1418",
+      "bg0": "#120606",
+      "bg1": "#6b1218",
       "accent": "#d4af37",
       "star": "#f5e6c8",
       "text": "#fff8e8",
@@ -134,13 +135,13 @@ export default [
       "consistency"
     ],
     "colors": {
-      "bg0": "#0a1410",
-      "bg1": "#1a3a28",
-      "accent": "#5dbb8a",
-      "star": "#d0f0e0",
-      "text": "#eef8f2",
-      "muted": "#88b098",
-      "bar": "#78c89a"
+      "bg0": "#120808",
+      "bg1": "#5a1814",
+      "accent": "#d4a05a",
+      "star": "#f0e0c0",
+      "text": "#fff6e8",
+      "muted": "#b89070",
+      "bar": "#e0b070"
     },
     "hanzi": "蛇"
   },
@@ -158,8 +159,8 @@ export default [
       "explorer"
     ],
     "colors": {
-      "bg0": "#180c08",
-      "bg1": "#5a2410",
+      "bg0": "#160806",
+      "bg1": "#6a2010",
       "accent": "#e09840",
       "star": "#ffe0b8",
       "text": "#fff4e8",
@@ -182,13 +183,13 @@ export default [
       "builder"
     ],
     "colors": {
-      "bg0": "#10140e",
-      "bg1": "#2a3820",
-      "accent": "#a8c878",
-      "star": "#e8f0d0",
-      "text": "#f4f8ea",
-      "muted": "#98b088",
-      "bar": "#b8d090"
+      "bg0": "#120a08",
+      "bg1": "#4a2418",
+      "accent": "#d4b46a",
+      "star": "#f0e4c8",
+      "text": "#faf4e8",
+      "muted": "#b09870",
+      "bar": "#e0c080"
     },
     "hanzi": "羊"
   },
@@ -206,8 +207,8 @@ export default [
       "debugger"
     ],
     "colors": {
-      "bg0": "#14100a",
-      "bg1": "#3a2814",
+      "bg0": "#140a08",
+      "bg1": "#4a2014",
       "accent": "#d4a05a",
       "star": "#ffe8c8",
       "text": "#fff6ec",
@@ -230,8 +231,8 @@ export default [
       "openSource"
     ],
     "colors": {
-      "bg0": "#16080c",
-      "bg1": "#5a1020",
+      "bg0": "#160608",
+      "bg1": "#6a1020",
       "accent": "#e8c060",
       "star": "#ffe8c0",
       "text": "#fff5e8",
@@ -254,8 +255,8 @@ export default [
       "debugger"
     ],
     "colors": {
-      "bg0": "#0c1014",
-      "bg1": "#243038",
+      "bg0": "#100808",
+      "bg1": "#3a1c18",
       "accent": "#c9a86c",
       "star": "#ebe0c8",
       "text": "#f7f2e8",
@@ -278,8 +279,8 @@ export default [
       "consistency"
     ],
     "colors": {
-      "bg0": "#160a10",
-      "bg1": "#4a1828",
+      "bg0": "#14080c",
+      "bg1": "#5a1828",
       "accent": "#e8a878",
       "star": "#ffe8d8",
       "text": "#fff5f0",

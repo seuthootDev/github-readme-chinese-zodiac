@@ -6,10 +6,37 @@ function headers() {
     "User-Agent": "github-readme-chinese-zodiac",
     "X-GitHub-Api-Version": "2022-11-28",
   };
-  if (process.env.GITHUB_TOKEN) {
-    h.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+  if (token) {
+    h.Authorization = `Bearer ${token}`;
   }
   return h;
+}
+
+/** Local preview when unauthenticated IP rate limit is hit (60/hr). */
+function demoProfile(username) {
+  return {
+    username,
+    name: username === "seuthootDev" ? "JUNG SEUNGHOON" : username,
+    bio: "",
+    avatarUrl: "",
+    followers: 12,
+    following: 8,
+    publicRepos: 36,
+    createdAt: "2019-04-24T00:00:00Z",
+    ageDays: 2500,
+    stars: 48,
+    forks: 6,
+    openIssues: 3,
+    languages: [
+      { name: "JavaScript", count: 12 },
+      { name: "TypeScript", count: 8 },
+      { name: "Python", count: 5 },
+    ],
+    role: "Full-Stack Dev",
+    mostActiveRepo: null,
+    _demo: true,
+  };
 }
 
 async function gh(path) {
@@ -23,6 +50,8 @@ async function gh(path) {
     const body = await res.text();
     const err = new Error(`GitHub API error (${res.status}): ${body.slice(0, 200)}`);
     err.statusCode = res.status === 403 ? 429 : 502;
+    err.githubStatus = res.status;
+    err.githubBody = body;
     throw err;
   }
   return res.json();
@@ -55,10 +84,31 @@ function guessRole(languages) {
 }
 
 export async function fetchGitHubProfile(username) {
-  const user = await gh(`/users/${encodeURIComponent(username)}`);
-  const repos = await gh(
-    `/users/${encodeURIComponent(username)}/repos?per_page=100&sort=updated&type=owner`,
-  );
+  if (process.env.DEMO_PROFILE === "1") {
+    console.warn(`[github] DEMO_PROFILE=1 — using mock profile for ${username}`);
+    return demoProfile(username);
+  }
+
+  let user;
+  let repos;
+  try {
+    user = await gh(`/users/${encodeURIComponent(username)}`);
+    repos = await gh(
+      `/users/${encodeURIComponent(username)}/repos?per_page=100&sort=updated&type=owner`,
+    );
+  } catch (err) {
+    // Local server only: keep design previews working after IP rate limit.
+    if (
+      process.env.LOCAL_DEV === "1" &&
+      (err.githubStatus === 403 || err.statusCode === 429)
+    ) {
+      console.warn(
+        `[github] rate limited — falling back to demo profile for ${username}. Set GITHUB_TOKEN in .env for real data.`,
+      );
+      return demoProfile(username);
+    }
+    throw err;
+  }
 
   const languageBytes = {};
   let stars = 0;
