@@ -14,13 +14,70 @@ Sister project (Western zodiac): [github-readme-zodiac](https://github.com/seuth
 | **Pinned Gist** | Profile **Pins** | ASCII / text card |
 | **SVG card** | Profile **README** | Full-color image (default **360×192**) |
 
-**Live SVG demo:** deploy this repo on Vercel, then use your deployment URL (placeholder below until live):
-
-`https://github-readme-chinese-zodiac.vercel.app`
+**Live demo:** [https://github-readme-chinese-zodiac.vercel.app](https://github-readme-chinese-zodiac.vercel.app)
 
 ---
 
-## Animals (sign param)
+## What a Pin looks like
+
+GitHub only shows about **5 lines** of a pinned Gist. Full 12-animal gallery (pin + full gist):
+
+**[Gist pin preview — 12 animals (PDF)](docs/gist-pin-preview-12-animals.pdf)**
+
+Also: [docs/gist-pin-preview.html](docs/gist-pin-preview.html)
+
+Example pin body (Pig / 亥 — `birthdate=1995-04-24`):
+
+```text
+🐷 PIG · Generous Collaborator         ✦----✦
+✨ JUNG SEUNGHOON · Full-Stack Dev    /      \
+⭐   4  📦  37  👥   0                 ✦  ✦   ✦
+Open Source █░░░░░░░░░░░   7%         \      /
+Builder     █████████░░░  76%          ✦----✦
+```
+
+---
+
+## Demo (SVG)
+
+```md
+![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev)
+```
+
+<p align="center">
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev" alt="Asian Zodiac" />
+</p>
+
+With birthdate (animal year):
+
+```md
+![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24)
+```
+
+<p align="center">
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24" alt="Asian Zodiac Pig" />
+</p>
+
+### All 12 animals
+
+<p align="center">
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rat" width="49%" alt="Rat" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=ox" width="49%" alt="Ox" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=tiger" width="49%" alt="Tiger" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rabbit" width="49%" alt="Rabbit" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dragon" width="49%" alt="Dragon" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=snake" width="49%" alt="Snake" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=horse" width="49%" alt="Horse" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=goat" width="49%" alt="Goat" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=monkey" width="49%" alt="Monkey" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rooster" width="49%" alt="Rooster" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dog" width="49%" alt="Dog" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=pig" width="49%" alt="Pig" />
+</p>
+
+---
+
+## Animals (`sign=` param)
 
 | `sign=` | Animal |
 |---------|--------|
@@ -37,7 +94,7 @@ Sister project (Western zodiac): [github-readme-zodiac](https://github.com/seuth
 | `dog` | 🐕 Dog |
 | `pig` | 🐷 Pig |
 
-**Birthdate → animal** uses the birth **year** (with a simple pre–Feb 4 → previous year approximation). No birthdate → deterministic animal from username hash.
+**Birthdate → animal** uses the birth **year** (simple pre–Feb 4 → previous year approximation). No birthdate → deterministic animal from username hash.
 
 ---
 
@@ -55,8 +112,6 @@ Pin path uses **your fork’s Action only** — not Vercel.
 ---
 
 ## 2) SVG card (README embed)
-
-After Vercel deploy:
 
 ```md
 ![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=YOUR_USERNAME)
