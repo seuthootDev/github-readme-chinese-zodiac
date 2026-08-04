@@ -1,5 +1,6 @@
 import { pickDisplayStats } from "../lib/stats.js";
 import animalIcons from "../data/animal-icons.js";
+import animalGoldIcons from "../data/animal-gold-icons.js";
 
 const WIDTH = 600;
 const HEIGHT = 320;
@@ -48,9 +49,32 @@ function wrapText(text, maxChars, maxLines = 3) {
 }
 
 /**
+ * Gold paper-cut animal as a centered background watermark (under text / hanzi).
+ * Keeps original gold color; low opacity so it stays atmospheric.
+ */
+function renderGoldBackground(zodiac) {
+  const icon = animalGoldIcons[zodiac.id];
+  if (!icon) return "";
+  const size = 280;
+  const x = (WIDTH - size) / 2;
+  const y = (HEIGHT - size) / 2 - 4;
+  return `
+    <image
+      href="${icon}"
+      x="${x}"
+      y="${y}"
+      width="${size}"
+      height="${size}"
+      opacity="0.28"
+      preserveAspectRatio="xMidYMid meet"
+      aria-hidden="true"
+    />`;
+}
+
+/**
  * Bare classical hanzi where the Western card shows a constellation.
- * Optional glow (meta.glow): original blur halo + opacity twinkle on the *large* glyph only.
- * Branch stays static. Default off for GitHub Camo safety.
+ * Optional glow (meta.glow): blur halo + opacity twinkle on large hanzi and earthly branch,
+ * phased so they alternate. Default off for GitHub Camo safety.
  */
 function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
   const hanzi = zodiac.hanzi || zodiac.earthlyBranch || "生";
@@ -68,8 +92,11 @@ function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
       </defs>`
     : "";
   const filterAttr = glow ? ` filter="url(#${uid}-glyph-glow)"` : "";
-  const twinkle = glow
+  const twinkleHanzi = glow
     ? `<animate attributeName="opacity" values="0.35;1;0.5;0.92;0.35" dur="3.2s" begin="0s" repeatCount="indefinite"/>`
+    : "";
+  const twinkleBranch = glow
+    ? `<animate attributeName="opacity" values="0.35;1;0.5;0.92;0.35" dur="3.2s" begin="1.6s" repeatCount="indefinite"/>`
     : "";
   return `
     <g transform="translate(310, 8)" aria-hidden="true">
@@ -82,7 +109,7 @@ function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
         font-size="104"
         font-family="${FONT_CLASSICAL}"
         opacity="${glow ? "0.9" : "0.88"}"${filterAttr}
-      >${h}${twinkle}</text>
+      >${h}${twinkleHanzi}</text>
       ${
         branch
           ? `<text
@@ -93,8 +120,8 @@ function renderHanziEmblem(zodiac, uid, { glow = false } = {}) {
         font-size="28"
         letter-spacing="6"
         font-family="${FONT_CLASSICAL}"
-        opacity="0.7"
-      >${escapeXml(branch)}</text>`
+        opacity="0.7"${filterAttr}
+      >${escapeXml(branch)}${twinkleBranch}</text>`
           : ""
       }
     </g>`;
@@ -200,6 +227,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
   <g clip-path="url(#${uid}-clip)">
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-bg)"/>
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-glow)"/>
+    ${renderGoldBackground(zodiac)}
 
     ${renderHanziEmblem(zodiac, uid, { glow })}
     ${renderDescription(zodiac, colors)}

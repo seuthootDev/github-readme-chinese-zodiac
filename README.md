@@ -79,18 +79,18 @@ With birthdate (animal year):
 ### All 12 animals
 
 <p align="center">
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rat" width="49%" alt="Rat" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=ox" width="49%" alt="Ox" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=tiger" width="49%" alt="Tiger" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rabbit" width="49%" alt="Rabbit" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dragon" width="49%" alt="Dragon" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=snake" width="49%" alt="Snake" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=horse" width="49%" alt="Horse" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=goat" width="49%" alt="Goat" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=monkey" width="49%" alt="Monkey" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rooster" width="49%" alt="Rooster" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dog" width="49%" alt="Dog" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=pig" width="49%" alt="Pig" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rat" width="360" alt="Rat" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=ox" width="360" alt="Ox" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=tiger" width="360" alt="Tiger" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rabbit" width="360" alt="Rabbit" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dragon" width="360" alt="Dragon" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=snake" width="360" alt="Snake" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=horse" width="360" alt="Horse" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=goat" width="360" alt="Goat" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=monkey" width="360" alt="Monkey" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rooster" width="360" alt="Rooster" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dog" width="360" alt="Dog" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=pig" width="360" alt="Pig" />
 </p>
 
 ---
@@ -199,7 +199,7 @@ Also runs on every push to `main` and daily at 00:00 UTC.
 | `sign` | Force animal: `rat` … `pig` |
 | `name` / `role` | Overrides (auto by default) |
 | `width` | `240`–`900`, default **`360`** |
-| `glow` | `1` / `true` — soft halo + twinkle on the **large hanzi** only (default off; best when opening the SVG URL directly — GitHub Camo is a still frame) |
+| `glow` | `1` / `true` — soft halo + twinkle on the **large hanzi** and **earthly branch**, alternating (default off; best when opening the SVG URL directly — GitHub Camo is a still frame) |
 
 ---
 
@@ -238,6 +238,7 @@ Animal artwork is derived from a Magnific (Freepik) asset under a **free license
 | Used for | Asset | Designed by | Certificate |
 |----------|--------|-------------|-------------|
 | README banner + title animals (`docs/readme-banner.jpg`, `assets/animals`) | [chinese zodiac new year signs — red silhouettes](https://www.magnific.com/free-vector/chinese-zodiac-new-year-signs-traditional-china-horoscope-animals-red-zodiacs-silhouette_10722644.htm) | [tartila — Magnific.com](https://www.magnific.com) | [docs/license-chinese-zodiac-red-silhouettes-10722644.pdf](docs/license-chinese-zodiac-red-silhouettes-10722644.pdf) |
+| Card background animals (`assets/animals-gold`) | [chinese new year animals — gold zodiac sign stickers](https://www.magnific.com/free-vector/chinese-new-year-animals-vector-gold-animal-zodiac-sign-stickers-set_18226630.htm) | Magnific / Freepik | [docs/license-chinese-zodiac-gold-animals-18226630.pdf](docs/license-chinese-zodiac-gold-animals-18226630.pdf) |
 
 ## License
 
