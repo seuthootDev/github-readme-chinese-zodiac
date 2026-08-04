@@ -4,6 +4,12 @@ const WIDTH = 600;
 const HEIGHT = 320;
 const DEFAULT_DISPLAY_WIDTH = 360;
 
+/** Inline stacks — GitHub Camo often strips <style>/@import. */
+const FONT_CLASSICAL =
+  "ZCOOL XiaoWei, Noto Serif SC, Songti SC, STSong, serif";
+const FONT_TITLE = "Noto Serif SC, Source Serif 4, Georgia, serif";
+const FONT_BODY = "Source Serif 4, Noto Serif SC, Georgia, serif";
+
 function escapeXml(str) {
   return String(str ?? "")
     .replace(/&/g, "&amp;")
@@ -42,49 +48,34 @@ function wrapText(text, maxChars, maxLines = 3) {
 
 /**
  * Bare classical hanzi where the Western card shows a constellation —
- * no seal box / frame, white glyph that soft-twinkles.
+ * no seal box / frame. Soft white glyph (no SVG filter — Camo-safe).
  */
-function renderHanziEmblem(zodiac, uid) {
+function renderHanziEmblem(zodiac) {
   const hanzi = zodiac.hanzi || zodiac.earthlyBranch || "生";
   const branch = zodiac.earthlyBranch || "";
   return `
     <g transform="translate(310, 8)" aria-hidden="true">
-      <defs>
-        <filter id="${uid}-glyph-glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="4.5" result="blur"/>
-          <feMerge>
-            <feMergeNode in="blur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-      <!-- same stage as western constellation panel -->
       <text
-        class="classical"
         x="168"
         y="120"
         text-anchor="middle"
         fill="#ffffff"
         font-size="104"
-        filter="url(#${uid}-glyph-glow)"
-        opacity="0.9"
-      >${escapeXml(hanzi)}
-        <animate attributeName="opacity" values="0.35;1;0.5;0.92;0.35" dur="3.2s" begin="0s" repeatCount="indefinite"/>
-      </text>
+        font-family="${FONT_CLASSICAL}"
+        opacity="0.88"
+      >${escapeXml(hanzi)}</text>
       ${
         branch
           ? `<text
-        class="classical"
         x="168"
         y="168"
         text-anchor="middle"
         fill="#ffffff"
         font-size="28"
         letter-spacing="6"
-        opacity="0.72"
-      >${escapeXml(branch)}
-        <animate attributeName="opacity" values="0.22;0.88;0.35;0.78;0.22" dur="3.9s" begin="0.55s" repeatCount="indefinite"/>
-      </text>`
+        font-family="${FONT_CLASSICAL}"
+        opacity="0.7"
+      >${escapeXml(branch)}</text>`
           : ""
       }
     </g>`;
@@ -98,7 +89,7 @@ function renderDescription(zodiac, colors) {
     .map((line, i) => {
       const prefix = i === 0 ? "卷 " : "   ";
       const y = 200 + i * 17;
-      return `<text class="body" x="340" y="${y}" fill="${colors.muted}" font-size="12">${prefix}${escapeXml(line)}</text>`;
+      return `<text x="340" y="${y}" fill="${colors.muted}" font-size="12" font-family="${FONT_BODY}">${prefix}${escapeXml(line)}</text>`;
     })
     .join("\n    ");
 }
@@ -109,12 +100,10 @@ function renderStatBars(displayStats, colors) {
       const y = 200 + i * 26;
       const w = barWidth(stat.value);
       return `
-      <text class="body" x="36" y="${y}" fill="${colors.muted}" font-size="12">${escapeXml(stat.label)}</text>
+      <text x="36" y="${y}" fill="${colors.muted}" font-size="12" font-family="${FONT_BODY}">${escapeXml(stat.label)}</text>
       <rect x="140" y="${y - 10}" width="150" height="7" fill="${colors.text}" opacity="0.08"/>
-      <rect x="140" y="${y - 10}" width="${w}" height="7" fill="${colors.bar}">
-        <animate attributeName="width" from="0" to="${w}" dur="0.9s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1"/>
-      </rect>
-      <text class="body" x="300" y="${y}" fill="${colors.text}" font-size="12" opacity="0.85">${stat.value}</text>`;
+      <rect x="140" y="${y - 10}" width="${w}" height="7" fill="${colors.bar}"/>
+      <text x="300" y="${y}" fill="${colors.text}" font-size="12" font-family="${FONT_BODY}" opacity="0.85">${stat.value}</text>`;
     })
     .join("");
 }
@@ -123,7 +112,7 @@ function renderLanguages(languages, colors) {
   const top = (languages || []).slice(0, 3).map((l) => l.name);
   if (!top.length) return "";
   const label = top.join("  ·  ");
-  return `<text class="body" x="36" y="168" fill="${colors.accent}" font-size="12" letter-spacing="0.4">${escapeXml(label)}</text>`;
+  return `<text x="36" y="168" fill="${colors.accent}" font-size="12" letter-spacing="0.4" font-family="${FONT_BODY}">${escapeXml(label)}</text>`;
 }
 
 /**
@@ -151,7 +140,7 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     .join(" · ");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="${displayWidth}" height="${displayHeight}" viewBox="0 0 ${WIDTH} ${HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${escapeXml(displayName)} Asian Zodiac Card">
+<svg width="${displayWidth}" height="${displayHeight}" viewBox="0 0 ${WIDTH} ${HEIGHT}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${escapeXml(displayName)} Asian Zodiac Card">
   <title>${escapeXml(displayName)} — ${escapeXml(zodiac.sign)} ${escapeXml(zodiac.title)}</title>
   <defs>
     <linearGradient id="${uid}-bg" x1="0" y1="0" x2="0.9" y2="1">
@@ -166,45 +155,39 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
     <clipPath id="${uid}-clip">
       <rect width="${WIDTH}" height="${HEIGHT}" rx="6"/>
     </clipPath>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&amp;family=Noto+Serif+SC:wght@500;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&amp;display=swap');
-      .classical { font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', 'Songti SC', serif; }
-      .title { font-family: 'Noto Serif SC', 'Source Serif 4', Georgia, serif; }
-      .body { font-family: 'Source Serif 4', 'Noto Serif SC', Georgia, serif; }
-    </style>
   </defs>
 
   <g clip-path="url(#${uid}-clip)">
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-bg)"/>
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-glow)"/>
 
-    ${renderHanziEmblem(zodiac, uid)}
+    ${renderHanziEmblem(zodiac)}
     ${renderDescription(zodiac, colors)}
 
-    <text class="title" x="36" y="52" fill="${colors.accent}" font-size="22" font-weight="700" letter-spacing="2">
+    <text x="36" y="52" fill="${colors.accent}" font-size="22" font-weight="700" letter-spacing="2" font-family="${FONT_TITLE}">
       ${escapeXml(zodiac.symbol)}  ${escapeXml(zodiac.sign.toUpperCase())}
     </text>
-    <text class="classical" x="36" y="82" fill="${colors.text}" font-size="22" opacity="0.95">
+    <text x="36" y="82" fill="${colors.text}" font-size="22" opacity="0.95" font-family="${FONT_CLASSICAL}">
       ${escapeXml(zodiac.title.replace(/^The\s+/i, ""))}
     </text>
-    <text class="body" x="36" y="102" fill="${colors.muted}" font-size="11" letter-spacing="1">
+    <text x="36" y="102" fill="${colors.muted}" font-size="11" letter-spacing="1" font-family="${FONT_BODY}">
       ${escapeXml(elementLine)}
     </text>
 
-    <text class="body" x="36" y="128" fill="${colors.text}" font-size="18" font-weight="600">
+    <text x="36" y="128" fill="${colors.text}" font-size="18" font-weight="600" font-family="${FONT_BODY}">
       ${escapeXml(displayName)}
     </text>
-    <text class="body" x="36" y="148" fill="${colors.muted}" font-size="12">
+    <text x="36" y="148" fill="${colors.muted}" font-size="12" font-family="${FONT_BODY}">
       ${escapeXml(role)}
     </text>
 
     ${renderLanguages(profile.languages, colors)}
     ${renderStatBars(displayStats, colors)}
 
-    <text class="body" x="36" y="298" fill="${colors.accent}" font-size="11" opacity="0.9">
+    <text x="36" y="298" fill="${colors.accent}" font-size="11" opacity="0.9" font-family="${FONT_BODY}">
       印 Your coding personality written in the Asian zodiac
     </text>
-    <text class="body" x="560" y="298" text-anchor="end" fill="${colors.muted}" font-size="10" opacity="0.55">
+    <text x="560" y="298" text-anchor="end" fill="${colors.muted}" font-size="10" opacity="0.55" font-family="${FONT_BODY}">
       ${escapeXml(sourceLabel)}
     </text>
   </g>

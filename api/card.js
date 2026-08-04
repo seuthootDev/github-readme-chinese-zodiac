@@ -25,8 +25,9 @@ function sendErrorSvg(res, status, message) {
 }
 
 export default async function handler(req, res) {
-  if (req.method && req.method !== "GET") {
-    res.setHeader("Allow", "GET");
+  // Allow HEAD — some proxies (incl. Camo probes) use it
+  if (req.method && req.method !== "GET" && req.method !== "HEAD") {
+    res.setHeader("Allow", "GET, HEAD");
     return res.status(405).json({ error: "Method not allowed" });
   }
 
