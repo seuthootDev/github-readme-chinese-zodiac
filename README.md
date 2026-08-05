@@ -40,6 +40,8 @@ Renown     █░░░░░░░░░░░   7%          ╰────╯
 Craft      █████████░░░  76%            生肖
 ```
 
+> **Pin quality (help wanted).** Pins work, but the hanzi seal often misaligns in monospace (wide CJK vs box-drawing). SVG cards are the polished path today — see [CONTRIBUTING.md](CONTRIBUTING.md#help-wanted-pinned-gist-polish-highest-priority) if you want to improve `src/gist/emblem.js`.
+
 ### How to put this on your profile Pins
 
 Same pattern as [productive-box](https://github.com/maxam2017/productive-box): **fork → Action fills your Gist → pin that Gist**. No Vercel for Pins.
@@ -203,7 +205,7 @@ Also runs on every push to `main` and daily at 00:00 UTC.
 
 ---
 
-## Stats (playful, not astrology)
+## Stats
 
 Each card shows **3 of 5** traits. Which three appear depends on the animal’s `statKeys`. Values are scaled from public GitHub signals (0–100) — same math as the [Western sister project](https://github.com/seuthootDev/github-readme-zodiac), Asian-flavored names.
 
@@ -229,6 +231,7 @@ npm run preview:gists
 ## Contributing
 
 Designs, copy, animal-flavored roles, better New Year tables — **welcome anytime.**  
+Highest-priority gap today: **pinned Gist hanzi seal alignment** (see [help wanted](CONTRIBUTING.md#help-wanted-pinned-gist-polish-highest-priority)).  
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Credits / attribution
