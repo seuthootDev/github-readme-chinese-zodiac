@@ -248,3 +248,19 @@ Animal artwork is derived from a Magnific (Freepik) asset under a **free license
 [MIT](LICENSE) © seuthootDev
 
 Third-party artwork remains under its Magnific license (see certificate above); the MIT license covers this repository’s code.
+
+---
+
+## More from the same author
+
+Want a terminal-style contribution graph too? Sister project:
+
+### [github-readme-insight-terminal-ascii](https://github.com/seuthootDev/github-readme-insight-terminal-ascii)
+
+GitHub stats as macOS / Windows / Ubuntu terminal SVGs — contribution graph, stats, top languages, neofetch.
+
+![mac](https://github-readme-insight-terminal-asci.vercel.app/svg?user=torvalds&theme=mac&scale=0.5)
+
+```md
+![GitHub contribution graph](https://github-readme-insight-terminal-asci.vercel.app/svg?user=YOUR_USERNAME&theme=mac)
+```
