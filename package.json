@@ -10,6 +10,7 @@
     "dev": "node scripts/local-server.js",
     "gist": "node scripts/update-gist.js",
     "preview:gists": "node scripts/preview-all-gists.js",
+    "preview:card": "node scripts/preview-card.js",
     "extract-animals": "python scripts/extract-animals.py",
     "embed-fonts": "node scripts/embed-fonts.js"
   },

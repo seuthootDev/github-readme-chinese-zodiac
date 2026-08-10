@@ -152,8 +152,8 @@ function renderDescription(zodiac, colors) {
   return lines
     .map((line, i) => {
       const prefix = i === 0 ? "卷 " : "   ";
-      const y = 198 + i * 19;
-      return `<text x="340" y="${y}" fill="${colors.muted}" font-size="16" font-family="${FONT_BODY}">${prefix}${escapeXml(line)}</text>`;
+      const y = 206 + i * 22;
+      return `<text x="340" y="${y}" fill="${colors.muted}" font-size="19" font-family="${FONT_BODY}">${prefix}${escapeXml(line)}</text>`;
     })
     .join("\n    ");
 }
@@ -161,14 +161,14 @@ function renderDescription(zodiac, colors) {
 function renderStatBars(displayStats, colors) {
   return displayStats
     .map((stat, i) => {
-      const y = 202 + i * 28;
+      const y = 212 + i * 32;
       const w = barWidth(stat.value);
       return `
-      <text x="36" y="${y}" fill="${colors.muted}" font-size="16" font-family="${FONT_BODY}">${escapeXml(stat.label)}</text>
+      <text x="36" y="${y}" fill="${colors.muted}" font-size="19" font-family="${FONT_BODY}">${escapeXml(stat.label)}</text>
       <rect x="140" y="${y - 11}" width="150" height="7" fill="${colors.text}" opacity="0.1"/>
       <rect x="140" y="${y - 11}" width="${w}" height="7" fill="${colors.bar}"/>
       <rect x="140" y="${y - 11}" width="${w}" height="1.5" fill="#ffffff" opacity="0.18"/>
-      <text x="300" y="${y}" fill="${colors.text}" font-size="16" font-family="${FONT_BODY}" opacity="0.85">${stat.value}</text>`;
+      <text x="300" y="${y}" fill="${colors.text}" font-size="19" font-family="${FONT_BODY}" opacity="0.85">${stat.value}</text>`;
     })
     .join("");
 }
@@ -177,7 +177,7 @@ function renderLanguages(languages, colors) {
   const top = (languages || []).slice(0, 3).map((l) => l.name);
   if (!top.length) return "";
   const label = top.join("  ·  ");
-  return `<text x="36" y="174" fill="${colors.accent}" font-size="16" letter-spacing="0.3" font-family="${FONT_BODY}">${escapeXml(label)}</text>`;
+  return `<text x="36" y="178" fill="${colors.accent}" font-size="19" letter-spacing="0.3" font-family="${FONT_BODY}">${escapeXml(label)}</text>`;
 }
 
 /** Paper-cut animal icon — tinted to accent via mask; falls back to emoji. */
@@ -185,19 +185,19 @@ function renderAnimalTitle(zodiac, colors, uid) {
   const icon = animalIcons[zodiac.id];
   const label = escapeXml(zodiac.sign.toUpperCase());
   if (!icon) {
-    return `<text x="36" y="54" fill="${colors.accent}" font-size="30" font-weight="700" letter-spacing="1" font-family="${FONT_TITLE}">
+    return `<text x="36" y="54" fill="${colors.accent}" font-size="34" font-weight="700" letter-spacing="1" font-family="${FONT_TITLE}">
       ${escapeXml(zodiac.symbol)}  ${label}
     </text>`;
   }
-  const size = 34;
+  const size = 36;
   const x = 36;
-  const y = 20;
+  const y = 18;
   return `
     <mask id="${uid}-animal" maskUnits="userSpaceOnUse" x="${x}" y="${y}" width="${size}" height="${size}">
       <image href="${icon}" x="${x}" y="${y}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet"/>
     </mask>
     <rect x="${x}" y="${y}" width="${size}" height="${size}" fill="${colors.accent}" mask="url(#${uid}-animal)"/>
-    <text x="${x + size + 10}" y="54" fill="${colors.accent}" font-size="30" font-weight="700" letter-spacing="1" font-family="${FONT_TITLE}">${label}</text>`;
+    <text x="${x + size + 10}" y="54" fill="${colors.accent}" font-size="34" font-weight="700" letter-spacing="1" font-family="${FONT_TITLE}">${label}</text>`;
 }
 
 function secondaryDisplayName(profile) {
@@ -224,9 +224,13 @@ export function renderZodiacCard({ profile, zodiac, stats, meta = {} }) {
       : "mapped by name-seed";
   const glow = Boolean(meta.glow);
   const nameLabel = realName ? `${login} (${realName})` : login;
-  const nameLine = realName
-    ? `${escapeXml(login)}<tspan fill="${colors.muted}" font-size="13" font-weight="400">  ${escapeXml(realName)}</tspan>`
-    : escapeXml(login);
+  const nameLine = [
+    escapeXml(login),
+    realName
+      ? `<tspan fill="${colors.muted}" font-size="20" font-weight="400">  ${escapeXml(realName)}</tspan>`
+      : "",
+    `<tspan fill="${colors.muted}" font-size="18" font-weight="400">      |  ${escapeXml(role)}</tspan>`,
+  ].join("");
 
   const displayWidth = clamp(
     Number(meta.width) || DEFAULT_DISPLAY_WIDTH,
@@ -270,18 +274,15 @@ ${EMBEDDED_FONT_CSS}
     ${renderDescription(zodiac, colors)}
 
     ${renderAnimalTitle(zodiac, colors, uid)}
-    <text x="36" y="88" fill="${colors.text}" font-size="28" opacity="0.95" font-family="${FONT_CLASSICAL}">
+    <text x="36" y="90" fill="${colors.text}" font-size="32" opacity="0.95" font-family="${FONT_CLASSICAL}">
       ${escapeXml(zodiac.title.replace(/^The\s+/i, ""))}
     </text>
-    <text x="36" y="112" fill="${colors.muted}" font-size="15" letter-spacing="0.4" font-family="${FONT_BODY}">
+    <text x="36" y="118" fill="${colors.muted}" font-size="18" letter-spacing="0.4" font-family="${FONT_BODY}">
       ${escapeXml(elementLine)}
     </text>
 
-    <text x="36" y="138" fill="${colors.text}" font-size="22" font-weight="600" font-family="${FONT_BODY}">
+    <text x="36" y="150" fill="${colors.text}" font-size="30" font-weight="600" font-family="${FONT_BODY}">
       ${nameLine}
-    </text>
-    <text x="36" y="158" fill="${colors.muted}" font-size="16" font-family="${FONT_BODY}">
-      ${escapeXml(role)}
     </text>
 
     ${renderLanguages(profile.languages, colors)}
@@ -291,10 +292,10 @@ ${EMBEDDED_FONT_CSS}
       <circle cx="52" cy="292" r="11" fill="none" stroke="${colors.accent}" stroke-width="1.1"/>
       <text x="52" y="296" text-anchor="middle" fill="${colors.accent}" font-size="12" font-family="${FONT_CLASSICAL}">印</text>
     </g>
-    <text x="70" y="298" fill="${colors.accent}" font-size="15" opacity="0.9" font-family="${FONT_BODY}">
+    <text x="70" y="298" fill="${colors.accent}" font-size="17" opacity="0.9" font-family="${FONT_BODY}">
       Your coding personality written in the Asian zodiac
     </text>
-    <text x="560" y="298" text-anchor="end" fill="${colors.muted}" font-size="13" opacity="0.55" font-family="${FONT_BODY}">
+    <text x="560" y="298" text-anchor="end" fill="${colors.muted}" font-size="15" opacity="0.55" font-family="${FONT_BODY}">
       ${escapeXml(sourceLabel)}
     </text>
   </g>
