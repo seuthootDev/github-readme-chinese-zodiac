@@ -34,7 +34,7 @@ Example pin body (Pig / 亥 — `birthdate=1995-04-24`):
 
 ```text
 🐷 PIG · Generous Collaborator        ╭────╮
-✨ JUNG SEUNGHOON · Full-Stack Dev    │ 亥 │
+✨ seuthootDev · JUNG SEUNGHOON       │ 亥 │
 🌟   4  📦  37  👥   0                │ 猪 │
 Renown     █░░░░░░░░░░░   7%          ╰────╯
 Craft      █████████░░░  76%            生肖

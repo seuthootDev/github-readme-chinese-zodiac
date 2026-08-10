@@ -2,290 +2,208 @@ github-readme-chinese-zodiac gist preview
 user: seuthootDev (JUNG SEUNGHOON)
 generated: 2026-08-04T08:58:54.758Z
 
-===== ğŸ€ Rat.md (rat) =====
+===== ?? Rat.md (rat) =====
 
 --- pin (first 5 lines) ---
-ğŸ€ RAT Â· Clever Hacker              â”Œâ”€â”€â”€â”€â”
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ å­ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ é¼  â”‚
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%        â””â”€â”€â”€â”€â”˜
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%          ç”Ÿè‚–
+?? RAT Â· Clever Hacker              ?Œâ??€?€?€????JUNG SEUNGHOON Â· Full-Stack Dev  ??å­????ŒŸ   4  ?“¦  37  ?‘¥   0              ??é¼???Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%        ?”â??€?€?€??Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ€ RAT Â· Clever Hacker              â”Œâ”€â”€â”€â”€â”
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ å­ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ é¼  â”‚
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%        â””â”€â”€â”€â”€â”˜
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ€ é¼  Â· Water Â· å­
-JavaScript Â· TypeScript Â· Python
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%
+?? RAT Â· Clever Hacker              ?Œâ??€?€?€????JUNG SEUNGHOON Â· Full-Stack Dev  ??å­????ŒŸ   4  ?“¦  37  ?‘¥   0              ??é¼???Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%        ?”â??€?€?€??Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+?? é¼?Â· Water Â· å­?JavaScript Â· TypeScript Â· Python
+Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%
 
-ğŸ’« Quick wits and sharper instincts â€” you find the elegant path through messy systems.
+?’« Quick wits and sharper instincts ??you find the elegant path through messy systems.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ‚ Ox.md (ox) =====
+===== ?‚ Ox.md (ox) =====
 
 --- pin (first 5 lines) ---
-ğŸ‚ OX Â· Steady Builder              â”â”â”â”â”â”“
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”ƒ ä¸‘ â”ƒ
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”ƒ ç‰› â”ƒ
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%        â”—â”â”â”â”â”›
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%          ç”Ÿè‚–
+?‚ OX Â· Steady Builder              ?â”?â”?â”“
+??JUNG SEUNGHOON Â· Full-Stack Dev  ??ä¸????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%        ?—â”?â”?â”›
+Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ‚ OX Â· Steady Builder              â”â”â”â”â”â”“
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”ƒ ä¸‘ â”ƒ
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”ƒ ç‰› â”ƒ
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%        â”—â”â”â”â”â”›
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ‚ ç‰› Â· Earth Â· ä¸‘
-JavaScript Â· TypeScript Â· Python
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%
+?‚ OX Â· Steady Builder              ?â”?â”?â”“
+??JUNG SEUNGHOON Â· Full-Stack Dev  ??ä¸????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%        ?—â”?â”?â”›
+Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+?‚ ??Â· Earth Â· ä¸?JavaScript Â· TypeScript Â· Python
+Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%
 
-ğŸ’« You ship durable work, prefer long-lived repos, and outlast flashy rewrites.
+?’« You ship durable work, prefer long-lived repos, and outlast flashy rewrites.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ… Tiger.md (tiger) =====
+===== ?… Tiger.md (tiger) =====
 
 --- pin (first 5 lines) ---
-ğŸ… TIGER Â· Bold Pioneer             â•²â”€â”€â”€â”€â•±
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ å¯… â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ è™ â”‚
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%        â•±â”€â”€â”€â”€â•²
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%          ç”Ÿè‚–
+?… TIGER Â· Bold Pioneer             ?²â??€?€?€????JUNG SEUNGHOON Â· Full-Stack Dev  ??å¯????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%        ?±â??€?€?€??Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ… TIGER Â· Bold Pioneer             â•²â”€â”€â”€â”€â•±
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ å¯… â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ è™ â”‚
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%        â•±â”€â”€â”€â”€â•²
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ… è™ Â· Wood Â· å¯…
-JavaScript Â· TypeScript Â· Python
-Renown     â–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘   7%
+?… TIGER Â· Bold Pioneer             ?²â??€?€?€????JUNG SEUNGHOON Â· Full-Stack Dev  ??å¯????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%        ?±â??€?€?€??Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+?… ??Â· Wood Â· å¯?JavaScript Â· TypeScript Â· Python
+Renown     ?ˆâ–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘   7%
 
-ğŸ’« You leap into new stacks and lead with courage â€” greenfield is your hunting ground.
+?’« You leap into new stacks and lead with courage ??greenfield is your hunting ground.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ‡ Rabbit.md (rabbit) =====
+===== ?‡ Rabbit.md (rabbit) =====
 
 --- pin (first 5 lines) ---
-ğŸ‡ RABBIT Â· Careful Craftsman       â•­Â·Â·Â·Â·â•®
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ å¯ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ å…” â”‚
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%        â•°Â·Â·Â·Â·â•¯
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%          ç”Ÿè‚–
+?‡ RABBIT Â· Careful Craftsman       ??·Â·Â·Â·â•®
+??JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%        ?°Â·Â·Â·Â·â•¯
+Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ‡ RABBIT Â· Careful Craftsman       â•­Â·Â·Â·Â·â•®
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ å¯ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ å…” â”‚
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%        â•°Â·Â·Â·Â·â•¯
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ‡ å…” Â· Wood Â· å¯
-JavaScript Â· TypeScript Â· Python
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%
+?‡ RABBIT Â· Careful Craftsman       ??·Â·Â·Â·â•®
+??JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%        ?°Â·Â·Â·Â·â•¯
+Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+?‡ ??Â· Wood Â· ??JavaScript Â· TypeScript Â· Python
+Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%
 
-ğŸ’« Precision and taste â€” you refine UX, docs, and details until the experience feels soft.
+?’« Precision and taste ??you refine UX, docs, and details until the experience feels soft.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ‰ Dragon.md (dragon) =====
+===== ?‰ Dragon.md (dragon) =====
 
 --- pin (first 5 lines) ---
-ğŸ‰ DRAGON Â· Vision Architect        *â”€â”€â”€â”€*
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ è¾° â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ é¾™ â”‚
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%        *â”€â”€â”€â”€*
-Renown     â–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘   7%          ç”Ÿè‚–
+?‰ DRAGON Â· Vision Architect        *?€?€?€?€*
+??JUNG SEUNGHOON Â· Full-Stack Dev  ??è¾????ŒŸ   4  ?“¦  37  ?‘¥   0              ??é¾???Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%        *?€?€?€?€*
+Renown     ?ˆâ–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘   7%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ‰ DRAGON Â· Vision Architect        *â”€â”€â”€â”€*
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ è¾° â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ é¾™ â”‚
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%        *â”€â”€â”€â”€*
-Renown     â–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘   7%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ‰ é¾™ Â· Earth Â· è¾°
-JavaScript Â· TypeScript Â· Python
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%
+?‰ DRAGON Â· Vision Architect        *?€?€?€?€*
+??JUNG SEUNGHOON Â· Full-Stack Dev  ??è¾????ŒŸ   4  ?“¦  37  ?‘¥   0              ??é¾???Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%        *?€?€?€?€*
+Renown     ?ˆâ–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘   7%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+?‰ é¾?Â· Earth Â· è¾?JavaScript Â· TypeScript Â· Python
+Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%
 
-ğŸ’« Big arcs, bold APIs â€” you design systems that others rally around.
+?’« Big arcs, bold APIs ??you design systems that others rally around.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ Snake.md (snake) =====
+===== ? Snake.md (snake) =====
 
 --- pin (first 5 lines) ---
-ğŸ SNAKE Â· Deep Debugger            â•±â€¾â€¾â€¾â€¾â•²
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ å·³ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ è›‡ â”‚
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%        â•²____â•±
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%          ç”Ÿè‚–
+? SNAKE Â· Deep Debugger            ?±â€¾â€¾â€¾â€¾â•²
+??JUNG SEUNGHOON Â· Full-Stack Dev  ??å·????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%        ??___??Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ SNAKE Â· Deep Debugger            â•±â€¾â€¾â€¾â€¾â•²
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ å·³ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ è›‡ â”‚
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%        â•²____â•±
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ è›‡ Â· Fire Â· å·³
-JavaScript Â· TypeScript Â· Python
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%
+? SNAKE Â· Deep Debugger            ?±â€¾â€¾â€¾â€¾â•²
+??JUNG SEUNGHOON Â· Full-Stack Dev  ??å·????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%        ??___??Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+? ??Â· Fire Â· å·?JavaScript Â· TypeScript Â· Python
+Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%
 
-ğŸ’« You coil around hard bugs and shed light on hidden failure modes.
+?’« You coil around hard bugs and shed light on hidden failure modes.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ´ Horse.md (horse) =====
+===== ?´ Horse.md (horse) =====
 
 --- pin (first 5 lines) ---
-ğŸ´ HORSE Â· Rapid Shipper            â•’â•â•â•â•â••
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ åˆ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ é©¬ â”‚
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%        â•˜â•â•â•â•â•›
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%          ç”Ÿè‚–
+?´ HORSE Â· Rapid Shipper            ?’â•?â•?â••
+??JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??é©???Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%        ?˜â•?â•?â•›
+Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ´ HORSE Â· Rapid Shipper            â•’â•â•â•â•â••
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ åˆ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ é©¬ â”‚
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%        â•˜â•â•â•â•â•›
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ´ é©¬ Â· Fire Â· åˆ
-JavaScript Â· TypeScript Â· Python
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%
+?´ HORSE Â· Rapid Shipper            ?’â•?â•?â••
+??JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??é©???Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%        ?˜â•?â•?â•›
+Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+?´ é©?Â· Fire Â· ??JavaScript Â· TypeScript Â· Python
+Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%
 
-ğŸ’« Momentum is your method â€” you gallop through iterations and love a fast feedback loop.
+?’« Momentum is your method ??you gallop through iterations and love a fast feedback loop.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ Goat.md (goat) =====
+===== ? Goat.md (goat) =====
 
 --- pin (first 5 lines) ---
-ğŸ GOAT Â· Creative Engineer         (â”€â”€â”€â”€)
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ æœª â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ ç¾Š â”‚
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%        (â”€â”€â”€â”€)
-Renown     â–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘   7%          ç”Ÿè‚–
+? GOAT Â· Creative Engineer         (?€?€?€?€)
+??JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??ç¾???Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%        (?€?€?€?€)
+Renown     ?ˆâ–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘   7%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ GOAT Â· Creative Engineer         (â”€â”€â”€â”€)
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ æœª â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ ç¾Š â”‚
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%        (â”€â”€â”€â”€)
-Renown     â–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘   7%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ ç¾Š Â· Earth Â· æœª
-JavaScript Â· TypeScript Â· Python
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%
+? GOAT Â· Creative Engineer         (?€?€?€?€)
+??JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??ç¾???Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%        (?€?€?€?€)
+Renown     ?ˆâ–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘   7%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+? ç¾?Â· Earth Â· ??JavaScript Â· TypeScript Â· Python
+Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%
 
-ğŸ’« You blend aesthetics and structure â€” code with a little pastoral calm and craft.
+?’« You blend aesthetics and structure ??code with a little pastoral calm and craft.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ’ Monkey.md (monkey) =====
+===== ?’ Monkey.md (monkey) =====
 
 --- pin (first 5 lines) ---
-ğŸ’ MONKEY Â· Playful Polyglot        âŒœâ”€â”€â”€â”€âŒ
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ ç”³ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ çŒ´ â”‚
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%        âŒâ”€â”€â”€â”€âŒŸ
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%          ç”Ÿè‚–
+?’ MONKEY Â· Playful Polyglot        ?œâ??€?€?€????JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%        ?â??€?€?€??Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ’ MONKEY Â· Playful Polyglot        âŒœâ”€â”€â”€â”€âŒ
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ ç”³ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ çŒ´ â”‚
-Ingenuity  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘  86%        âŒâ”€â”€â”€â”€âŒŸ
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ’ çŒ´ Â· Metal Â· ç”³
-JavaScript Â· TypeScript Â· Python
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%
+?’ MONKEY Â· Playful Polyglot        ?œâ??€?€?€????JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Ingenuity  ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?‘â–‘  86%        ?â??€?€?€??Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+?’ ??Â· Metal Â· ??JavaScript Â· TypeScript Â· Python
+Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%
 
-ğŸ’« Curious hands, many tools â€” you experiment, remix, and learn in public.
+?’« Curious hands, many tools ??you experiment, remix, and learn in public.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ“ Rooster.md (rooster) =====
+===== ?“ Rooster.md (rooster) =====
 
 --- pin (first 5 lines) ---
-ğŸ“ ROOSTER Â· Precise Optimizer      â”ŠÂ·Â·Â·Â·â”Š
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ é…‰ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ é¸¡ â”‚
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%        â”ŠÂ·Â·Â·Â·â”Š
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%          ç”Ÿè‚–
+?“ ROOSTER Â· Precise Optimizer      ?ŠÂ·Â·Â·Â·â”Š
+??JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??é¸???Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%        ?ŠÂ·Â·Â·Â·â”Š
+Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ“ ROOSTER Â· Precise Optimizer      â”ŠÂ·Â·Â·Â·â”Š
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ é…‰ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ é¸¡ â”‚
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%        â”ŠÂ·Â·Â·Â·â”Š
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ“ é¸¡ Â· Metal Â· é…‰
-JavaScript Â· TypeScript Â· Python
-Renown     â–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘   7%
+?“ ROOSTER Â· Precise Optimizer      ?ŠÂ·Â·Â·Â·â”Š
+??JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??é¸???Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%        ?ŠÂ·Â·Â·Â·â”Š
+Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+?“ é¸?Â· Metal Â· ??JavaScript Â· TypeScript Â· Python
+Renown     ?ˆâ–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘   7%
 
-ğŸ’« Dawn reviews and sharp standards â€” you crow when the build is clean.
+?’« Dawn reviews and sharp standards ??you crow when the build is clean.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ• Dog.md (dog) =====
+===== ?• Dog.md (dog) =====
 
 --- pin (first 5 lines) ---
-ğŸ• DOG Â· Loyal Maintainer           â–£â”€â”€â”€â”€â–£
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ æˆŒ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ ç‹— â”‚
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%        â–£â”€â”€â”€â”€â–£
-Renown     â–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘   7%          ç”Ÿè‚–
+?• DOG Â· Loyal Maintainer           ?£â??€?€?€????JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%        ?£â??€?€?€??Renown     ?ˆâ–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘   7%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ• DOG Â· Loyal Maintainer           â–£â”€â”€â”€â”€â–£
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ æˆŒ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ ç‹— â”‚
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%        â–£â”€â”€â”€â”€â–£
-Renown     â–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘   7%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ• ç‹— Â· Earth Â· æˆŒ
-JavaScript Â· TypeScript Â· Python
-Insight    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘  57%
+?• DOG Â· Loyal Maintainer           ?£â??€?€?€????JUNG SEUNGHOON Â· Full-Stack Dev  ???????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%        ?£â??€?€?€??Renown     ?ˆâ–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘   7%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+?• ??Â· Earth Â· ??JavaScript Â· TypeScript Â· Python
+Insight    ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘?‘â–‘  57%
 
-ğŸ’« You guard the codebase, support the team, and keep promises in every PR.
+?’« You guard the codebase, support the team, and keep promises in every PR.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac
 
-===== ğŸ· Pig.md (pig) =====
+===== ?· Pig.md (pig) =====
 
 --- pin (first 5 lines) ---
-ğŸ· PIG Â· Generous Collaborator      â•­â”€â”€â”€â”€â•®
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ äº¥ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ çŒª â”‚
-Renown     â–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘   7%        â•°â”€â”€â”€â”€â•¯
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%          ç”Ÿè‚–
+?· PIG Â· Generous Collaborator      ????€?€?€????JUNG SEUNGHOON Â· Full-Stack Dev  ??äº????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Renown     ?ˆâ–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘   7%        ?°â??€?€?€??Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%          ?Ÿè‚–
 
 --- full gist ---
-ğŸ· PIG Â· Generous Collaborator      â•­â”€â”€â”€â”€â•®
-âœ¨ JUNG SEUNGHOON Â· Full-Stack Dev  â”‚ äº¥ â”‚
-ğŸŒŸ   4  ğŸ“¦  37  ğŸ‘¥   0              â”‚ çŒª â”‚
-Renown     â–ˆâ–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘   7%        â•°â”€â”€â”€â”€â•¯
-Craft      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘  76%          ç”Ÿè‚–
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-ğŸ· çŒª Â· Water Â· äº¥
-JavaScript Â· TypeScript Â· Python
-Discipline â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘  95%
+?· PIG Â· Generous Collaborator      ????€?€?€????JUNG SEUNGHOON Â· Full-Stack Dev  ??äº????ŒŸ   4  ?“¦  37  ?‘¥   0              ??????Renown     ?ˆâ–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘?‘â–‘   7%        ?°â??€?€?€??Craft      ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘?‘â–‘  76%          ?Ÿè‚–
+?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€?€
+?· ??Â· Water Â· äº?JavaScript Â· TypeScript Â· Python
+Discipline ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–ˆ?ˆâ–‘  95%
 
-ğŸ’« Open hands and open source â€” you share knowledge and celebrate othersâ€™ wins.
+?’« Open hands and open source ??you share knowledge and celebrate others??wins.
 
-å° Your coding personality written in the Asian zodiac
+??Your coding personality written in the Asian zodiac

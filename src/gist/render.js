@@ -116,21 +116,33 @@ function abbreviateTitle(title) {
 /**
  * Pin-first card: stats on the left, 简体 animal seal on the right.
  */
+function secondaryDisplayName(profile) {
+  const login = String(profile.username || "").trim();
+  const name = String(profile.name || "").trim();
+  if (!name || !login) return name && name !== login ? name : "";
+  if (name.toLowerCase() === login.toLowerCase()) return "";
+  return name;
+}
+
 export function renderGistCard({ profile, zodiac, stats }) {
   const displayStats = pickDisplayStats(stats, zodiac, 3);
-  const displayName = profile.name || profile.username;
+  const login = profile.username || profile.name || "developer";
+  const realName = secondaryDisplayName(profile);
   const role = abbreviateRole(profile.role || "Software Dev");
   const title = abbreviateTitle(zodiac.title);
   const langs = (profile.languages || [])
     .slice(0, 3)
     .map((l) => l.name)
     .join(" · ");
+  const identity = realName
+    ? `✨ ${login} · ${realName}`
+    : `✨ ${login} · ${role}`;
 
   const emblem = getPinEmblem(zodiac);
 
   const pinLeft = [
     `${zodiac.symbol} ${zodiac.sign.toUpperCase()} · ${title}`,
-    `✨ ${displayName} · ${role}`,
+    identity,
     `🌟${compactStat(profile.stars)}  📦${compactStat(profile.publicRepos)}  👥${compactStat(profile.followers)}`,
     `${displayStats[0].label.slice(0, 10).padEnd(10)} ${bar(displayStats[0].value)} ${num(displayStats[0].value, 3)}%`,
     `${displayStats[1].label.slice(0, 10).padEnd(10)} ${bar(displayStats[1].value)} ${num(displayStats[1].value, 3)}%`,
