@@ -259,7 +259,7 @@ Want a terminal-style contribution graph too? Sister project:
 
 GitHub stats as macOS / Windows / Ubuntu terminal SVGs — contribution graph, stats, top languages, neofetch.
 
-![mac](https://github-readme-insight-terminal-asci.vercel.app/svg?user=torvalds&theme=mac&scale=0.5)
+![mac](https://github-readme-insight-terminal-asci.vercel.app/svg?user=torvalds&theme=mac&scale=0.8)
 
 ```md
 ![GitHub contribution graph](https://github-readme-insight-terminal-asci.vercel.app/svg?user=YOUR_USERNAME&theme=mac)
