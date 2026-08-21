@@ -207,7 +207,7 @@ Also runs on every push to `main` and daily at 00:00 UTC.
 
 ## Stats
 
-Each card shows **3 of 5** traits. Which three appear depends on the animal’s `statKeys`. Values are scaled from public GitHub signals (0–100) — same math as the [Western sister project](https://github.com/seuthootDev/github-readme-zodiac), Asian-flavored names.
+Each card shows **3 of 5** traits. Which three appear depends on the animal’s `statKeys`. Values are weighted from public GitHub signals with **no maximum** — same math as the [Western sister project](https://github.com/seuthootDev/github-readme-zodiac), Asian-flavored names. Bars are relative to the highest of the three shown.
 
 | Stat | Western twin | Drawn from (roughly) |
 |------|--------------|----------------------|

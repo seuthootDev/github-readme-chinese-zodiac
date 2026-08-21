@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node scripts/local-server.js",
     "dev": "node scripts/local-server.js",
+    "test": "node --test src/lib/stats.test.js src/gist/render.test.js src/render/card.test.js",
     "gist": "node scripts/update-gist.js",
     "preview:gists": "node scripts/preview-all-gists.js",
     "preview:card": "node scripts/preview-card.js",

@@ -1,4 +1,4 @@
-import { pickDisplayStats } from "../lib/stats.js";
+import { pickDisplayStats, relativeFill, formatStatValue } from "../lib/stats.js";
 import animalIcons from "../data/animal-icons.js";
 import animalGoldIcons from "../data/animal-gold-icons.js";
 import { EMBEDDED_FONT_CSS } from "../data/embedded-fonts.js";
@@ -26,8 +26,8 @@ function escapeXml(str) {
     .replace(/'/g, "&apos;");
 }
 
-function barWidth(value, max = 150) {
-  return Math.round((clamp(value) / 100) * max);
+function barWidth(value, peak, max = 150) {
+  return relativeFill(value, peak, max);
 }
 
 function clamp(n, min = 0, max = 100) {
@@ -159,16 +159,17 @@ function renderDescription(zodiac, colors) {
 }
 
 function renderStatBars(displayStats, colors) {
+  const peak = Math.max(0, ...displayStats.map((s) => Number(s.value) || 0));
   return displayStats
     .map((stat, i) => {
       const y = 212 + i * 32;
-      const w = barWidth(stat.value);
+      const w = barWidth(stat.value, peak);
       return `
       <text x="36" y="${y}" fill="${colors.muted}" font-size="19" font-family="${FONT_BODY}">${escapeXml(stat.label)}</text>
       <rect x="140" y="${y - 11}" width="150" height="7" fill="${colors.text}" opacity="0.1"/>
       <rect x="140" y="${y - 11}" width="${w}" height="7" fill="${colors.bar}"/>
       <rect x="140" y="${y - 11}" width="${w}" height="1.5" fill="#ffffff" opacity="0.18"/>
-      <text x="300" y="${y}" fill="${colors.text}" font-size="19" font-family="${FONT_BODY}" opacity="0.85">${stat.value}</text>`;
+      <text x="300" y="${y}" fill="${colors.text}" font-size="19" font-family="${FONT_BODY}" opacity="0.85">${escapeXml(formatStatValue(stat.value))}</text>`;
     })
     .join("");
 }

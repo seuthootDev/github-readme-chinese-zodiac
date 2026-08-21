@@ -1,4 +1,4 @@
-import { pickDisplayStats } from "../lib/stats.js";
+import { pickDisplayStats, relativeFill, formatStatValue } from "../lib/stats.js";
 import { getPinEmblem } from "./emblem.js";
 
 const LEFT_WIDTH = 34;
@@ -45,30 +45,13 @@ function clipPad(str, width) {
   return out + " ".repeat(Math.max(0, width - w));
 }
 
-function num(n, width = 4) {
-  return String(n ?? 0).padStart(width, " ");
-}
-
 /** 0–999 as-is; 1000+ as k (e.g. 1200 → 1.2k, 10000 → 10k). Fixed width for pin alignment. */
 function compactStat(n, width = 4) {
-  const v = Math.max(0, Number(n) || 0);
-  let text;
-  if (v < 1000) {
-    text = String(v);
-  } else if (v < 10000) {
-    const tenths = Math.round(v / 100) / 10; // one decimal
-    text = `${tenths % 1 === 0 ? tenths.toFixed(0) : tenths.toFixed(1)}k`;
-  } else if (v < 1000000) {
-    text = `${Math.round(v / 1000)}k`;
-  } else {
-    const millions = Math.round(v / 100000) / 10;
-    text = `${millions % 1 === 0 ? millions.toFixed(0) : millions.toFixed(1)}M`;
-  }
-  return text.padStart(width, " ");
+  return formatStatValue(n).padStart(width, " ");
 }
 
-function bar(value, width = BAR_WIDTH) {
-  const filled = Math.max(0, Math.min(width, Math.round((value / 100) * width)));
+function bar(value, peak, width = BAR_WIDTH) {
+  const filled = relativeFill(value, peak, width);
   return `${"█".repeat(filled)}${"░".repeat(width - filled)}`;
 }
 
@@ -126,6 +109,7 @@ function secondaryDisplayName(profile) {
 
 export function renderGistCard({ profile, zodiac, stats }) {
   const displayStats = pickDisplayStats(stats, zodiac, 3);
+  const peak = Math.max(0, ...displayStats.map((s) => Number(s.value) || 0));
   const login = profile.username || profile.name || "developer";
   const realName = secondaryDisplayName(profile);
   const role = abbreviateRole(profile.role || "Software Dev");
@@ -144,8 +128,8 @@ export function renderGistCard({ profile, zodiac, stats }) {
     `${zodiac.symbol} ${zodiac.sign.toUpperCase()} · ${title}`,
     identity,
     `🌟${compactStat(profile.stars)}  📦${compactStat(profile.publicRepos)}  👥${compactStat(profile.followers)}`,
-    `${displayStats[0].label.slice(0, 10).padEnd(10)} ${bar(displayStats[0].value)} ${num(displayStats[0].value, 3)}%`,
-    `${displayStats[1].label.slice(0, 10).padEnd(10)} ${bar(displayStats[1].value)} ${num(displayStats[1].value, 3)}%`,
+    `${displayStats[0].label.slice(0, 10).padEnd(10)} ${bar(displayStats[0].value, peak)} ${compactStat(displayStats[0].value)}`,
+    `${displayStats[1].label.slice(0, 10).padEnd(10)} ${bar(displayStats[1].value, peak)} ${compactStat(displayStats[1].value)}`,
   ];
 
   const lines = [...mergePinRows(pinLeft, emblem)];
@@ -157,7 +141,7 @@ export function renderGistCard({ profile, zodiac, stats }) {
   if (langs) lines.push(langs);
   if (displayStats[2]) {
     lines.push(
-      `${displayStats[2].label.slice(0, 10).padEnd(10)} ${bar(displayStats[2].value)} ${num(displayStats[2].value, 3)}%`,
+      `${displayStats[2].label.slice(0, 10).padEnd(10)} ${bar(displayStats[2].value, peak)} ${compactStat(displayStats[2].value)}`,
     );
   }
   if (zodiac.description) {
