@@ -11,8 +11,15 @@ const root = path.join(__dirname, "..");
 
 const username =
   process.env.ZODIAC_USERNAME || process.env.GH_USER || "torvalds";
-const glow = process.env.GLOW !== "0";
 const width = Number(process.env.WIDTH) || 420;
+const glowMode =
+  process.env.GLOW === "0" ? "off" : process.env.GLOW === "1" ? "on" : "alternate";
+
+function cardGlow(index) {
+  if (glowMode === "off") return false;
+  if (glowMode === "on") return true;
+  return index % 2 === 0;
+}
 
 process.env.DEMO_PROFILE = process.env.DEMO_PROFILE || "1";
 
@@ -26,18 +33,19 @@ const stats = calculateStats(profile);
 const signs = getAllSigns();
 const stamp = Date.now();
 
-const cards = signs.map((zodiac) => {
+const cards = signs.map((zodiac, index) => {
   const { source } = resolveZodiac({
     username: profile.username,
     sign: zodiac.id,
   });
+  const glow = cardGlow(index);
   const svg = renderZodiacCard({
     profile,
     zodiac,
     stats,
     meta: { source, width, glow },
   });
-  return { zodiac, svg: svg.replace(/^<\?xml[^>]*>\s*/, "") };
+  return { zodiac, glow, svg: svg.replace(/^<\?xml[^>]*>\s*/, "") };
 });
 
 const outDir = path.join(root, "docs");
@@ -54,9 +62,9 @@ writeFileSync(
 
 const sections = cards
   .map(
-    ({ zodiac, svg }) => `
+    ({ zodiac, glow, svg }) => `
   <section>
-    <h2>${zodiac.symbol} ${zodiac.sign} · ${zodiac.hanzi || ""} ${zodiac.earthlyBranch || ""}</h2>
+    <h2>${zodiac.symbol} ${zodiac.sign} · ${zodiac.hanzi || ""} ${zodiac.earthlyBranch || ""} · ${glow ? "glow" : "plain"}</h2>
     <div class="card">${svg}</div>
   </section>`,
   )
@@ -106,7 +114,7 @@ const html = `<!doctype html>
   <h1>Chinese zodiac — all 12 animals</h1>
   <div class="meta">
     ${profile.username}${profile.name && profile.name !== profile.username ? ` · ${profile.name}` : ""}
-    · glow=${glow ? "on" : "off"} · width=${width} · ${stamp}
+    · glow=${glowMode} · width=${width} · ${stamp}
   </div>
   <div class="grid">
 ${sections}
