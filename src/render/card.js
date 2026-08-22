@@ -99,6 +99,11 @@ function renderHanziEmblem(zodiac, colors, uid, { glow = false } = {}) {
   const hanzi = zodiac.hanzi || zodiac.earthlyBranch || "生";
   const branch = zodiac.earthlyBranch || "";
   const h = escapeXml(hanzi);
+  const cx = 168;
+  const largeSize = 104;
+  const largeY = 120;
+  // CJK em-box sits on the alphabetic baseline; optical center is ~0.38em above it.
+  const cy = largeY - Math.round(largeSize * 0.38);
   const filterDefs = glow
     ? `<defs>
         <filter id="${uid}-glyph-glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -117,21 +122,21 @@ function renderHanziEmblem(zodiac, colors, uid, { glow = false } = {}) {
   return `
     <g transform="translate(310, 8)" aria-hidden="true">
       ${filterDefs}
-      <circle cx="168" cy="92" r="72" fill="none" stroke="${colors.accent}" stroke-width="1.2" opacity="0.28"/>
-      <circle cx="168" cy="92" r="64" fill="${colors.accent}" opacity="0.06"/>
+      <circle cx="${cx}" cy="${cy}" r="72" fill="none" stroke="${colors.accent}" stroke-width="1.2" opacity="0.28"/>
+      <circle cx="${cx}" cy="${cy}" r="64" fill="${colors.accent}" opacity="0.06"/>
       <text
-        x="168"
-        y="120"
+        x="${cx}"
+        y="${largeY}"
         text-anchor="middle"
         fill="#ffffff"
-        font-size="104"
+        font-size="${largeSize}"
         font-family="${FONT_CLASSICAL}"
         opacity="${glow ? "0.9" : "0.88"}"${filterAttr}
       >${h}${twinkle}</text>
       ${
         branch
           ? `<text
-        x="168"
+        x="${cx}"
         y="168"
         text-anchor="middle"
         fill="#ffffff"
