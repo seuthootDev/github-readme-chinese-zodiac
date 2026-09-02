@@ -9,13 +9,15 @@ function codeWidth(code) {
   // combining marks / variation selectors
   if (code >= 0xfe00 && code <= 0xfe0f) return 0;
   if (code >= 0x0300 && code <= 0x036f) return 0;
-  // emoji & pictographs (⭐ 📦 👥 etc.)
-  if (code >= 0x1f300 && code <= 0x1faff) return 2;
-  if (code >= 0x1f000 && code <= 0x1f02f) return 2;
+  // emoji & pictographs (⭐ 📦 👥 etc.) — measured ~2.5 cells wide in
+  // GitHub's monospace stack, not 2; undercounting them drifts rows with
+  // more emoji further right and breaks alignment with emoji-free rows.
+  if (code >= 0x1f300 && code <= 0x1faff) return 2.5;
+  if (code >= 0x1f000 && code <= 0x1f02f) return 2.5;
   // misc symbols / dingbats often render wide in gist
-  if (code >= 0x2600 && code <= 0x27bf) return 2;
+  if (code >= 0x2600 && code <= 0x27bf) return 2.5;
   // zodiac ♈–♓ — treat wide so padding stays stable on GitHub
-  if (code >= 0x2648 && code <= 0x2653) return 2;
+  if (code >= 0x2648 && code <= 0x2653) return 2.5;
   // CJK / Hangul
   if (code >= 0x1100 && code <= 0x115f) return 2;
   if (code >= 0x2e80 && code <= 0xa4cf) return 2;
@@ -42,7 +44,7 @@ function clipPad(str, width) {
     out += ch;
     w += cw;
   }
-  return out + " ".repeat(Math.max(0, width - w));
+  return out + " ".repeat(Math.max(0, Math.round(width - w)));
 }
 
 /** 0–999 as-is; 1000+ as k (e.g. 1200 → 1.2k, 10000 → 10k). Fixed width for pin alignment. */
