@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import signs from "../data/animals.js";
-import { renderZodiacCard } from "./card.js";
+import { renderZodiacCard, resolveTheme } from "./card.js";
 
 describe("renderZodiacCard stats", () => {
   it("sizes bars relative to the highest of the three shown stats", () => {
@@ -21,6 +21,7 @@ describe("renderZodiacCard stats", () => {
         consistency: 1,
         openSource: 1,
       },
+      meta: { theme: "classic" },
     });
 
     const fills = [
@@ -47,6 +48,7 @@ describe("renderZodiacCard hanzi seal", () => {
         consistency: 1,
         openSource: 1,
       },
+      meta: { theme: "classic" },
     });
 
     const large = svg.match(
@@ -62,5 +64,20 @@ describe("renderZodiacCard hanzi seal", () => {
     const largeSize = Number(large[2]);
     const expectedCy = largeY - Math.round(largeSize * 0.38);
     assert.deepEqual(circles, [expectedCy, expectedCy]);
+  });
+});
+
+describe("resolveTheme", () => {
+  it("returns classic only for the classic keyword (case/space-insensitive)", () => {
+    assert.equal(resolveTheme("classic"), "classic");
+    assert.equal(resolveTheme(" Classic "), "classic");
+  });
+
+  it("falls back to cute for cute, empty, missing, or unknown values", () => {
+    assert.equal(resolveTheme("cute"), "cute");
+    assert.equal(resolveTheme(""), "cute");
+    assert.equal(resolveTheme(undefined), "cute");
+    assert.equal(resolveTheme(null), "cute");
+    assert.equal(resolveTheme("neon"), "cute");
   });
 });
