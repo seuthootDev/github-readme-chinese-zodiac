@@ -1,5 +1,5 @@
 /** Asian / Chinese zodiac — 12 earthly branches (生肖). */
-/** Palette trial: vermilion / ink / gold (distinct from western night-sky cards). */
+/** `colors` = classic vermilion / ink / gold skin; `cuteColors` = default pastel sticker skin. */
 export default [
   {
     "id": "rat",
@@ -23,7 +23,13 @@ export default [
       "muted": "#b09878",
       "bar": "#d4b44a"
     },
-    "hanzi": "鼠"
+    "hanzi": "鼠",
+    "pinyin": "shǔ",
+    "cuteColors": {
+      "bg": "#f3f1f7",
+      "mid": "#ddd7ec",
+      "accent": "#9b8fc4"
+    }
   },
   {
     "id": "ox",
@@ -47,7 +53,13 @@ export default [
       "muted": "#b09878",
       "bar": "#e0b888"
     },
-    "hanzi": "牛"
+    "hanzi": "牛",
+    "pinyin": "niú",
+    "cuteColors": {
+      "bg": "#fbf5ea",
+      "mid": "#efdfc2",
+      "accent": "#c99a5e"
+    }
   },
   {
     "id": "tiger",
@@ -71,7 +83,13 @@ export default [
       "muted": "#c9a070",
       "bar": "#f0c45a"
     },
-    "hanzi": "虎"
+    "hanzi": "虎",
+    "pinyin": "hǔ",
+    "cuteColors": {
+      "bg": "#fff3e8",
+      "mid": "#ffd9b8",
+      "accent": "#ff9e5e"
+    }
   },
   {
     "id": "rabbit",
@@ -95,7 +113,13 @@ export default [
       "muted": "#c4a890",
       "bar": "#f0d0b0"
     },
-    "hanzi": "兔"
+    "hanzi": "兔",
+    "pinyin": "tù",
+    "cuteColors": {
+      "bg": "#f7f1fd",
+      "mid": "#e4d4f7",
+      "accent": "#b48be6"
+    }
   },
   {
     "id": "dragon",
@@ -119,7 +143,13 @@ export default [
       "muted": "#c4a868",
       "bar": "#e8c45a"
     },
-    "hanzi": "龙"
+    "hanzi": "龙",
+    "pinyin": "lóng",
+    "cuteColors": {
+      "bg": "#ecfaf5",
+      "mid": "#c7eedf",
+      "accent": "#45bf98"
+    }
   },
   {
     "id": "snake",
@@ -143,7 +173,13 @@ export default [
       "muted": "#b89070",
       "bar": "#e0b070"
     },
-    "hanzi": "蛇"
+    "hanzi": "蛇",
+    "pinyin": "shé",
+    "cuteColors": {
+      "bg": "#f3faea",
+      "mid": "#d9efc0",
+      "accent": "#84c050"
+    }
   },
   {
     "id": "horse",
@@ -167,7 +203,13 @@ export default [
       "muted": "#c49060",
       "bar": "#f0a850"
     },
-    "hanzi": "马"
+    "hanzi": "马",
+    "pinyin": "mǎ",
+    "cuteColors": {
+      "bg": "#fff1ec",
+      "mid": "#ffd5c6",
+      "accent": "#f58a6c"
+    }
   },
   {
     "id": "goat",
@@ -191,7 +233,13 @@ export default [
       "muted": "#b09870",
       "bar": "#e0c080"
     },
-    "hanzi": "羊"
+    "hanzi": "羊",
+    "pinyin": "yáng",
+    "cuteColors": {
+      "bg": "#fbf9f1",
+      "mid": "#ece4c8",
+      "accent": "#b5a066"
+    }
   },
   {
     "id": "monkey",
@@ -215,7 +263,13 @@ export default [
       "muted": "#b89068",
       "bar": "#e8b870"
     },
-    "hanzi": "猴"
+    "hanzi": "猴",
+    "pinyin": "hóu",
+    "cuteColors": {
+      "bg": "#fffbe6",
+      "mid": "#fff0a8",
+      "accent": "#e8b520"
+    }
   },
   {
     "id": "rooster",
@@ -239,7 +293,13 @@ export default [
       "muted": "#c49870",
       "bar": "#f0cc70"
     },
-    "hanzi": "鸡"
+    "hanzi": "鸡",
+    "pinyin": "jī",
+    "cuteColors": {
+      "bg": "#fff0f0",
+      "mid": "#ffcfcf",
+      "accent": "#ff6f6f"
+    }
   },
   {
     "id": "dog",
@@ -263,7 +323,13 @@ export default [
       "muted": "#a89880",
       "bar": "#d4b878"
     },
-    "hanzi": "狗"
+    "hanzi": "狗",
+    "pinyin": "gǒu",
+    "cuteColors": {
+      "bg": "#eef6fd",
+      "mid": "#cfe5fa",
+      "accent": "#5aa8e8"
+    }
   },
   {
     "id": "pig",
@@ -287,6 +353,12 @@ export default [
       "muted": "#c49888",
       "bar": "#f0b890"
     },
-    "hanzi": "猪"
+    "hanzi": "猪",
+    "pinyin": "zhū",
+    "cuteColors": {
+      "bg": "#fff4f7",
+      "mid": "#ffd2dd",
+      "accent": "#ff8fa3"
+    }
   }
 ];
