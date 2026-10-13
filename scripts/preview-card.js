@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { fetchGitHubProfile } from "../src/lib/github.js";
 import { getAllSigns, resolveZodiac } from "../src/lib/zodiac.js";
 import { calculateStats } from "../src/lib/stats.js";
-import { renderZodiacCard } from "../src/render/card.js";
+import { renderZodiacCard, resolveTheme } from "../src/render/card.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -14,6 +14,9 @@ const username =
 const width = Number(process.env.WIDTH) || 420;
 const glowMode =
   process.env.GLOW === "0" ? "off" : process.env.GLOW === "1" ? "on" : "alternate";
+const themeArg = process.argv.find((a) => a.startsWith("--theme="));
+const theme = resolveTheme(themeArg ? themeArg.slice("--theme=".length) : process.env.THEME);
+const suffix = theme === "cute" ? "" : `-${theme}`;
 
 function cardGlow(index) {
   if (glowMode === "off") return false;
@@ -43,7 +46,7 @@ const cards = signs.map((zodiac, index) => {
     profile,
     zodiac,
     stats,
-    meta: { source, width, glow },
+    meta: { source, width, glow, theme },
   });
   return { zodiac, glow, svg: svg.replace(/^<\?xml[^>]*>\s*/, "") };
 });
@@ -51,8 +54,8 @@ const cards = signs.map((zodiac, index) => {
 const outDir = path.join(root, "docs");
 mkdirSync(outDir, { recursive: true });
 
-const svgPath = path.join(outDir, "card-demo.svg");
-const htmlPath = path.join(outDir, "card-demo.html");
+const svgPath = path.join(outDir, `card-demo${suffix}.svg`);
+const htmlPath = path.join(outDir, `card-demo${suffix}.html`);
 
 writeFileSync(
   svgPath,
@@ -75,7 +78,7 @@ const html = `<!doctype html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chinese zodiac — all 12 cards</title>
+  <title>Chinese zodiac — all 12 cards (${theme})</title>
   <style>
     :root { color-scheme: dark; }
     body {
@@ -114,7 +117,7 @@ const html = `<!doctype html>
   <h1>Chinese zodiac — all 12 animals</h1>
   <div class="meta">
     ${profile.username}${profile.name && profile.name !== profile.username ? ` · ${profile.name}` : ""}
-    · glow=${glowMode} · width=${width} · ${stamp}
+    · theme=${theme} · glow=${glowMode} · width=${width} · ${stamp}
   </div>
   <div class="grid">
 ${sections}

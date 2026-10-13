@@ -1,7 +1,7 @@
 import { fetchGitHubProfile } from "../src/lib/github.js";
 import { resolveZodiac } from "../src/lib/zodiac.js";
 import { calculateStats } from "../src/lib/stats.js";
-import { renderZodiacCard } from "../src/render/card.js";
+import { renderZodiacCard, resolveTheme } from "../src/render/card.js";
 
 function sendSvg(res, svg, cacheSeconds = 14400) {
   res.setHeader("Content-Type", "image/svg+xml; charset=utf-8");
@@ -42,6 +42,7 @@ export default async function handler(req, res) {
     const name = sanitizeText(url.searchParams.get("name"), 32);
     const width = parseWidth(url.searchParams.get("width"));
     const glow = parseFlag(url.searchParams.get("glow"));
+    const theme = resolveTheme(url.searchParams.get("theme"));
 
     if (!username) {
       return sendErrorSvg(res, 400, "Missing ?username= parameter");
@@ -65,7 +66,7 @@ export default async function handler(req, res) {
       profile,
       zodiac,
       stats,
-      meta: { source, width, glow },
+      meta: { source, width, glow, theme },
     });
 
     return sendSvg(res, svg);
