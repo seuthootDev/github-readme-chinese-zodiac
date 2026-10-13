@@ -59,6 +59,8 @@ Details (secrets table, variables, schedule): **[§ Pin a Gist — fork setup](#
 
 ## Demo (SVG)
 
+> 🎀 **New default design (v0.2).** Cards now use a pastel sticker look. Prefer the original vermilion & gold brush style? Add `&theme=classic` to your URL.
+
 ```md
 ![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev)
 ```
@@ -75,6 +77,16 @@ With birthdate (animal year):
 
 <p align="center">
   <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&width=360&glow=1" alt="Asian Zodiac Pig" />
+</p>
+
+Classic theme (the original vermilion & gold brush design):
+
+```md
+![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&theme=classic)
+```
+
+<p align="center">
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&theme=classic" alt="Asian Zodiac Pig — classic theme" />
 </p>
 
 ### All 12 animals
@@ -200,7 +212,8 @@ Also runs on every push to `main` and daily at 00:00 UTC.
 | `sign` | Force animal: `rat` … `pig` |
 | `name` / `role` | Overrides (auto by default) |
 | `width` | `240`–`900`, default **`360`** |
-| `glow` | `1` / `true` — soft halo + twinkle on the **large hanzi** only (default off; best when opening the SVG URL directly — GitHub Camo is a still frame) |
+| `theme` | `cute` (default) — pastel sticker card · `classic` — original vermilion & gold brush card |
+| `glow` | `1` / `true` — cute: sparkles twinkle around the character · classic: soft halo + twinkle on the large hanzi (default off; best when opening the SVG URL directly — GitHub Camo is a still frame) |
 
 ---
 
