@@ -68,6 +68,8 @@ const CUTE_STATIC_UI = [
   "…",
   "“",
   "”",
+  // ī is drawn as dotless ı + combining macron (see displayPinyin in src/render/themes/cute.js).
+  "ı̄",
 ];
 
 function collectCuteLatinText() {

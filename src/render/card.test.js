@@ -110,7 +110,8 @@ describe("cute theme (default)", () => {
     for (const zodiac of signs) {
       const svg = renderZodiacCard({ profile: alice, zodiac, stats: ONES });
       assert.ok(svg.includes(`>${zodiac.hanzi}<`), `${zodiac.id} hanzi`);
-      assert.ok(svg.includes(zodiac.pinyin), `${zodiac.id} pinyin`);
+      // ī is drawn as dotless ı + combining macron (Fredoka glyph workaround).
+      assert.ok(svg.includes(zodiac.pinyin.replace(/ī/g, "ı̄")), `${zodiac.id} pinyin`);
       assert.ok(svg.includes(`YEAR OF THE ${zodiac.sign.toUpperCase()}`), `${zodiac.id} year`);
       assert.ok(svg.includes('class="character"'), `${zodiac.id} character`);
       assert.ok(svg.includes('class="sticker"'), `${zodiac.id} sticker`);
@@ -199,5 +200,76 @@ describe("cute theme (default)", () => {
     const pig = signs.find((s) => s.id === "pig");
     const svg = renderZodiacCard({ profile: alice, zodiac: pig, stats: ONES, meta: { width: 600 } });
     assert.match(svg, /<svg width="600" height="320" viewBox="0 0 600 320"/);
+  });
+});
+
+describe("cute theme — final review fixes", () => {
+  const pig = signs.find((s) => s.id === "pig");
+  const nameLineOf = (svg) => svg.match(/<text x="30" y="152"[^>]*>([\s\S]*?)<\/text>/)?.[1] ?? "";
+  const languagesOf = (svg) =>
+    svg.match(/<g class="languages">[\s\S]*?<text[^>]*>([\s\S]*?)<\/text>/)?.[1] ?? "";
+
+  it("drops trailing languages that would run into the hanzi", () => {
+    const svg = renderZodiacCard({
+      profile: {
+        username: "alice",
+        languages: [{ name: "Jupyter Notebook" }, { name: "TypeScript" }, { name: "JavaScript" }],
+      },
+      zodiac: pig,
+      stats: ONES,
+    });
+    assert.equal(languagesOf(svg), "Jupyter Notebook · TypeScript");
+  });
+
+  it("truncates a single language name that is too long on its own", () => {
+    const svg = renderZodiacCard({
+      profile: { username: "alice", languages: [{ name: "Protocol Buffer Text Format Extended Edition" }] },
+      zodiac: pig,
+      stats: ONES,
+    });
+    const label = languagesOf(svg);
+    assert.ok(label.endsWith("…"), label);
+    assert.ok(label.length < "Protocol Buffer Text Format Extended Edition".length);
+  });
+
+  it("measures CJK real names as full-width (drops role instead of overflowing)", () => {
+    const svg = renderZodiacCard({
+      profile: { username: "abcdefghijkl", name: "가나다라마바사아자차카타", role: "Developer" },
+      zodiac: pig,
+      stats: ONES,
+    });
+    const line = nameLineOf(svg);
+    assert.ok(line.includes("가나다라마바사아자차카타"), line);
+    assert.ok(!line.includes("Developer"), line);
+  });
+
+  it("draws the earthly branch in the YEAR line with the embedded hanzi font", () => {
+    const svg = renderZodiacCard({ profile: alice, zodiac: pig, stats: ONES });
+    assert.match(svg, /YEAR OF THE PIG · <tspan font-family="ZCOOL KuaiLe[^"]*">亥<\/tspan>/);
+  });
+});
+
+describe("cute theme — visual check fixes", () => {
+  it("draws ī as dotless i + combining macron (Fredoka's precomposed ī misplaces the macron)", () => {
+    const rooster = signs.find((s) => s.id === "rooster");
+    const svg = renderZodiacCard({ profile: alice, zodiac: rooster, stats: ONES });
+    assert.ok(svg.includes("j\u0131\u0304 ·"));
+    assert.ok(!svg.includes("j\u012b"));
+  });
+
+  it("measures wide capitals so an all-W/M login is truncated before the hanzi", () => {
+    const pig = signs.find((s) => s.id === "pig");
+    const svg = renderZodiacCard({
+      profile: { username: "WWWWMMMMWWWWMMMMWWWWMM" },
+      zodiac: pig,
+      stats: ONES,
+    });
+    const line = svg.match(/<text x="30" y="152"[^>]*>([\s\S]*?)(?:<tspan|<\/text>)/)?.[1] ?? "";
+    assert.ok(line.endsWith("…"), line);
+    assert.ok(line.length <= 18, line);
+  });
+
+  it("subsets the dotless i and combining macron into the cute font", () => {
+    assert.match(CUTE_FONT_CSS, /U\+131\b|U\+130-131/);
   });
 });
