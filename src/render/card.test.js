@@ -2,6 +2,7 @@ import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import signs from "../data/animals.js";
 import { renderZodiacCard, resolveTheme } from "./card.js";
+import { EMBEDDED_FONT_CSS, CUTE_FONT_CSS } from "../data/embedded-fonts.js";
 
 describe("renderZodiacCard stats", () => {
   it("sizes bars relative to the highest of the three shown stats", () => {
@@ -79,5 +80,15 @@ describe("resolveTheme", () => {
     assert.equal(resolveTheme(undefined), "cute");
     assert.equal(resolveTheme(null), "cute");
     assert.equal(resolveTheme("neon"), "cute");
+  });
+});
+
+describe("embedded fonts", () => {
+  it("ships Fredoka and ZCOOL KuaiLe for cute and keeps Ma Shan Zheng for classic", () => {
+    assert.match(CUTE_FONT_CSS, /font-family: 'Fredoka'/);
+    assert.match(CUTE_FONT_CSS, /font-weight: 400 600;/);
+    assert.match(CUTE_FONT_CSS, /font-family: 'ZCOOL KuaiLe'/);
+    assert.doesNotMatch(CUTE_FONT_CSS, /Ma Shan Zheng/);
+    assert.match(EMBEDDED_FONT_CSS, /font-family: 'Ma Shan Zheng'/);
   });
 });
