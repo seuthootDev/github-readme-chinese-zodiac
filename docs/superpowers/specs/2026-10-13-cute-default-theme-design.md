@@ -49,8 +49,10 @@ Right side:
 Left side, top to bottom (x = 30):
 1. `YEAR OF THE PIG · 亥` — small caps-style, `accent`, letter-spaced.
 2. Title (e.g. "Generous Collaborator") — 28px bold, brown.
-3. Description — one line, small, muted; truncated with "…" if too long for the left column.
-4. Login + real name (real name smaller, muted) and role.
+3. Description — up to two lines (13px, muted); "…" if it still doesn't fit.
+   (Descriptions are 65–87 chars, so one line would cut most of them.)
+4. Login + real name and role (smaller, muted). To keep the line out of the hanzi area,
+   role is dropped first, then real name, when the line would be too wide.
 5. Languages line — `✦ TypeScript · JavaScript · Python`, `accent`.
 6. Three stat rows — label, rounded pill bar (track `mid`, fill `accent`), value.
    Bars stay relative to the highest of the three (`relativeFill`).
@@ -111,7 +113,7 @@ Reference: pig and tiger mockups from brainstorming (`.superpowers/brainstorm/..
 | `src/render/themes/cute.js` | New renderer implementing the layout above. |
 | `src/data/cute-animals.js` | 12 character definitions. |
 | `src/data/animals.js` | Add `pinyin` and `cuteColors` to each animal; existing `colors` stay for classic. |
-| `api/card.js` | Add `parseTheme()`; pass `theme` in `meta`. |
+| `api/card.js` | Read `theme` with `resolveTheme()` (exported from `src/render/card.js` so it is unit-testable); pass `theme` in `meta`. |
 | `scripts/embed-fonts.js` | Also fetch Fredoka + ZCOOL KuaiLe subsets; export classic and cute CSS separately from `src/data/embedded-fonts.js`. Subset text includes cute-only UI strings ("YEAR OF THE", pinyin with tone marks, "by birth year", "by name-seed", ✦, curly quotes). |
 | `scripts/preview-card.js`, `scripts/local-server.js` | Support `theme` so all 12 cards can be previewed in both themes. |
 
@@ -147,7 +149,7 @@ Added to `src/render/card.test.js` (run by `npm test`):
 - Cute stat bars use relative fill against the top of the three shown stats.
 - User-supplied text (name/role with `<script>`, `&`) is escaped in cute.
 
-`parseTheme()` cases: `classic` → classic; `cute`, empty, unknown → cute.
+`resolveTheme()` cases: `classic` → classic; `cute`, empty, unknown → cute.
 
 Manual: `npm run preview:card` renders 12 cute + 12 classic cards to HTML; check that embedded fonts render when the SVG is loaded via `<img>` (no external fonts).
 
