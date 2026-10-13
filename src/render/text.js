@@ -37,3 +37,10 @@ export function secondaryDisplayName(profile) {
   if (name.toLowerCase() === login.toLowerCase()) return "";
   return name;
 }
+
+/** Cut to maxChars including a trailing "…" when shortened. */
+export function truncate(text, maxChars) {
+  const s = String(text ?? "").trim();
+  if (s.length <= maxChars) return s;
+  return `${s.slice(0, Math.max(1, maxChars - 1)).trimEnd()}…`;
+}

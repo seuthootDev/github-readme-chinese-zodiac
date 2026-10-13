@@ -1,4 +1,5 @@
 import { renderClassicCard } from "./themes/classic.js";
+import { renderCuteCard } from "./themes/cute.js";
 
 export const THEMES = ["cute", "classic"];
 export const DEFAULT_THEME = "cute";
@@ -13,8 +14,8 @@ export function resolveTheme(value) {
  * @param {{ profile: object, zodiac: object, stats: object, meta?: { source?: string, width?: number, glow?: boolean, theme?: string } }} input
  */
 export function renderZodiacCard(input) {
-  // The cute renderer lands in Task 5; until then every theme renders classic.
-  return renderClassicCard(input);
+  const theme = resolveTheme(input?.meta?.theme);
+  return theme === "classic" ? renderClassicCard(input) : renderCuteCard(input);
 }
 
 export const CARD_SIZE = {
