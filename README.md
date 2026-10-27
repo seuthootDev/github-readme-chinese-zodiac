@@ -1,73 +1,45 @@
-<p align="center">
-  <img src="docs/readme-banner.jpg" alt="Chinese zodiac animals banner" width="100%" />
-</p>
-
 # github-readme-chinese-zodiac
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![GitHub stars](https://img.shields.io/github/stars/seuthootDev/github-readme-chinese-zodiac.svg?style=flat)](https://github.com/seuthootDev/github-readme-chinese-zodiac/stargazers) [![Contributing](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-**Asian zodiac** profile cards from your GitHub activity — the 12 animals (生肖), rendered as SVG README cards or pinned Gists.
-
-> Your coding personality written in the Asian zodiac
-
-Sister project (Western zodiac): [github-readme-zodiac](https://github.com/seuthootDev/github-readme-zodiac)
-
-| Mode | Where it appears | Style |
-|------|------------------|--------|
-| **Pinned Gist** | Profile **Pins** | ASCII / text card |
-| **SVG card** | Profile **README** | Full-color image (default **360×192**) |
-
-**Live demo:** [https://github-readme-chinese-zodiac.vercel.app](https://github-readme-chinese-zodiac.vercel.app)
-
----
-
-## What a Pin looks like
-
-GitHub only shows about **5 lines** of a pinned Gist. Full 12-animal gallery (pin + full gist):
-
-**[Gist pin preview — 12 animals (PDF)](docs/gist-pin-preview-12-animals.pdf)**
-
-Also: [docs/gist-pin-preview.html](docs/gist-pin-preview.html)
-
-Example pin body (Pig / 亥 — `birthdate=1995-04-24`):
-
-```text
-🐷 PIG · Generous Collaborator        ╭────╮
-✨ seuthootDev · JUNG SEUNGHOON       │ 亥 │
-🌟   4  📦  37  👥   0                │ 猪 │
-Renown     █░░░░░░░░░░░   7%          ╰────╯
-Craft      █████████░░░  76%            生肖
-```
-
-> **Pin quality (help wanted).** Pins work, but the hanzi seal often misaligns in monospace (wide CJK vs box-drawing). SVG cards are the polished path today — see [CONTRIBUTING.md](CONTRIBUTING.md#help-wanted-pinned-gist-polish-highest-priority) if you want to improve `src/gist/emblem.js`.
-
-### How to put this on your profile Pins
-
-Same pattern as [productive-box](https://github.com/maxam2017/productive-box): **fork → Action fills your Gist → pin that Gist**. No Vercel for Pins.
-
-1. **[Fork this repo](https://github.com/seuthootDev/github-readme-chinese-zodiac/fork)**
-2. Create a **public** [Gist](https://gist.github.com/) and copy its ID  
-   (`https://gist.github.com/YOU/`**`GIST_ID`** — not the `.js` embed URL)
-3. Create a PAT with **`gist`** scope → on **your fork**, add Secrets `GH_TOKEN` + `GIST_ID`
-4. On **your fork**, add Variable `BIRTHDATE` = `YYYY-MM-DD` (optional but recommended)
-5. **Actions** → **Update Asian Zodiac Gist** → **Run workflow**
-6. [Pin the Gist](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile) on your profile
-
-Details (secrets table, variables, schedule): **[§ Pin a Gist — fork setup](#1-pin-a-gist--fork-setup)** below.
-
----
-
-## Demo (SVG)
-
-> 🎀 **New default design (v0.2).** Cards now use a pastel sticker look. Prefer the original vermilion & gold brush style? Add `&theme=classic` to your URL.
-
-```md
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev)
-```
+**Your GitHub activity as one of the 12 Asian zodiac animals (生肖).** A profile card for your README — add it with a single URL.
 
 <p align="center">
   <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev" alt="Asian Zodiac" />
 </p>
+
+## Quick start
+
+Paste this into your profile README and replace `YOUR_USERNAME`:
+
+```md
+![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=YOUR_USERNAME&birthdate=YYYY-MM-DD)
+```
+
+That's it — no fork, no token, no setup. Your animal comes from your birth year (or force one with `sign=`), and the stats come from your public GitHub activity.
+
+**Live demo:** [github-readme-chinese-zodiac.vercel.app](https://github-readme-chinese-zodiac.vercel.app)
+
+> 🎀 **New default design (v0.2).** Cards now use a pastel sticker look. Prefer the original vermilion & gold brush style? Add `&theme=classic` to your URL.
+
+## All 12 animals
+
+<p align="center">
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rat" width="360" alt="Rat" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=ox" width="360" alt="Ox" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=tiger" width="360" alt="Tiger" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rabbit" width="360" alt="Rabbit" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dragon" width="360" alt="Dragon" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=snake" width="360" alt="Snake" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=horse" width="360" alt="Horse" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=goat" width="360" alt="Goat" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=monkey" width="360" alt="Monkey" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rooster" width="360" alt="Rooster" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dog" width="360" alt="Dog" />
+  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=pig" width="360" alt="Pig" />
+</p>
+
+## Themes & variants
 
 With birthdate (animal year):
 
@@ -89,26 +61,19 @@ Classic theme (the original vermilion & gold brush design):
   <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&theme=classic" alt="Asian Zodiac Pig — classic theme" />
 </p>
 
-### All 12 animals
+### Options
 
-<p align="center">
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rat" width="360" alt="Rat" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=ox" width="360" alt="Ox" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=tiger" width="360" alt="Tiger" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rabbit" width="360" alt="Rabbit" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dragon" width="360" alt="Dragon" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=snake" width="360" alt="Snake" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=horse" width="360" alt="Horse" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=goat" width="360" alt="Goat" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=monkey" width="360" alt="Monkey" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=rooster" width="360" alt="Rooster" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=dog" width="360" alt="Dog" />
-  <img src="https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&sign=pig" width="360" alt="Pig" />
-</p>
+| Param | Description |
+|-------|-------------|
+| `username` | GitHub username (**required**) |
+| `birthdate` | `YYYY-MM-DD` → animal year |
+| `sign` | Force animal: `rat` … `pig` |
+| `name` / `role` | Overrides (auto by default) |
+| `width` | `240`–`900`, default **`360`** |
+| `theme` | `cute` (default) — pastel sticker card · `classic` — original vermilion & gold brush card |
+| `glow` | `1` / `true` — cute: sparkles twinkle around the character · classic: soft halo + twinkle on the large hanzi (default off; best when opening the SVG URL directly — GitHub Camo is a still frame) |
 
----
-
-## Animals (`sign=` param)
+### Animals (`sign=` param)
 
 | `sign=` | Animal |
 |---------|--------|
@@ -127,18 +92,63 @@ Classic theme (the original vermilion & gold brush design):
 
 **Birthdate → animal** uses the birth **year** (simple pre–Feb 4 → previous year approximation). No birthdate → deterministic animal from username hash.
 
+Sister project (Western zodiac): [github-readme-zodiac](https://github.com/seuthootDev/github-readme-zodiac)
+
 ---
 
-## 1) Pin a Gist — fork setup
+## Bonus: pin it as a Gist
+
+Prefer your profile **Pins** over the README? A fork-based GitHub Action (like [productive-box](https://github.com/maxam2017/productive-box)) can keep a text version of the card in a pinned Gist.
+
+| Mode | Where it appears | Setup |
+|------|------------------|--------|
+| **SVG card** | Profile **README** | One URL (above) |
+| **Pinned Gist** | Profile **Pins** | Fork + token + Action (below) |
+
+### What a Pin looks like
+
+GitHub only shows about **5 lines** of a pinned Gist. Full 12-animal gallery (pin + full gist):
+
+**[Gist pin preview — 12 animals (PDF)](docs/gist-pin-preview-12-animals.pdf)**
+
+Also: [docs/gist-pin-preview.html](docs/gist-pin-preview.html)
+
+Example pin body (Pig / 亥 — `birthdate=1995-04-24`):
+
+```text
+🐷 PIG · Generous Collaborator        ╭────╮
+✨ seuthootDev · JUNG SEUNGHOON       │ 亥 │
+🌟   4  📦  37  👥   0                │ 猪 │
+Renown     █░░░░░░░░░░░   7%          ╰────╯
+Craft      █████████░░░  76%            生肖
+```
+
+> **Pin quality (help wanted).** Pins work, but the hanzi seal often misaligns in monospace (wide CJK vs box-drawing). SVG cards are the polished path today — see [CONTRIBUTING.md](CONTRIBUTING.md#help-wanted-pinned-gist-polish-highest-priority) if you want to improve `src/gist/emblem.js`.
+
+#### How to put this on your profile Pins
+
+Same pattern as [productive-box](https://github.com/maxam2017/productive-box): **fork → Action fills your Gist → pin that Gist**. No Vercel for Pins.
+
+1. **[Fork this repo](https://github.com/seuthootDev/github-readme-chinese-zodiac/fork)**
+2. Create a **public** [Gist](https://gist.github.com/) and copy its ID  
+   (`https://gist.github.com/YOU/`**`GIST_ID`** — not the `.js` embed URL)
+3. Create a PAT with **`gist`** scope → on **your fork**, add Secrets `GH_TOKEN` + `GIST_ID`
+4. On **your fork**, add Variable `BIRTHDATE` = `YYYY-MM-DD` (optional but recommended)
+5. **Actions** → **Update Asian Zodiac Gist** → **Run workflow**
+6. [Pin the Gist](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile) on your profile
+
+Details (secrets table, variables, schedule): **[Fork setup](#fork-setup)** below.
+
+### Fork setup
 
 **Recommended for everyone:** fork this repo and run the Action on **your fork**.  
 (That keeps your token/Gist on your account and matches how most README pin projects work.)
 
-### 1. Fork
+#### 1. Fork
 
 Fork [seuthootDev/github-readme-chinese-zodiac](https://github.com/seuthootDev/github-readme-chinese-zodiac).
 
-### 2. Create a public Gist
+#### 2. Create a public Gist
 
 1. https://gist.github.com/
 2. Filename e.g. `chinese_zodiac.md`, any placeholder text
@@ -146,12 +156,12 @@ Fork [seuthootDev/github-readme-chinese-zodiac](https://github.com/seuthootDev/g
 4. Copy only the **Gist ID** (not the `.js` embed URL):  
    `https://gist.github.com/YOU/`**`GIST_ID`**
 
-### 3. Create a token (once)
+#### 3. Create a token (once)
 
 https://github.com/settings/tokens → **Tokens (classic)** → enable **`gist`** only.  
 The token string is shown **once** — save it. The same PAT can be reused on the Western sister project.
 
-### 4. Secrets and Variables on **your fork**
+#### 4. Secrets and Variables on **your fork**
 
 **Settings → Secrets and variables → Actions**
 
@@ -174,7 +184,7 @@ The token string is shown **once** — save it. The same PAT can be reused on th
 > Birthdate is a **Variable** (`BIRTHDATE`), not a Secret.  
 > Path: Settings → Secrets and variables → Actions → **Variables** → New repository variable.
 
-### 5. Run the Action
+#### 5. Run the Action
 
 1. On **your fork**: **Actions** → enable workflows if prompted  
 2. **Update Asian Zodiac Gist** → **Run workflow**  
@@ -182,38 +192,12 @@ The token string is shown **once** — save it. The same PAT can be reused on th
 
 Also runs on every push to `main` and daily at 00:00 UTC.
 
-### Pin vs SVG
+#### Pin vs SVG
 
 | Feature | Your fork’s Action? | Vercel? |
 |---------|---------------------|---------|
 | **Pinned Gist** | Yes | No |
 | **SVG in README** | No | Yes (`github-readme-chinese-zodiac.vercel.app`) |
-
----
-
-## 2) SVG card (README embed)
-
-```md
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=YOUR_USERNAME)
-
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=YOUR_USERNAME&birthdate=1995-04-24)
-
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=YOUR_USERNAME&sign=dragon&width=360)
-
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=YOUR_USERNAME&birthdate=1995-04-24&glow=1)
-```
-
-### Options
-
-| Param | Description |
-|-------|-------------|
-| `username` | GitHub username (**required**) |
-| `birthdate` | `YYYY-MM-DD` → animal year |
-| `sign` | Force animal: `rat` … `pig` |
-| `name` / `role` | Overrides (auto by default) |
-| `width` | `240`–`900`, default **`360`** |
-| `theme` | `cute` (default) — pastel sticker card · `classic` — original vermilion & gold brush card |
-| `glow` | `1` / `true` — cute: sparkles twinkle around the character · classic: soft halo + twinkle on the large hanzi (default off; best when opening the SVG URL directly — GitHub Camo is a still frame) |
 
 ---
 
@@ -252,7 +236,7 @@ Animal artwork is derived from a Magnific (Freepik) asset under a **free license
 
 | Used for | Asset | Designed by | Certificate |
 |----------|--------|-------------|-------------|
-| README banner + title animals (`docs/readme-banner.jpg`, `assets/animals`) | [chinese zodiac new year signs — red silhouettes](https://www.magnific.com/free-vector/chinese-zodiac-new-year-signs-traditional-china-horoscope-animals-red-zodiacs-silhouette_10722644.htm) | [tartila — Magnific.com](https://www.magnific.com) | [docs/license-chinese-zodiac-red-silhouettes-10722644.pdf](docs/license-chinese-zodiac-red-silhouettes-10722644.pdf) |
+| Title animals (`assets/animals`) | [chinese zodiac new year signs — red silhouettes](https://www.magnific.com/free-vector/chinese-zodiac-new-year-signs-traditional-china-horoscope-animals-red-zodiacs-silhouette_10722644.htm) | [tartila — Magnific.com](https://www.magnific.com) | [docs/license-chinese-zodiac-red-silhouettes-10722644.pdf](docs/license-chinese-zodiac-red-silhouettes-10722644.pdf) |
 | Card background animals (`assets/animals-gold`) | [chinese new year animals — gold zodiac sign stickers](https://www.magnific.com/free-vector/chinese-new-year-animals-vector-gold-animal-zodiac-sign-stickers-set_18226630.htm) | Magnific / Freepik | [docs/license-chinese-zodiac-gold-animals-18226630.pdf](docs/license-chinese-zodiac-gold-animals-18226630.pdf) |
 
 ## License
