@@ -215,6 +215,12 @@ Each card shows **3 of 5** traits. Which three appear depends on the animal’s 
 
 ---
 
+## Daily forecast & streak
+
+On the default (cute) card, the line under the title is a **daily dev horoscope** — a lucky language (picked from your own top languages) and one piece of advice. It changes every day (UTC) and stays the same all day.
+
+The footer shows your **current streak** and **contributions this year**. This needs `GITHUB_TOKEN` on the server (GraphQL); without it the card shows the tagline instead. `theme=classic` keeps its original blurb and tagline.
+
 ## Local development
 
 ```bash

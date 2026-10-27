@@ -73,6 +73,42 @@ function descriptionLines(text) {
   return lines;
 }
 
+/** Today's dev horoscope in place of the animal blurb: lucky language, then one tip. */
+function renderForecast(forecast, c) {
+  const head = "Today's lucky language: ";
+  const advice = fitText(forecast.advice, 13, COLUMN);
+  return `<text x="${LEFT}" y="106" fill="${c.accent}" font-size="13" font-weight="600" font-family="${FONT_ROUND}">${escapeXml(head)}<tspan fill="${INK}">${escapeXml(forecast.luckyLanguage)}</tspan></text>
+    <text x="${LEFT}" y="123" fill="${MUTED}" font-size="13" font-family="${FONT_ROUND}">${escapeXml(advice)}</text>`;
+}
+
+/** Two-tongued flame with a light core, centered at (x, y). */
+function flameIcon(x, y, s, color) {
+  const p = (dx, dy) => `${(x + dx * s).toFixed(1)},${(y + dy * s).toFixed(1)}`;
+  const outer = `M${p(0.5, -8)} C${p(2, -4)} ${p(6, -2)} ${p(6, 2.5)} C${p(6, 6)} ${p(3.3, 8)} ${p(0, 8)} C${p(-3.3, 8)} ${p(-6, 6)} ${p(-6, 2.5)} C${p(-6, -0.5)} ${p(-4.5, -2.5)} ${p(-3.5, -4)} C${p(-3, -2)} ${p(-2.2, -1)} ${p(-1, -0.5)} C${p(-1.5, -3.5)} ${p(-0.8, -6)} ${p(0.5, -8)} Z`;
+  const core = `M${p(0, 1)} C${p(1, 3)} ${p(2.5, 4)} ${p(2.5, 5.5)} C${p(2.5, 7)} ${p(1.3, 7.5)} ${p(0, 7.5)} C${p(-1.3, 7.5)} ${p(-2.5, 7)} ${p(-2.5, 5.5)} C${p(-2.5, 4)} ${p(-1, 3)} ${p(0, 1)} Z`;
+  return `<path d="${outer}" fill="${color}"/>
+    <path d="${core}" fill="#ffffff" opacity="0.75"/>`;
+}
+
+/** "14-day streak · 412 contributions this year" with the numbers highlighted. */
+function activityLine(activity, highlight) {
+  const parts = [];
+  if (activity.streak > 0) {
+    parts.push(`<tspan fill="${highlight}">${escapeXml(formatStatValue(activity.streak))}-day</tspan> streak`);
+  }
+  parts.push(`<tspan fill="${highlight}">${escapeXml(formatStatValue(activity.contributions))}</tspan> contributions this year`);
+  return parts.join("  ·  ");
+}
+
+/** Footer: streak + contributions, or the tagline when activity is unavailable. */
+function renderFooter(activity, c) {
+  if (!activity) {
+    return `<text x="${LEFT}" y="300" fill="${MUTED}" font-size="12" font-family="${FONT_ROUND}">Your coding personality written in the Asian zodiac</text>`;
+  }
+  return `${flameIcon(LEFT + 6, 295, 0.85, c.accent)}
+    <text x="${LEFT + 18}" y="300" fill="${MUTED}" font-size="12" font-family="${FONT_ROUND}">${activityLine(activity, c.accent)}</text>`;
+}
+
 /** Login + (real name · role); drops role, then real name, before overflowing the column. */
 function renderNameLine(profile) {
   const login = fitText(truncate(profile.username || profile.name || "developer", 22), 20, COLUMN);
@@ -138,9 +174,9 @@ function renderHero(zodiac, c, glow) {
 }
 
 /**
- * @param {{ profile: object, zodiac: object, stats: object, meta?: { source?: string, width?: number, glow?: boolean } }} input
+ * @param {{ profile: object, zodiac: object, stats: object, forecast?: object, activity?: object, meta?: { source?: string, width?: number, glow?: boolean } }} input
  */
-export function renderCuteCard({ profile, zodiac, stats, meta = {} }) {
+export function renderCuteCard({ profile, zodiac, stats, forecast, activity, meta = {} }) {
   const c = zodiac.cuteColors;
   const uid = `azc-${profile.username}-${zodiac.id}`.replace(/[^a-z0-9-]/gi, "");
   const displayStats = pickDisplayStats(stats, zodiac, 3);
@@ -161,12 +197,14 @@ export function renderCuteCard({ profile, zodiac, stats, meta = {} }) {
       : ""
   }`;
   const source = meta.source === "birthdate" ? "by birth year" : "by name-seed";
-  const description = descriptionLines(zodiac.description)
-    .map(
-      (line, i) =>
-        `<text x="${LEFT}" y="${106 + i * 17}" fill="${MUTED}" font-size="13" font-family="${FONT_ROUND}">${escapeXml(line)}</text>`,
-    )
-    .join("\n    ");
+  const description = forecast
+    ? renderForecast(forecast, c)
+    : descriptionLines(zodiac.description)
+        .map(
+          (line, i) =>
+            `<text x="${LEFT}" y="${106 + i * 17}" fill="${MUTED}" font-size="13" font-family="${FONT_ROUND}">${escapeXml(line)}</text>`,
+        )
+        .join("\n    ");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${displayWidth}" height="${displayHeight}" viewBox="0 0 ${WIDTH} ${HEIGHT}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${escapeXml(nameLabel)} Asian Zodiac Card">
@@ -195,7 +233,7 @@ ${CUTE_FONT_CSS}
     ${renderLanguages(profile.languages, c)}
     ${renderStats(displayStats, c)}
 
-    <text x="${LEFT}" y="300" fill="${MUTED}" font-size="12" font-family="${FONT_ROUND}">Your coding personality written in the Asian zodiac</text>
+    ${renderFooter(activity, c)}
     <text x="570" y="300" text-anchor="end" fill="${MUTED}" font-size="12" font-family="${FONT_ROUND}">${escapeXml(`${zodiac.element} · ${source}`)}</text>
   </g>
   <rect x="3" y="3" width="594" height="314" rx="26" fill="none" stroke="${c.mid}" stroke-width="3"/>

@@ -153,3 +153,53 @@ export async function fetchGitHubProfile(username) {
     mostActiveRepo: repos.find((r) => !r.fork)?.name || null,
   };
 }
+
+/** Days in a row with contributions, ending today (or yesterday if today is still empty). */
+export function currentStreak(days) {
+  const sorted = [...days].sort((a, b) => a.date.localeCompare(b.date));
+  let i = sorted.length - 1;
+  if (i >= 0 && sorted[i].count === 0) i--;
+  let streak = 0;
+  for (; i >= 0 && sorted[i].count > 0; i--) streak++;
+  return streak;
+}
+
+/**
+ * Last-year contribution total and current streak via GraphQL.
+ * Needs GITHUB_TOKEN (or GH_TOKEN); returns null when unavailable so the card can fall back.
+ */
+export async function fetchActivity(username) {
+  if (!headers().Authorization) return null;
+  try {
+    const res = await fetch(`${GITHUB_API}/graphql`, {
+      method: "POST",
+      headers: { ...headers(), "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `query($login: String!) {
+          user(login: $login) {
+            contributionsCollection {
+              contributionCalendar {
+                totalContributions
+                weeks { contributionDays { date contributionCount } }
+              }
+            }
+          }
+        }`,
+        variables: { login: username },
+      }),
+    });
+    if (!res.ok) return null;
+    const json = await res.json();
+    const calendar = json?.data?.user?.contributionsCollection?.contributionCalendar;
+    if (!calendar) return null;
+    const days = calendar.weeks.flatMap((w) =>
+      w.contributionDays.map((d) => ({ date: d.date, count: d.contributionCount })),
+    );
+    return {
+      contributions: calendar.totalContributions,
+      streak: currentStreak(days),
+    };
+  } catch {
+    return null;
+  }
+}

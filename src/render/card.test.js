@@ -273,3 +273,35 @@ describe("cute theme — visual check fixes", () => {
     assert.match(CUTE_FONT_CSS, /U\+131\b|U\+130-131/);
   });
 });
+
+describe("forecast and activity", () => {
+  const input = {
+    profile: { username: "alice", languages: [] },
+    zodiac: signs.find((s) => s.id === "pig"),
+    stats: { renown: 1, craft: 1, discipline: 1 },
+    forecast: { luckyLanguage: "Go", advice: "Ship it, then polish it.", dateLabel: "Oct 27" },
+    activity: { streak: 14, contributions: 412 },
+  };
+
+  it("cute: shows the forecast and streak footer", () => {
+    const svg = renderZodiacCard({ ...input, meta: { theme: "cute" } });
+    assert.match(svg, /Today&apos;s lucky language: /);
+    assert.match(svg, />Go</);
+    assert.match(svg, />14-day<\/tspan> streak/);
+    assert.doesNotMatch(svg, /written in the Asian zodiac/);
+  });
+
+  it("cute: falls back to the blurb and tagline", () => {
+    const { forecast, activity, ...plain } = input;
+    const svg = renderZodiacCard({ ...plain, meta: { theme: "cute" } });
+    assert.match(svg, /written in the Asian zodiac/);
+    assert.doesNotMatch(svg, /lucky language/);
+  });
+
+  it("classic: keeps its blurb and tagline even when forecast and activity are given", () => {
+    const svg = renderZodiacCard({ ...input, meta: { theme: "classic" } });
+    assert.match(svg, /written in the Asian zodiac/);
+    assert.doesNotMatch(svg, /[Ll]ucky language/);
+    assert.doesNotMatch(svg, /streak/);
+  });
+});
