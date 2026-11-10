@@ -13,7 +13,7 @@
 Paste this into your profile README and replace `YOUR_USERNAME`:
 
 ```md
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=YOUR_USERNAME&birthdate=YYYY-MM-DD)
+[![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=YOUR_USERNAME&birthdate=YYYY-MM-DD)](https://github.com/seuthootDev/github-readme-chinese-zodiac)
 ```
 
 That's it — no fork, no token, no setup. Your animal comes from your birth year (or force one with `sign=`), and the stats come from your public GitHub activity.
@@ -44,7 +44,7 @@ That's it — no fork, no token, no setup. Your animal comes from your birth yea
 With birthdate (animal year):
 
 ```md
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&width=360&glow=1)
+[![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&width=360&glow=1)](https://github.com/seuthootDev/github-readme-chinese-zodiac)
 ```
 
 <p align="center">
@@ -54,7 +54,7 @@ With birthdate (animal year):
 Classic theme (the original vermilion & gold brush design):
 
 ```md
-![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&theme=classic)
+[![Asian Zodiac](https://github-readme-chinese-zodiac.vercel.app/api/card?username=seuthootDev&birthdate=1995-04-24&theme=classic)](https://github.com/seuthootDev/github-readme-chinese-zodiac)
 ```
 
 <p align="center">
