@@ -2,6 +2,7 @@ import { fetchGitHubProfile, fetchActivity } from "../src/lib/github.js";
 import { resolveZodiac } from "../src/lib/zodiac.js";
 import { calculateStats } from "../src/lib/stats.js";
 import { dailyForecast } from "../src/lib/forecast.js";
+import { yearMarkFor } from "../src/lib/ganzhi.js";
 import { renderZodiacCard, resolveTheme } from "../src/render/card.js";
 
 function sendSvg(res, svg, cacheSeconds = 14400) {
@@ -76,7 +77,7 @@ export default async function handler(req, res) {
         signId: zodiac.id,
         languages: profile.languages,
       }),
-      meta: { source, width, glow, theme },
+      meta: { source, width, glow, theme, yearMark: yearMarkFor(zodiac.id) },
     });
 
     return sendSvg(res, svg);

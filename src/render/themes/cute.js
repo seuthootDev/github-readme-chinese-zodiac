@@ -157,6 +157,43 @@ function renderStats(displayStats, c) {
     .join("");
 }
 
+/** Element colors of the year (五行): fill, text on it, outline so white still reads on a pastel card. */
+const YEAR_COLORS = {
+  blue: { fill: "#2f6fdb", ink: "#ffffff", edge: "#2f6fdb" },
+  red: { fill: "#d93a2f", ink: "#ffffff", edge: "#d93a2f" },
+  gold: { fill: "#e3a714", ink: "#ffffff", edge: "#c48a00" },
+  white: { fill: "#ffffff", ink: "#5a6470", edge: "#b7c0ca" },
+  black: { fill: "#24242c", ink: "#ffffff", edge: "#24242c" },
+};
+
+/** Header: "YEAR OF THE HORSE · 午", or "✦ RED HORSE YEAR · 午" in the animal's own year. */
+function renderHeader(zodiac, c, yearMark) {
+  const branch = zodiac.earthlyBranch
+    ? ` · <tspan font-family="${FONT_HANZI}">${escapeXml(zodiac.earthlyBranch)}</tspan>`
+    : "";
+  const attrs = `fill="${c.accent}" font-size="15" font-weight="600" letter-spacing="1" font-family="${FONT_ROUND}"`;
+  if (!yearMark) {
+    return `<text x="${LEFT}" y="46" ${attrs}>${escapeXml(`YEAR OF THE ${zodiac.sign.toUpperCase()}`)}${branch}</text>`;
+  }
+  const y = YEAR_COLORS[yearMark.color] ?? YEAR_COLORS.red;
+  return `${sparkle(LEFT, 33, 15, y.edge)}
+    <text class="year-label" x="${LEFT + 21}" y="46" ${attrs}>${escapeXml(yearMark.label)}${branch}</text>`;
+}
+
+/** Diagonal sash across the top-right corner in the year's element color, trimmed with the animal's accent. */
+function renderYearSash(yearMark, c, clipId) {
+  if (!yearMark) return "";
+  const y = YEAR_COLORS[yearMark.color] ?? YEAR_COLORS.red;
+  return `<g class="year-mark" clip-path="url(#${clipId})">
+    <g transform="translate(${WIDTH} 0) rotate(45)">
+      <rect x="-90" y="34" width="180" height="26" fill="${y.fill}" stroke="${y.edge}" stroke-width="1.5"/>
+      <rect x="-90" y="31" width="180" height="3" fill="${c.accent}"/>
+      <rect x="-90" y="60" width="180" height="3" fill="${c.accent}"/>
+      <text x="0" y="52" text-anchor="middle" fill="${y.ink}" font-size="13" font-weight="600" letter-spacing="1" font-family="${FONT_ROUND}">${escapeXml(String(yearMark.year))} · <tspan font-family="${FONT_HANZI}">${escapeXml(yearMark.ganzhi)}</tspan></text>
+    </g>
+  </g>`;
+}
+
 /** Giant pastel hanzi, sticker character on top, sparkles, and the pinyin tag. */
 function renderHero(zodiac, c, glow) {
   const hanzi = escapeXml(zodiac.hanzi || zodiac.earthlyBranch || "");
@@ -174,7 +211,7 @@ function renderHero(zodiac, c, glow) {
 }
 
 /**
- * @param {{ profile: object, zodiac: object, stats: object, forecast?: object, activity?: object, meta?: { source?: string, width?: number, glow?: boolean } }} input
+ * @param {{ profile: object, zodiac: object, stats: object, forecast?: object, activity?: object, meta?: { source?: string, width?: number, glow?: boolean, yearMark?: object|null } }} input
  */
 export function renderCuteCard({ profile, zodiac, stats, forecast, activity, meta = {} }) {
   const c = zodiac.cuteColors;
@@ -190,12 +227,7 @@ export function renderCuteCard({ profile, zodiac, stats, forecast, activity, met
 
   const title = zodiac.title.replace(/^The\s+/i, "");
   const titleSize = fitFontSize(title, COLUMN, 28);
-  // Branch glyph uses the embedded hanzi face — Fredoka has no CJK.
-  const year = `${escapeXml(`YEAR OF THE ${zodiac.sign.toUpperCase()}`)}${
-    zodiac.earthlyBranch
-      ? ` · <tspan font-family="${FONT_HANZI}">${escapeXml(zodiac.earthlyBranch)}</tspan>`
-      : ""
-  }`;
+  const yearMark = meta.yearMark || null;
   const source = meta.source === "birthdate" ? "by birth year" : "by name-seed";
   const description = forecast
     ? renderForecast(forecast, c)
@@ -226,7 +258,7 @@ ${CUTE_FONT_CSS}
     <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#${uid}-dots)" opacity="0.55"/>
     ${renderHero(zodiac, c, glow)}
 
-    <text x="${LEFT}" y="46" fill="${c.accent}" font-size="15" font-weight="600" letter-spacing="1" font-family="${FONT_ROUND}">${year}</text>
+    ${renderHeader(zodiac, c, yearMark)}
     <text x="${LEFT}" y="82" fill="${INK}" font-size="${titleSize}" font-weight="600" font-family="${FONT_ROUND}">${escapeXml(title)}</text>
     ${description}
     ${renderNameLine(profile)}
@@ -237,5 +269,6 @@ ${CUTE_FONT_CSS}
     <text x="570" y="300" text-anchor="end" fill="${MUTED}" font-size="12" font-family="${FONT_ROUND}">${escapeXml(`${zodiac.element} · ${source}`)}</text>
   </g>
   <rect x="3" y="3" width="594" height="314" rx="26" fill="none" stroke="${c.mid}" stroke-width="3"/>
+  ${renderYearSash(yearMark, c, `${uid}-clip`)}
 </svg>`;
 }

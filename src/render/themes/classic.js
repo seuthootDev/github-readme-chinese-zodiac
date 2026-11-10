@@ -155,6 +155,35 @@ function renderLanguages(languages, colors) {
   return `<text x="36" y="178" fill="${colors.accent}" font-size="19" letter-spacing="0.3" font-family="${FONT_BODY}">${escapeXml(label)}</text>`;
 }
 
+/** Element colors of the year (五行) on the dark card; black relies on the gold trim to read. */
+const YEAR_COLORS = {
+  blue: { fill: "#2f6fdb", ink: "#ffffff" },
+  red: { fill: "#d93a2f", ink: "#fff4e0" },
+  gold: { fill: "#e3a714", ink: "#2a1500" },
+  white: { fill: "#f4efe4", ink: "#5a4a3a" },
+  black: { fill: "#111114", ink: "#e8d5a3" },
+};
+
+/** Vertical ribbon hanging from the top edge: 干支 + 年, gold trim, knot and tassel. */
+function renderYearRibbon(yearMark, colors) {
+  if (!yearMark) return "";
+  const y = YEAR_COLORS[yearMark.color] ?? YEAR_COLORS.red;
+  const gold = colors.accent;
+  const tassel = yearMark.color === "black" ? gold : y.fill;
+  const [stem, branch] = Array.from(yearMark.ganzhi);
+  return `<g class="year-mark" transform="translate(566 0)" aria-hidden="true">
+      <rect x="-13" y="0" width="26" height="92" fill="${y.fill}"/>
+      <rect x="-13" y="0" width="2" height="92" fill="${gold}"/>
+      <rect x="11" y="0" width="2" height="92" fill="${gold}"/>
+      <text x="0" y="34" text-anchor="middle" fill="${y.ink}" font-size="18" font-family="${FONT_BRUSH}">${escapeXml(stem)}</text>
+      <text x="0" y="58" text-anchor="middle" fill="${y.ink}" font-size="18" font-family="${FONT_BRUSH}">${escapeXml(branch)}</text>
+      <text x="0" y="80" text-anchor="middle" fill="${y.ink}" font-size="13" font-family="${FONT_BRUSH}">年</text>
+      <path d="M-13 92 L0 104 L13 92 Z" fill="${y.fill}"/>
+      <circle cx="0" cy="110" r="6" fill="none" stroke="${gold}" stroke-width="2"/>
+      <path d="M-5 116 L-7 146 M-2 116 L-3 150 M2 116 L3 150 M5 116 L7 146" stroke="${tassel}" stroke-width="2" stroke-linecap="round"/>
+    </g>`;
+}
+
 /** Paper-cut animal icon — tinted to accent via mask; falls back to emoji. */
 function renderAnimalTitle(zodiac, colors, uid) {
   const icon = animalIcons[zodiac.id];
@@ -176,7 +205,7 @@ function renderAnimalTitle(zodiac, colors, uid) {
 }
 
 /**
- * @param {{ profile: object, zodiac: object, stats: object, meta?: { source?: string, width?: number, glow?: boolean } }} input
+ * @param {{ profile: object, zodiac: object, stats: object, meta?: { source?: string, width?: number, glow?: boolean, yearMark?: object|null } }} input
  */
 export function renderClassicCard({ profile, zodiac, stats, meta = {} }) {
   const colors = zodiac.colors;
@@ -265,6 +294,7 @@ ${EMBEDDED_FONT_CSS}
     <text x="560" y="298" text-anchor="end" fill="${colors.muted}" font-size="15" opacity="0.55" font-family="${FONT_BODY}">
       ${escapeXml(sourceLabel)}
     </text>
+    ${renderYearRibbon(meta.yearMark, colors)}
   </g>
 </svg>`;
 }

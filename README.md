@@ -73,6 +73,15 @@ Classic theme (the original vermilion & gold brush design):
 | `theme` | `cute` (default) — pastel sticker card · `classic` — original vermilion & gold brush card |
 | `glow` | `1` / `true` — cute: sparkles twinkle around the character · classic: soft halo + twinkle on the large hanzi (default off; best when opening the SVG URL directly — GitHub Camo is a still frame) |
 
+### Year mark (本命年)
+
+When your card's animal rules the current year, it gets a special mark automatically — no parameter needed. The color follows the year's heavenly stem (天干): **blue** (wood), **red** (fire), **golden** (earth), **white** (metal), **black** (water). 2026 is 丙午, the **Red Horse**; 2027 is 丁未, the **Red Goat**; 2028 is 戊申, the **Golden Monkey**.
+
+- **cute:** a corner sash (`2026 · 丙午`) and a `RED HORSE YEAR` header
+- **classic:** a hanging ribbon with 丙午年 and a gold tassel
+
+The year switches on Feb 4 (立春), the same boundary used for `birthdate`.
+
 ### Animals (`sign=` param)
 
 | `sign=` | Animal |

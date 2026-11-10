@@ -305,3 +305,57 @@ describe("forecast and activity", () => {
     assert.doesNotMatch(svg, /streak/);
   });
 });
+
+describe("year mark (current zodiac year)", () => {
+  const horse = signs.find((s) => s.id === "horse");
+  const input = {
+    profile: { username: "alice", languages: [] },
+    zodiac: horse,
+    stats: { renown: 1, craft: 1, discipline: 1 },
+  };
+  const yearMark = { year: 2026, ganzhi: "丙午", signId: "horse", color: "red", label: "RED HORSE YEAR" };
+  const strip = (svg) => svg.replace(/^<\?xml[^>]*>/, "");
+
+  it("cute: draws the corner sash and swaps the header for the colored-year label", () => {
+    const svg = renderZodiacCard({ ...input, meta: { theme: "cute", yearMark } });
+    assert.match(svg, /class="year-mark"/);
+    assert.match(svg, /2026 · <tspan[^>]*>丙午<\/tspan>/);
+    assert.match(svg, /class="year-label"[^>]*>RED HORSE YEAR/);
+    assert.doesNotMatch(svg, /YEAR OF THE HORSE/);
+    assertBalancedTags(strip(svg));
+  });
+
+  it("cute: keeps the animal's own palette (sash trim uses its accent)", () => {
+    const svg = renderZodiacCard({ ...input, meta: { theme: "cute", yearMark } });
+    const sash = svg.slice(svg.indexOf('class="year-mark"'));
+    assert.ok(sash.includes(horse.cuteColors.accent));
+    assert.match(svg, new RegExp(`fill="${horse.cuteColors.bg}"`));
+  });
+
+  it("classic: hangs a vertical ribbon with the 干支 and 年", () => {
+    const svg = renderZodiacCard({ ...input, meta: { theme: "classic", yearMark } });
+    assert.match(svg, /class="year-mark"/);
+    assert.match(svg, />丙</);
+    assert.match(svg, />午</);
+    assert.match(svg, />年</);
+    assertBalancedTags(strip(svg));
+  });
+
+  it("every element color renders a balanced card in both themes", () => {
+    for (const color of ["blue", "red", "gold", "white", "black"]) {
+      for (const theme of ["cute", "classic"]) {
+        const svg = renderZodiacCard({ ...input, meta: { theme, yearMark: { ...yearMark, color } } });
+        assert.match(svg, /class="year-mark"/, `${theme}/${color}`);
+        assertBalancedTags(strip(svg));
+      }
+    }
+  });
+
+  it("no mark without meta.yearMark", () => {
+    for (const theme of ["cute", "classic"]) {
+      const svg = renderZodiacCard({ ...input, meta: { theme } });
+      assert.doesNotMatch(svg, /year-mark/);
+    }
+    assert.match(renderZodiacCard({ ...input, meta: { theme: "cute" } }), /YEAR OF THE HORSE/);
+  });
+});

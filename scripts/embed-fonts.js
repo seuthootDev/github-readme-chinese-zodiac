@@ -36,6 +36,8 @@ const STATIC_UI = [
   "Dog",
   "Pig",
   "印",
+  // Year mark ribbon: heavenly stems + 年 (see src/lib/ganzhi.js)
+  "甲乙丙丁戊己庚辛壬癸年",
   "—",
   "–",
   "’",
@@ -91,6 +93,8 @@ function collectHanziText() {
   for (const a of animals) {
     for (const c of `${a.hanzi || ""}${a.earthlyBranch || ""}`) chars.add(c);
   }
+  // Year mark sash: heavenly stems (see src/lib/ganzhi.js)
+  for (const c of "甲乙丙丁戊己庚辛壬癸") chars.add(c);
   return [...chars].sort().join("");
 }
 
