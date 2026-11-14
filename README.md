@@ -252,3 +252,17 @@ GitHub stats as macOS / Windows / Ubuntu terminal SVGs — contribution graph, s
 ```md
 ![GitHub contribution graph](https://github-readme-insight-terminal-asci.vercel.app/svg?user=YOUR_USERNAME&theme=mac)
 ```
+
+### [claude-gh-guard](https://github.com/seuthootDev/claude-gh-guard)
+
+Not a card, but a tool for anyone juggling personal and work GitHub accounts in [Claude Code](https://claude.com/claude-code). It shows the GitHub and Claude account in use on the status line, and blocks `git commit`, `git push` and `gh pr create` when the account is definitely the wrong one for the repo.
+
+![Matching account](https://raw.githubusercontent.com/seuthootDev/claude-gh-guard/main/assets/match.png)
+
+![Wrong account, gh pr create blocked](https://raw.githubusercontent.com/seuthootDev/claude-gh-guard/main/assets/mismatch.png)
+
+![No remote, nothing to check](https://raw.githubusercontent.com/seuthootDev/claude-gh-guard/main/assets/no-remote.png)
+
+```sh
+npx claude-gh-guard init
+```
