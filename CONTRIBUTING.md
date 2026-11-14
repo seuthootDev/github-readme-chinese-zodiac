@@ -27,7 +27,7 @@ SVG card hanzi / vermilion styling is a separate track; the pin seal is the pain
 - **Role / identity mapping** — better auto-roles, animal-flavored suggestions
 - **Birth-year accuracy** — finer Chinese New Year boundary tables
 - **Pin (Gist) presentation** — seal alignment (above), clearer 5-line pins, safer monospace art
-- **Docs & DX** — fork setup, examples, translations
+- **Docs & DX** — Action setup, examples, translations
 
 Open an issue first if you want to bounce an idea around.
 

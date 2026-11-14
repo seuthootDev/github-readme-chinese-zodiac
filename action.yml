@@ -1,9 +1,32 @@
-name: GitHub Readme Chinese Zodiac Gist
-description: Update a pinned Gist with your Asian zodiac developer card
+name: Chinese Zodiac Dev Card Gist
+description: Keep a pinned Gist updated with your Chinese zodiac developer card, built from your GitHub activity
 author: seuthootDev
 branding:
   icon: star
   color: orange
+
+inputs:
+  gh_token:
+    description: Personal access token with the `gist` scope (store it as a secret)
+    required: true
+  gist_id:
+    description: ID of the public Gist to update (the last part of the Gist URL)
+    required: true
+  username:
+    description: GitHub login to build the card for (default: the token owner)
+    required: false
+  birthdate:
+    description: Birthdate as YYYY-MM-DD; its year picks your animal
+    required: false
+  sign:
+    description: Force an animal (rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig)
+    required: false
+  name:
+    description: Display name override
+    required: false
+  role:
+    description: Role / title override
+    required: false
 
 runs:
   using: node24

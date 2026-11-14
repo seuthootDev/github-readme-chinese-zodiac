@@ -68,9 +68,18 @@ async function updateGist({ token, gistId, content, filename }) {
   });
 }
 
+// Action inputs arrive as INPUT_<NAME>; plain env vars keep local runs working.
+function setting(input, ...envNames) {
+  for (const key of [`INPUT_${input.toUpperCase()}`, ...envNames]) {
+    const value = process.env[key]?.trim();
+    if (value) return value;
+  }
+  return undefined;
+}
+
 async function main() {
-  const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
-  const gistId = process.env.GIST_ID;
+  const token = setting("gh_token", "GH_TOKEN", "GITHUB_TOKEN");
+  const gistId = setting("gist_id", "GIST_ID");
 
   if (!token) {
     console.error("Missing GH_TOKEN (needs gist scope)");
@@ -87,14 +96,12 @@ async function main() {
   // Prefer ZODIAC_USERNAME — bare USERNAME is the Windows login name locally.
   const username = await resolveUsername(
     token,
-    process.env.ZODIAC_USERNAME?.trim() ||
-      process.env.GH_USER?.trim() ||
-      process.env.USERNAME?.trim(),
+    setting("username", "ZODIAC_USERNAME", "GH_USER"),
   );
-  const birthdate = process.env.BIRTHDATE?.trim() || undefined;
-  const sign = process.env.SIGN?.trim() || undefined;
-  const name = process.env.NAME?.trim() || undefined;
-  const role = process.env.ROLE?.trim() || undefined;
+  const birthdate = setting("birthdate", "BIRTHDATE");
+  const sign = setting("sign", "SIGN");
+  const name = setting("name", "NAME");
+  const role = setting("role", "ROLE");
 
   console.log(`Building zodiac gist for @${username}…`);
 
