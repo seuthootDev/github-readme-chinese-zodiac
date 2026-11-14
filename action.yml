@@ -13,7 +13,7 @@ inputs:
     description: ID of the public Gist to update (the last part of the Gist URL)
     required: true
   username:
-    description: GitHub login to build the card for (default: the token owner)
+    description: "GitHub login to build the card for (default: the token owner)"
     required: false
   birthdate:
     description: Birthdate as YYYY-MM-DD; its year picks your animal
