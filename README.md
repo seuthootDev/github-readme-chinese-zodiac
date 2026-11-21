@@ -1,6 +1,6 @@
 # github-readme-chinese-zodiac
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![GitHub stars](https://img.shields.io/github/stars/seuthootDev/github-readme-chinese-zodiac.svg?style=flat)](https://github.com/seuthootDev/github-readme-chinese-zodiac/stargazers) [![Contributing](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![CI](https://github.com/seuthootDev/github-readme-chinese-zodiac/actions/workflows/ci.yml/badge.svg)](https://github.com/seuthootDev/github-readme-chinese-zodiac/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![GitHub stars](https://img.shields.io/github/stars/seuthootDev/github-readme-chinese-zodiac.svg?style=flat)](https://github.com/seuthootDev/github-readme-chinese-zodiac/stargazers) [![Contributing](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 **Your GitHub activity as one of the 12 Asian zodiac animals (生肖).** A profile card for your README — add it with a single URL.
 
