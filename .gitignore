@@ -6,3 +6,11 @@ node_modules/
 *.log
 scripts/out/
 .superpowers/
+
+# Local preview output (scripts/preview-card.js, scripts/preview-seal-compare.js)
+docs/card-demo*
+docs/seal-c*
+scripts/preview-seal-compare.js
+
+# No dependencies, so no lockfile to track
+package-lock.json
