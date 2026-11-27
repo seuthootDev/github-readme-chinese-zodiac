@@ -45,6 +45,10 @@ Open an issue first if you want to bounce an idea around.
 2. Preview locally: `npm start` / `npm run preview:gists`
 3. Open a PR against `main` with a short **what / why**
 
+## Not ready to code?
+
+That is fine too. Starring the repo or sharing a card you made also helps other people find the project.
+
 ## License
 
 By contributing, you agree that your contributions will be licensed under the [MIT License](LICENSE).
